@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Meal Plan">
+<meta name="theme-color" content="#c0533f">
+<title>Meal Plan — Jul 20–26, 2026</title>
+<style>
+  :root{
+    --bg:#f6f5f2; --card:#ffffff; --ink:#22201c; --muted:#6b6459;
+    --line:#e7e3dc; --accent:#c0533f; --accent2:#2e6f5e;
+    --safe:#2e6f5e; --diab:#7a5cc0; --iron:#b5442f; --veg:#4f8a3d; --spice:#d4791f; --kid:#3f7bb5;
+    --chip:#f0ece5;
+    --shadow:0 1px 3px rgba(0,0,0,.06),0 6px 18px rgba(0,0,0,.05);
+    --radius:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#17150f; --card:#211e18; --ink:#eee9df; --muted:#a49b8b;
+      --line:#332f26; --chip:#2a2620; --shadow:0 1px 3px rgba(0,0,0,.4); }
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5; font-size:17px; padding:0 0 40px;
+    -webkit-text-size-adjust:100%;
+  }
+  header{
+    padding:20px 20px 14px; text-align:center;
+    background:linear-gradient(160deg,var(--accent) 0%,#a8452f 100%);
+    color:#fff;
+  }
+  header h1{margin:0; font-size:21px; letter-spacing:.2px;}
+  header .sub{opacity:.9; font-size:13.5px; margin-top:3px;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 16px;}
+
+  .tip{
+    background:#fff6e9; color:#6a4a15; border:1px solid #f0d9ad;
+    margin:12px 16px 4px; max-width:760px; border-radius:12px; padding:10px 13px; font-size:13.5px;
+  }
+  @media (prefers-color-scheme: dark){ .tip{background:#2c2412; color:#e6cf9c; border-color:#4a3c1c;} }
+
+  .tabs{
+    position:sticky; top:0; z-index:30; background:var(--bg);
+    display:flex; gap:6px; overflow-x:auto; padding:10px 12px;
+    border-bottom:1px solid var(--line); scrollbar-width:none;
+  }
+  .tabs::-webkit-scrollbar{display:none;}
+  .tabs button{
+    flex:0 0 auto; font-family:inherit; font-size:14px; font-weight:700;
+    color:var(--muted); background:transparent; border:none; cursor:pointer;
+    padding:9px 14px; border-radius:999px; white-space:nowrap;
+  }
+  .tabs button.active{color:#fff; background:var(--accent);}
+
+  .panel{display:none;}
+  .panel.active{display:block; animation:fade .18s ease;}
+  @keyframes fade{from{opacity:.4}to{opacity:1}}
+
+  h2.sec{font-size:14px; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin:20px 4px 10px;}
+
+  .legend{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:14px 16px; box-shadow:var(--shadow);}
+  .legend .row{display:flex; gap:10px; align-items:flex-start; padding:7px 0; font-size:14.5px; border-bottom:1px dashed var(--line);}
+  .legend .row:last-child{border-bottom:none;}
+  .legend b{white-space:nowrap;}
+
+  .cal{display:flex; flex-direction:column; gap:10px;}
+  .day{
+    display:flex; gap:12px; background:var(--card); border:1px solid var(--line);
+    border-radius:14px; box-shadow:var(--shadow); padding:12px; align-items:stretch;
+  }
+  .day.weekend{opacity:.72;}
+  .dbadge{
+    flex:0 0 52px; text-align:center; border-radius:11px; background:var(--chip);
+    display:flex; flex-direction:column; justify-content:center; padding:6px 0;
+  }
+  .dbadge .dow{font-size:11px; font-weight:800; letter-spacing:1px; color:var(--accent);}
+  .dbadge .dnum{font-size:22px; font-weight:800; line-height:1;}
+  .dmeals{flex:1; display:flex; flex-direction:column; gap:7px; min-width:0;}
+  .meal{font-size:14.5px;}
+  .meal .k{display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; padding:2px 7px; border-radius:6px; margin-right:7px; vertical-align:middle;}
+  .meal.lunch .k{background:#eaf1f7; color:#2c5f88;}
+  .meal.dinner .k{background:#f7ece9; color:#a8452f;}
+  @media (prefers-color-scheme: dark){
+    .meal.lunch .k{background:#1e2a34; color:#8fbce0;}
+    .meal.dinner .k{background:#33231f; color:#e39685;}
+  }
+  .dish{font-weight:700; color:var(--ink); text-decoration:none; border-bottom:1.5px dotted var(--accent);}
+  .meal small{display:block; color:var(--muted); font-size:12.5px; margin-top:1px; margin-left:2px;}
+  .meal.none{color:var(--muted); font-size:13.5px; font-style:italic;}
+
+  details.card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); margin:12px 0; box-shadow:var(--shadow); overflow:hidden; scroll-margin-top:70px;}
+  details.card>summary{list-style:none; cursor:pointer; padding:16px; display:flex; align-items:center; gap:12px;}
+  details.card>summary::-webkit-details-marker{display:none;}
+  .cnum{flex:0 0 auto; width:34px; height:34px; border-radius:10px; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:15px;}
+  .ctitle{flex:1;}
+  .ctitle .t{font-weight:700; font-size:17px;}
+  .ctitle .s{font-size:13px; color:var(--muted); margin-top:2px;}
+  .chev{flex:0 0 auto; color:var(--muted); transition:transform .2s;}
+  details[open]>summary .chev{transform:rotate(180deg);}
+  .cbody{padding:0 16px 18px;}
+
+  .tags{display:flex; flex-wrap:wrap; gap:6px; margin:2px 0 14px;}
+  .tag{font-size:12px; font-weight:600; padding:4px 9px; border-radius:999px; color:#fff;}
+  .t-safe{background:var(--safe);} .t-iron{background:var(--iron);} .t-diab{background:var(--diab);}
+  .t-veg{background:var(--veg);} .t-spice{background:var(--spice);} .t-kid{background:var(--kid);}
+
+  h4{margin:16px 0 6px; font-size:14px; text-transform:uppercase; letter-spacing:.6px; color:var(--accent2);}
+  .cbody ul{margin:6px 0; padding-left:20px;}
+  .cbody ol{margin:6px 0; padding-left:22px;}
+  .cbody li{margin:5px 0;}
+  .note{border-left:3px solid var(--line); padding:8px 12px; margin:10px 0; border-radius:0 8px 8px 0; background:var(--chip); font-size:14.5px;}
+  .note.diab{border-color:var(--diab);} .note.iron{border-color:var(--iron);}
+  .note.veg{border-color:var(--veg);} .note.spice{border-color:var(--spice);} .note.kid{border-color:var(--kid);} .note.safe{border-color:var(--safe);}
+  .note .lbl{font-weight:700;}
+  .pill{display:inline-block; font-size:12px; background:var(--chip); padding:2px 7px; border-radius:6px; margin-left:4px; color:var(--muted);}
+
+  .shop .grp{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); margin:10px 0; box-shadow:var(--shadow); overflow:hidden;}
+  .shop .grp h4{margin:0; padding:12px 16px; background:var(--chip); color:var(--ink); border-bottom:1px solid var(--line); font-size:13px;}
+  .item{display:flex; align-items:flex-start; gap:8px; padding:11px 16px; border-bottom:1px solid var(--line);}
+  .item:last-of-type{border-bottom:none;}
+  .item label{display:flex; gap:11px; align-items:flex-start; flex:1; cursor:pointer; font-size:15px;}
+  .item input{margin-top:3px; width:20px; height:20px; accent-color:var(--accent2); flex:0 0 auto;}
+  .item input:checked + span{text-decoration:line-through; color:var(--muted);}
+  .info{flex:0 0 auto; font-size:11.5px; font-weight:700; color:var(--accent2); background:var(--chip); border:1px solid var(--line); border-radius:999px; padding:5px 9px; cursor:pointer; white-space:nowrap;}
+  .detail{display:none; padding:0 16px 12px 43px; font-size:13.5px; color:var(--muted); background:var(--card); border-bottom:1px solid var(--line);}
+  .detail.open{display:block;}
+  .detail b{color:var(--ink);}
+  .clearbtn{display:inline-block; margin:6px 4px 0; font-size:13px; color:var(--accent); background:none; border:1px solid var(--line); padding:7px 12px; border-radius:999px; cursor:pointer;}
+
+  .prep ol{counter-reset:step; list-style:none; padding-left:0;}
+  .prep ol>li{position:relative; padding:12px 12px 12px 46px; margin:8px 0; background:var(--card); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow);}
+  .prep ol>li::before{counter-increment:step; content:counter(step); position:absolute; left:10px; top:12px; width:26px; height:26px; background:var(--accent2); color:#fff; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px;}
+  .prep .time{font-size:12px; color:var(--muted); font-weight:600;}
+
+  footer{text-align:center; color:var(--muted); font-size:12.5px; padding:24px 16px 8px;}
+</style>
+</head>
+<body id="top">
+<header>
+  <h1>🍽️ Family Meal Plan</h1>
+  <div class="sub">Week of July 20–26, 2026 · Lunch &amp; Dinner · metric</div>
+</header>
+
+<div class="tip">📲 <b>Tip:</b> tabs &amp; calendar work anywhere. For ticked shopping boxes to persist, add this to your Home Screen from Safari (Share → Add to Home Screen).</div>
+
+<div class="tabs" id="tabbar">
+  <button class="active" data-tab="plan" onclick="showTab('plan')">📅 Plan</button>
+  <button data-tab="recipes" onclick="showTab('recipes')">🍳 Recipes</button>
+  <button data-tab="shop" onclick="showTab('shop')">🛒 Shopping</button>
+  <button data-tab="pantry" onclick="showTab('pantry')">🧂 Pantry</button>
+  <button data-tab="prep" onclick="showTab('prep')">🔪 Sunday Prep</button>
+</div>
+
+<div class="wrap">
+
+<!-- ============ PLAN ============ -->
+<div class="panel active" id="tab-plan">
+  <h2 class="sec">How to read the tags</h2>
+  <div class="legend">
+    <div class="row"><b>🚫 Allergen-safe</b><span>No <b>raw/uncooked dairy, egg, tree nut, peanut, or pea</b>. ✅ Cooked/baked milk &amp; melted cheese are used.</span></div>
+    <div class="row"><b>🔄 Low-carb</b><span>A <b>low-GI / low-carb swap</b> is given for each dinner.</span></div>
+    <div class="row"><b>🩸 Iron-rich</b><span>Iron sources <b>paired with vitamin C</b> to aid absorption, plus extra <b>fiber</b>.</span></div>
+    <div class="row"><b>🌶️ Adults</b><span>Spice added at the end; a <b>plain portion</b> pulled first where noted.</span></div>
+  </div>
+
+  <h2 class="sec">The week — cook once, eat twice</h2>
+  <div class="cal">
+    <div class="day weekend">
+      <div class="dbadge"><span class="dow">SUN</span><span class="dnum">19</span></div>
+      <div class="dmeals">
+        <div class="meal none">Weekend — no daycare</div>
+        <div class="meal dinner"><span class="k">Dinner</span><a class="dish" onclick="openRecipe('r1')">Tater Tot Casserole</a><small>Cook ahead → packs as Monday's lunch</small></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="dbadge"><span class="dow">MON</span><span class="dnum">20</span></div>
+      <div class="dmeals">
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r1')">Tater Tot Casserole</a><small>Packed from last night · reheat 60–90 s</small></div>
+        <div class="meal dinner"><span class="k">Dinner</span><a class="dish" onclick="openRecipe('r2')">Mexican Lasagna</a><small>Cook ahead → Tuesday's lunch</small></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="dbadge"><span class="dow">TUE</span><span class="dnum">21</span></div>
+      <div class="dmeals">
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r2')">Mexican Lasagna</a><small>Packed · sauce/topping kept plain</small></div>
+        <div class="meal dinner"><span class="k">Dinner</span><a class="dish" onclick="openRecipe('r3')">Chicken Alfredo Tortellini</a><small>Cook ahead → Wednesday's lunch</small></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="dbadge"><span class="dow">WED</span><span class="dnum">22</span></div>
+      <div class="dmeals">
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r3')">Chicken Alfredo</a><small>Add a splash of milk when reheating</small></div>
+        <div class="meal dinner"><span class="k">Dinner</span><a class="dish" onclick="openRecipe('r4')">Bean Stew + Buns</a><small>Cook ahead → Thursday's lunch</small></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="dbadge"><span class="dow">THU</span><span class="dnum">23</span></div>
+      <div class="dmeals">
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r4')">Bean Stew + Bun</a><small>Even better next day</small></div>
+        <div class="meal dinner"><span class="k">Dinner</span><a class="dish" onclick="openRecipe('r5')">Meatloaf + Mashed Potatoes</a><small>Cook ahead → Friday's lunch</small></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="dbadge"><span class="dow">FRI</span><span class="dnum">24</span></div>
+      <div class="dmeals">
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r5')">Meatloaf + Mash</a><small>Packed from Thursday</small></div>
+        <div class="meal dinner"><span class="k">Dinner</span><a class="dish" onclick="openRecipe('rb')">Beef Bibimbap ★</a><small>Free night — nothing to pack for the weekend</small></div>
+      </div>
+    </div>
+    <div class="day weekend">
+      <div class="dbadge"><span class="dow">SAT</span><span class="dnum">25</span></div>
+      <div class="dmeals"><div class="meal none">Weekend — leftovers / family choice</div></div>
+    </div>
+    <div class="day weekend">
+      <div class="dbadge"><span class="dow">SUN</span><span class="dnum">26</span></div>
+      <div class="dmeals"><div class="meal none">Weekend — start Sunday prep for next week</div></div>
+    </div>
+  </div>
+  <p class="note">Tap any dish to jump to its recipe. Each dinner makes enough for the family <b>plus</b> a lunchbox; the morning job is just reheat (or ≤20 min).</p>
+</div>
+
+<!-- ============ RECIPES ============ -->
+<div class="panel" id="tab-recipes">
+  <h2 class="sec">Recipes</h2>
+
+  <details class="card" id="r1">
+    <summary><div class="cnum">1</div><div class="ctitle"><div class="t">Tater Tot Casserole</div><div class="s">Sunday dinner → Monday lunch · serves 4 + lunchbox</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron-rich</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> The classic uses <b>peas</b> — swap to corn + green beans. Cream soup &amp; cheese bake in = cooked dairy (no raw dairy). No egg anywhere.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>700 g lean ground beef <span class="pill">iron</span></li>
+        <li>1 onion (~150 g), diced · 2 carrots (~150 g), grated · 1 zucchini (~150 g), grated <span class="pill">hidden veg</span></li>
+        <li>60 g baby spinach, finely chopped <span class="pill">iron + fiber</span></li>
+        <li>300 g can cream of mushroom soup <em>or</em> roux (15 g flour + 360 ml milk)</li>
+        <li>150 g corn + 150 g green beans, chopped <span class="pill">no peas</span></li>
+        <li>15 g (1 tbsp) tomato paste <span class="pill">vit C</span></li>
+        <li>450 g frozen tater tots · 100 g shredded cheddar</li>
+        <li>Salt, pepper, ½ tsp garlic powder</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Brown beef with onion. Stir in carrot, zucchini, spinach; cook 3–4 min.</li>
+        <li>Add tomato paste, corn, green beans, soup (or roux). Season. Spread in a baking dish.</li>
+        <li>Top with tater tots, then cheese. Bake <b>200°C (400°F) 30–35 min</b> until golden.</li>
+      </ol>
+      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> tots are high-GI. Plate a portion from the <b>beef-veg layer</b> + a scoop of <b>mashed cauliflower</b> instead of tots.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef + spinach + tomato paste. Serve with orange segments to boost iron absorption.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> reheats perfectly — microwave 60–90 s.</div>
+    </div>
+  </details>
+
+  <details class="card" id="r2">
+    <summary><div class="cnum">2</div><div class="ctitle"><div class="t">Mexican Lasagna</div><div class="s">Monday dinner → Tuesday lunch · serves 4 + lunchbox</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron-rich ★</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-spice">Adult spice</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Skip <b>raw sour cream</b> on the allergen-safe portion. Melted cheese = fine. No egg/nuts. Black beans replace any peas.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>570 g ground beef (or half beef / half turkey) <span class="pill">iron</span></li>
+        <li>400 g can black beans, drained &amp; rinsed <span class="pill">iron + fiber ★</span></li>
+        <li>1 onion (~150 g) + 1 bell pepper (~150 g), diced · 150 g corn <span class="pill">hidden veg</span></li>
+        <li>60 g baby spinach, chopped <span class="pill">iron</span></li>
+        <li>400 g can diced tomatoes + 240 g mild salsa <span class="pill">vit C</span></li>
+        <li>1 tbsp taco seasoning (mild), 1 tsp cumin</li>
+        <li>8 corn or whole-grain tortillas · 150 g shredded Mexican-blend cheese</li>
+        <li>1 avocado (for the low-carb portion) · Adults: jalapeños / hot sauce · optional sour cream (not the allergen-safe portion)</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Brown beef + onion. Add pepper, corn, spinach, beans, tomatoes, salsa, spices. Simmer 8 min.</li>
+        <li>Layer: sauce → tortillas → sauce → cheese, repeat; finish with cheese.</li>
+        <li>Bake <b>190°C (375°F) 25 min</b>. Rest 5 min before cutting.</li>
+      </ol>
+      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> beans stay (low-GI); tortillas are the load. Build a <b>tortilla-free skillet portion</b> over lettuce, or 1 low-carb tortilla + avocado.</div>
+      <div class="note spice"><span class="lbl">🌶️ Adults:</span> stir jalapeños/hot sauce into one half before layering, or add on top after plating the plain pieces.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich ★:</span> the week's iron star — beef + black beans + spinach + salsa vitamin C.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> a firm square reheats cleanly; no sour cream.</div>
+    </div>
+  </details>
+
+  <details class="card" id="r3">
+    <summary><div class="cnum">3</div><div class="ctitle"><div class="t">Chicken Alfredo "Tortellini"</div><div class="s">Tuesday dinner → Wednesday lunch · serves 4 + lunchbox</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-spice">Adult spice</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Cheese <b>tortellini pasta contains egg</b> → for the egg-free portion use <b>egg-free dried pasta</b> (most dried penne/rotini is semolina + water — check the label). Alfredo is cooked cream/butter/parmesan (no raw dairy).</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>400 g chicken breast (2), diced <span class="pill">protein</span></li>
+        <li>Standard: ~300 g cheese tortellini · Egg-free portion: ~100 g egg-free dried penne/rotini</li>
+        <li>Alfredo: 30 g butter, 2 garlic cloves, 360 ml cream (or 360 ml milk + 15 g flour), 90 g grated parmesan</li>
+        <li>250 g broccoli, finely chopped + 60 g spinach <span class="pill">hidden veg + iron</span></li>
+        <li>Salt, pepper · Adults: red pepper flakes / chili crisp</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Sear diced chicken until cooked; set aside. Boil pasta/tortellini; add broccoli for the last 3 min.</li>
+        <li>Alfredo: melt butter, cook garlic 30 s, add cream, simmer, whisk in parmesan; stir in spinach until wilted.</li>
+        <li>Toss chicken + pasta + broccoli in sauce.</li>
+      </ol>
+      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> serve the chicken + alfredo + broccoli over <b>zucchini noodles</b> or roasted broccoli — the sauce is low-carb.</div>
+      <div class="note veg"><span class="lbl">🥦 Hidden veg:</span> finely chopped broccoli + spinach vanish into the sauce.</div>
+      <div class="note spice"><span class="lbl">🌶️ Adults:</span> red pepper flakes or chili crisp on top after the plain bowls.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> add a teaspoon of milk when reheating so it loosens. Reheat 60 s, stir.</div>
+    </div>
+  </details>
+
+  <details class="card" id="r4">
+    <summary><div class="cnum">4</div><div class="ctitle"><div class="t">Hearty Bean Stew + Buns</div><div class="s">Wednesday dinner → Thursday lunch · serves 4 + lunchbox</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron-rich ★</span><span class="tag t-veg">High fiber</span><span class="tag t-diab">Low-carb</span><span class="tag t-spice">Adult spice</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Naturally free of dairy, egg &amp; nuts. <b>No peas</b> — kidney + cannellini beans. Check buns are egg-wash-free (milk in dough is fine — cooked).</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>250 g ground or diced beef (optional, boosts iron) <span class="pill">iron</span></li>
+        <li>400 g can kidney beans + 400 g can cannellini/white beans <span class="pill">iron + fiber ★</span></li>
+        <li>1 onion (~150 g), 2 carrots (~150 g), 2 celery sticks (~120 g), 1 zucchini (~150 g), diced <span class="pill">fiber</span></li>
+        <li>1 small sweet potato (~250 g), diced <span class="pill">fiber</span></li>
+        <li>60 g kale or spinach, chopped <span class="pill">iron</span></li>
+        <li>400 g can diced tomatoes + 30 g tomato paste <span class="pill">vit C</span></li>
+        <li>750 ml low-sodium broth, 1 tsp smoked paprika, 1 bay leaf</li>
+        <li>Soft buns/dinner rolls · Adults: harissa, gochugaru, or hot sauce</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Brown beef (if using) with onion. Add carrot, celery, sweet potato, zucchini; cook 5 min.</li>
+        <li>Add tomatoes, paste, broth, beans, paprika, bay leaf. Simmer 25–30 min until sweet potato is tender.</li>
+        <li>Stir in kale/spinach for the last 5 min. Serve with warm buns.</li>
+      </ol>
+      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> the stew is already low-GI. <b>Skip the bun</b> or use a low-carb roll; drizzle olive oil.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich ★ + high fiber:</span> beans, beef &amp; kale for iron; carrot/celery/zucchini/sweet-potato add fiber. Pair with a vitamin-C side; go easy on milk at this meal.</div>
+      <div class="note spice"><span class="lbl">🌶️ Adults:</span> stir harissa or gochugaru into your bowls at the table.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> even better next day. Pack with a bun; reheat 90 s.</div>
+    </div>
+  </details>
+
+  <details class="card" id="r5">
+    <summary><div class="cnum">5</div><div class="ctitle"><div class="t">Meatloaf + Mashed Potatoes</div><div class="s">Thursday dinner → Friday lunch · serves 4 + lunchbox</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron-rich</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-spice">Adult spice</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Standard meatloaf uses <b>egg</b> as binder → use a <b>flax egg</b> (10 g / 1 tbsp ground flax + 45 ml water, rest 5 min). Milk in the breadcrumbs cooks in (no raw dairy). No peas in the side.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>700 g ground beef <span class="pill">iron</span></li>
+        <li>Binder: 80 g breadcrumbs (egg-free) + 80 ml milk + 1 flax egg</li>
+        <li>1 grated carrot, ½ grated zucchini, 1 small onion, 60 g finely chopped spinach <span class="pill">hidden veg + iron</span></li>
+        <li>Glaze: 60 g ketchup + 15 g tomato paste + splash Worcestershire</li>
+        <li>Mash: 900 g potatoes + butter + milk — plus 1 cauliflower head (~600 g, for the low-carb mash)</li>
+        <li>Side veg: carrots + 200 g green beans <span class="pill">no peas</span></li>
+        <li>Adults: sriracha stirred into extra glaze</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Mix beef, soaked breadcrumbs, flax egg, grated veg, spinach, salt, pepper. Press into a loaf pan.</li>
+        <li>Brush with glaze. Bake <b>190°C (375°F) 45–55 min</b> (internal 71°C / 160°F).</li>
+        <li>Boil potatoes (and cauliflower separately for the low-carb mash); mash with butter + milk. Steam carrots + green beans.</li>
+      </ol>
+      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> swap mash for <b>mashed cauliflower</b> (or 50/50 blend). Make extra → it doubles as Sunday's tater-tot swap.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef + spinach hidden in the loaf. Serve with the tomato glaze (vit C) + green beans.</div>
+      <div class="note spice"><span class="lbl">🌶️ Adults:</span> brush your slices with sriracha-spiked glaze.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> a slice + a scoop of mash reheats great.</div>
+    </div>
+  </details>
+
+  <details class="card" id="rb">
+    <summary><div class="cnum">★</div><div class="ctitle"><div class="t">Bonus: Beef Bibimbap</div><div class="s">Friday dinner (weekend, no lunch to match) · serves 4</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron-rich ★</span><span class="tag t-veg">Loads of veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-spice">Adult spice</span><span class="tag t-kid">Deconstructed</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Traditionally topped with a <b>fried egg</b> → leave it off the egg-free portion. Everything else is safe. Serve it deconstructed: plain rice + plain beef + separate veg, no sauce.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>450 g thin-sliced beef (bulgogi cut) <span class="pill">iron ★</span></li>
+        <li>Marinade: 30 ml soy sauce, 15 ml sesame oil, 2 garlic cloves, ¼ pear (grated), 1 tsp sugar</li>
+        <li>Veg: 100 g spinach, 1 carrot, 1 zucchini, 100 g mushrooms, 100 g bean sprouts — each lightly sautéed <span class="pill">iron + fiber</span></li>
+        <li>Rice for the family · <b>eggs for the standard bowls</b> (leave off the egg-free portion)</li>
+        <li>Gochujang sauce on the side (adults + spice to taste)</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Marinate beef 20 min, then sear hot &amp; fast. Sauté each veg lightly with a pinch of salt + sesame.</li>
+        <li>Build bowls: rice, beef, veg. Add fried egg + gochujang to the standard bowls. Plain plate: plain rice, plain beef, veg — no sauce, no egg.</li>
+      </ol>
+      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> swap white rice for <b>cauliflower rice</b> or a small scoop of quinoa; pile on veg + beef.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich ★:</span> beef + spinach + vitamin-C veg — a great iron night to close the week.</div>
+      <div class="note kid"><span class="lbl">🥄 Plain option:</span> keep it separate — plain protein + rice, veg on the side.</div>
+    </div>
+  </details>
+</div>
+
+<!-- ============ SHOPPING ============ -->
+<div class="panel shop" id="tab-shop">
+  <h2 class="sec">Combined shopping list</h2>
+  <p class="note">Tap <b>“For ⓘ”</b> on the less-obvious items to see which recipe they're for. Quantities feed 4 + weekday lunchboxes. Basic seasonings are on the <b>Pantry</b> tab.</p>
+  <button class="clearbtn" onclick="clearShop()">Reset checkboxes</button>
+
+  <div class="grp"><h4>🥩 Meat</h4>
+    <div class="item"><label><input type="checkbox" data-k="m1"><span>Ground beef — ~2.2 kg total</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Splits: <b>casserole 700 g · lasagna 570 g · meatloaf 700 g · stew 250 g</b>. Buy as one pack &amp; portion.</div>
+    <div class="item"><label><input type="checkbox" data-k="m2"><span>Chicken breast — 400 g (2)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Chicken alfredo</b> (Tue) — diced.</div>
+    <div class="item"><label><input type="checkbox" data-k="m3"><span>Thin-sliced / bulgogi beef — 450 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Bonus bibimbap</b> (Fri) only. Skip if not doing Friday's dinner.</div>
+  </div>
+
+  <div class="grp"><h4>🥦 Produce</h4>
+    <div class="item"><label><input type="checkbox" data-k="p1"><span>Onions — 5 (~750 g)</span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="p2"><span>Carrots — 1 kg bag</span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="p3"><span>Zucchini — 4 (~800 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Grated as <b>hidden veg</b> in casserole, meatloaf, stew &amp; bibimbap. One becomes the low-carb zoodles for alfredo.</div>
+    <div class="item"><label><input type="checkbox" data-k="p4"><span>Celery — 1 small bunch (~120 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Bean stew base only.</b> Optional — finely dice so it melts in, <b>or omit</b>; it's purely aromatic and the stew is fine without it.</div>
+    <div class="item"><label><input type="checkbox" data-k="p5"><span>Baby spinach — 300 g (2 bags)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">The week's iron workhorse — chopped into <b>almost every dish</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="p6"><span>Kale — 1 small bunch (~150 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Bean stew only.</b> Spinach can stand in if you'd rather not buy both.</div>
+    <div class="item"><label><input type="checkbox" data-k="p7"><span>Broccoli — 500 g (2 heads)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Chicken alfredo</b> (hidden in sauce) + the low-carb base.</div>
+    <div class="item"><label><input type="checkbox" data-k="p8"><span>Cauliflower — 2 heads (~1.2 kg)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">For the <b>low-carb swaps only</b> — cauliflower mash + cauli rice.</div>
+    <div class="item"><label><input type="checkbox" data-k="p9"><span>Bell pepper — 1 (~150 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Mexican lasagna</b> filling.</div>
+    <div class="item"><label><input type="checkbox" data-k="p10"><span>Mushrooms — 200 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Bibimbap</b> veg (+ optional in the alfredo).</div>
+    <div class="item"><label><input type="checkbox" data-k="p11"><span>Sweet potato — 1 small (~250 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Bean stew</b> — fiber + natural sweetness.</div>
+    <div class="item"><label><input type="checkbox" data-k="p12"><span>Green beans — 400 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">The <b>pea replacement</b> — casserole mix + meatloaf side.</div>
+    <div class="item"><label><input type="checkbox" data-k="p13"><span>Potatoes — 900 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Meatloaf night</b> mash.</div>
+    <div class="item"><label><input type="checkbox" data-k="p14"><span>Garlic — 1 bulb</span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="p15"><span>Bean sprouts — 100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Bibimbap</b> topping only.</div>
+    <div class="item"><label><input type="checkbox" data-k="p16"><span>Pear — 1</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Bibimbap beef marinade</b> — grated in to tenderize; you won't taste it.</div>
+    <div class="item"><label><input type="checkbox" data-k="p17"><span>Avocado — 1</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">For the <b>low-carb lasagna portion</b> — healthy fat.</div>
+    <div class="item"><label><input type="checkbox" data-k="p18"><span>Oranges / clementines — small bag</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Vitamin-C sides</b> to pair with the iron-rich meals (boosts absorption).</div>
+  </div>
+
+  <div class="grp"><h4>🥫 Canned &amp; dry</h4>
+    <div class="item"><label><input type="checkbox" data-k="c1"><span>Black beans — 400 g can</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Mexican lasagna.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c2"><span>Kidney beans — 400 g can</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Bean stew.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c3"><span>Cannellini / white beans — 400 g can</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Bean stew.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c4"><span>Diced tomatoes — 2 × 400 g cans</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Lasagna + bean stew</b> (1 each).</div>
+    <div class="item"><label><input type="checkbox" data-k="c5"><span>Cream of mushroom soup — 300 g can</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Casserole</b> — or make a roux from pantry flour + milk.</div>
+    <div class="item"><label><input type="checkbox" data-k="c6"><span>Corn — 300 g (can or frozen)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Casserole + lasagna</b> (150 g each).</div>
+    <div class="item"><label><input type="checkbox" data-k="c7"><span>Mild salsa — 1 jar (~240 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Mexican lasagna.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c8"><span>Low-sodium broth — 750 ml</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Bean stew.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c9"><span>Tomato paste — 1 small tube/can (~70 g used)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Casserole (15 g) + stew (30 g) + meatloaf glaze (15 g).</b> A tube keeps for weeks.</div>
+    <div class="item"><label><input type="checkbox" data-k="c10"><span>Ground flaxseed — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Meatloaf egg-replacer</b> (flax egg). Also good stirred into oats for iron/fiber.</div>
+    <div class="item"><label><input type="checkbox" data-k="c11"><span>Breadcrumbs — egg-free, ~80 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Meatloaf</b> binder — check the label is egg-free.</div>
+  </div>
+
+  <div class="grp"><h4>🍝 Carbs / bakery</h4>
+    <div class="item"><label><input type="checkbox" data-k="b1"><span>Frozen tater tots — 450 g bag</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Casserole</b> (low-carb version gets cauli mash).</div>
+    <div class="item"><label><input type="checkbox" data-k="b2"><span>Cheese tortellini — 1 pack (~300 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Alfredo — standard version.</b> The egg-free portion uses dried pasta (tortellini dough has egg).</div>
+    <div class="item"><label><input type="checkbox" data-k="b3"><span>Egg-free dried pasta — penne/rotini (~100 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">The <b>egg-free alfredo portion.</b> Check the label says no egg.</div>
+    <div class="item"><label><input type="checkbox" data-k="b4"><span>Tortillas — corn or whole-grain (8)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Mexican lasagna</b> layers.</div>
+    <div class="item"><label><input type="checkbox" data-k="b5"><span>Soft buns / dinner rolls — 4–6</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Bean stew.</b> Check egg-wash-free; milk in dough is fine.</div>
+    <div class="item"><label><input type="checkbox" data-k="b6"><span>Rice — for the family</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Bibimbap</b> (low-carb: cauli rice).</div>
+    <div class="item"><label><input type="checkbox" data-k="b7"><span>Low-carb (optional): low-carb tortilla · black-bean/edamame pasta</span></label></div>
+  </div>
+
+  <div class="grp"><h4>🧀 Dairy — cooked uses only</h4>
+    <div class="item"><label><input type="checkbox" data-k="d1"><span>Cheddar — 100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Casserole</b> top.</div>
+    <div class="item"><label><input type="checkbox" data-k="d2"><span>Mexican-blend cheese — 150 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Lasagna</b> layers.</div>
+    <div class="item"><label><input type="checkbox" data-k="d3"><span>Parmesan — 90 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Alfredo</b> sauce.</div>
+    <div class="item"><label><input type="checkbox" data-k="d4"><span>Cream — 360 ml (or whole milk + flour)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Alfredo</b> sauce.</div>
+    <div class="item"><label><input type="checkbox" data-k="d5"><span>Milk — ~600 ml</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Mash + meatloaf breadcrumb soak + roux option (cooked uses — no raw dairy).</div>
+    <div class="item"><label><input type="checkbox" data-k="d6"><span>Butter — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Alfredo + mash.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="d7"><span>Sour cream — optional, adults only</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Lasagna topping (optional).</b> ⚠️ Raw dairy — keep off the allergen-safe portion.</div>
+  </div>
+
+  <div class="grp"><h4>🌶️ Adult spice / extras</h4>
+    <div class="item"><label><input type="checkbox" data-k="s1"><span>Pickled jalapeños / hot sauce · red pepper flakes / chili crisp</span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="s2"><span>Harissa or gochugaru · gochujang · sriracha</span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="s3"><span>Eggs — 2–4</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Standard bibimbap bowls only.</b> Keep off the egg-free portion.</div>
+  </div>
+</div>
+
+<!-- ============ PANTRY ============ -->
+<div class="panel shop" id="tab-pantry">
+  <h2 class="sec">Pantry check — assumed at home</h2>
+  <p class="note">Left off the buy list assuming these are kept stocked. Quantities used this week shown — move any you're low on into the trip.</p>
+  <div class="grp"><h4>🧂 Assumed staples (verify stock)</h4>
+    <div class="item"><label><input type="checkbox" data-k="pan1"><span>Cooking oil / olive oil</span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan2"><span>Plain flour <span class="pill">~15–30 g, roux/alfredo</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan3"><span>Salt &amp; black pepper</span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan4"><span>Garlic powder <span class="pill">½ tsp, casserole</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan5"><span>Ground cumin <span class="pill">1 tsp, lasagna</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan6"><span>Smoked paprika <span class="pill">1 tsp, stew</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan7"><span>Taco seasoning <span class="pill">1 tbsp, lasagna</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan8"><span>Bay leaf <span class="pill">1, stew</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan9"><span>Ketchup <span class="pill">60 g, meatloaf glaze</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan10"><span>Worcestershire sauce <span class="pill">splash, meatloaf</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan11"><span>Soy sauce <span class="pill">30 ml, bibimbap</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan12"><span>Sesame oil <span class="pill">15 ml, bibimbap</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan13"><span>Sugar <span class="pill">1 tsp, bibimbap marinade</span></span></label></div>
+  </div>
+</div>
+
+<!-- ============ PREP ============ -->
+<div class="panel prep" id="tab-prep">
+  <h2 class="sec">Sunday meal prep <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">(~60–75 min)</span></h2>
+  <ol>
+    <li><span class="time">10 min · 5 dinners</span><br><b>Big veg chop.</b> Dice all onions; grate carrots &amp; zucchini; chop spinach. Split into labeled tubs: <em>Casserole</em>, <em>Lasagna</em>, <em>Meatloaf</em>, <em>Stew</em>. Wash broccoli + kale.</li>
+    <li><span class="time">15 min · Sun + Mon</span><br><b>Brown a big batch of beef</b> (~1.3 kg) plain with onion. Split half → casserole, half → lasagna. Season at assembly. Cool &amp; fridge.</li>
+    <li><span class="time">10 min · low-carb swaps</span><br><b>Mash a batch of cauliflower</b> (both heads). Covers the casserole swap, lasagna side &amp; Thursday mash swap.</li>
+    <li><span class="time">8 min · Wed</span><br><b>Stew base.</b> Sauté stew onion/carrot/celery/sweet potato, then fridge. Wednesday = add beans, tomatoes, broth, simmer 25 min.</li>
+    <li><span class="time">8 min · Thu</span><br><b>Meatloaf mix.</b> Make flax egg, combine beef + breadcrumbs + grated veg + spinach, press into loaf pan, cover, fridge. Thursday = glaze &amp; bake.</li>
+    <li><span class="time">10 min · Tue</span><br><b>Alfredo + chicken.</b> Dice &amp; sear chicken; make alfredo, refrigerate (loosen with milk when reheating). Tuesday = boil pasta, toss.</li>
+    <li><span class="time">4 min · labels</span><br><b>Assembly-line the fridge</b> front-to-back: Sun casserole → Mon lasagna → Tue chicken/alfredo → Wed stew → Thu meatloaf. Sticky-note the 1-line finish step on each.</li>
+    <li><span class="time">optional</span><br><b>Bibimbap</b> (Fri) needs no prep. If keen, mix the marinade &amp; freeze the beef in it.</li>
+  </ol>
+  <p class="note"><b>Weeknights become:</b> Sun bake 35 m · Mon layer+bake 25 m · Tue boil+toss 15 m · Wed simmer 25 m · Thu glaze+bake 50 m (hands-off) · Fri quick stir-fry.</p>
+</div>
+
+<footer>
+  Allergen-safe: no raw dairy, egg, tree nut, peanut, or pea · Low-GI/low-carb swaps + iron-rich options included · metric.<br>Refresh next week with the new plan.
+</footer>
+</div>
+
+<script>
+  var KEY='mealplan_2026_07_20_v3';
+  function showTab(name){
+    document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id==='tab-'+name); });
+    document.querySelectorAll('#tabbar button').forEach(function(b){ b.classList.toggle('active', b.dataset.tab===name); });
+    window.scrollTo(0,0);
+  }
+  function openRecipe(id){
+    showTab('recipes');
+    var el=document.getElementById(id);
+    if(el){ el.open=true; setTimeout(function(){ el.scrollIntoView({behavior:'smooth',block:'start'}); },60); }
+  }
+  function tog(btn){
+    var d=btn.closest('.item').nextElementSibling;
+    if(d && d.classList.contains('detail')) d.classList.toggle('open');
+  }
+  function loadShop(){
+    try{
+      var saved=JSON.parse(localStorage.getItem(KEY)||'{}');
+      document.querySelectorAll('input[type=checkbox][data-k]').forEach(function(cb){ if(saved[cb.dataset.k]) cb.checked=true; });
+    }catch(e){}
+  }
+  function saveShop(){
+    var o={};
+    document.querySelectorAll('input[type=checkbox][data-k]').forEach(function(cb){ if(cb.checked)o[cb.dataset.k]=1; });
+    try{ localStorage.setItem(KEY,JSON.stringify(o)); }catch(e){}
+  }
+  function clearShop(){
+    document.querySelectorAll('input[type=checkbox][data-k]').forEach(function(cb){ cb.checked=false; });
+    try{ localStorage.removeItem(KEY); }catch(e){}
+  }
+  document.addEventListener('change',function(e){ if(e.target.matches('input[type=checkbox][data-k]')) saveShop(); });
+  loadShop();
+</script>
+</body>
+</html>
