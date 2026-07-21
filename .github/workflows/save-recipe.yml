@@ -25,7 +25,7 @@ jobs:
           last=$(git log -1 --format=%ct -- recipes.html || echo 0)
           now=$(date +%s)
           diff=$(( now - last ))
-          cooldown=14400
+          cooldown=5 # TEMP: testing only, restoring to 14400 immediately after
           echo "seconds since last save: $diff (cooldown: $cooldown)"
           if [ "$diff" -lt "$cooldown" ]; then
             echo "proceed=false" >> "$GITHUB_OUTPUT"
