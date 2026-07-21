@@ -1,0 +1,53 @@
+name: Save Recipe to Recipe Book
+
+on:
+  repository_dispatch:
+    types: [save-recipe]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: recipe-book-save
+  cancel-in-progress: false
+
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check cooldown
+        id: cooldown
+        run: |
+          last=$(git log -1 --format=%ct -- recipes.html || echo 0)
+          now=$(date +%s)
+          diff=$(( now - last ))
+          cooldown=14400
+          echo "seconds since last save: $diff (cooldown: $cooldown)"
+          if [ "$diff" -lt "$cooldown" ]; then
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Apply save
+        if: steps.cooldown.outputs.proceed == 'true'
+        env:
+          RECIPE_ID: ${{ github.event.client_payload.recipe_id }}
+          RECIPE_HTML: ${{ github.event.client_payload.recipe_html }}
+          NOTES: ${{ github.event.client_payload.notes }}
+        run: python3 .github/scripts/save_recipe.py
+
+      - name: Commit and push
+        if: steps.cooldown.outputs.proceed == 'true'
+        env:
+          RECIPE_ID: ${{ github.event.client_payload.recipe_id }}
+        run: |
+          git config user.name "recipe-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add recipes.html index.html
+          git commit -m "Save recipe: ${RECIPE_ID}" || echo "nothing to commit"
+          git push

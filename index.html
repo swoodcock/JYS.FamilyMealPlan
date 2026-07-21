@@ -118,6 +118,15 @@
   .note .lbl{font-weight:700;}
   .pill{display:inline-block; font-size:12px; background:var(--chip); padding:2px 7px; border-radius:6px; margin-left:4px; color:var(--muted);}
 
+  .savewidget{margin-top:14px; padding-top:14px; border-top:1px dashed var(--line);}
+  .savebtn{font-family:inherit; font-size:13.5px; font-weight:700; color:var(--accent2); background:var(--chip); border:1px solid var(--line); border-radius:999px; padding:8px 14px; cursor:pointer;}
+  .savebtn:disabled{opacity:.5; cursor:default;}
+  .savebox{display:none; margin-top:10px;}
+  .savebox.open{display:block;}
+  .savebox textarea{width:100%; font-family:inherit; font-size:14px; padding:9px 11px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--ink); resize:vertical; min-height:54px;}
+  .savebox button{margin-top:8px; font-family:inherit; font-size:13.5px; font-weight:700; color:#fff; background:var(--accent2); border:none; border-radius:999px; padding:8px 16px; cursor:pointer;}
+  .savestatus{font-size:13.5px; color:var(--muted);}
+
   .shop .grp{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); margin:10px 0; box-shadow:var(--shadow); overflow:hidden;}
   .shop .grp h4{margin:0; padding:12px 16px; background:var(--chip); color:var(--ink); border-bottom:1px solid var(--line); font-size:13px;}
   .item{display:flex; align-items:flex-start; gap:8px; padding:11px 16px; border-bottom:1px solid var(--line);}
@@ -252,6 +261,13 @@
       <div class="note diab"><span class="lbl">🔄 Low-carb:</span> tots are high-GI. Plate a portion from the <b>beef-veg layer</b> + a scoop of <b>mashed cauliflower</b> instead of tots.</div>
       <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef + spinach + tomato paste. Serve with orange segments to boost iron absorption.</div>
       <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> reheats perfectly — microwave 60–90 s.</div>
+      <div class="savewidget" data-recipe-id="r1">
+        <button class="savebtn" onclick="toggleSave('r1')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-r1">
+          <textarea id="savenotes-r1" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('r1')">Submit</button>
+        </div>
+      </div>
     </div>
   </details>
 
@@ -281,6 +297,13 @@
       <div class="note spice"><span class="lbl">🌶️ Adults:</span> stir jalapeños/hot sauce into one half before layering, or add on top after plating the plain pieces.</div>
       <div class="note iron"><span class="lbl">🩸 Iron-rich ★:</span> the week's iron star — beef + black beans + spinach + salsa vitamin C.</div>
       <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> a firm square reheats cleanly; no sour cream.</div>
+      <div class="savewidget" data-recipe-id="r2">
+        <button class="savebtn" onclick="toggleSave('r2')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-r2">
+          <textarea id="savenotes-r2" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('r2')">Submit</button>
+        </div>
+      </div>
     </div>
   </details>
 
@@ -307,6 +330,13 @@
       <div class="note veg"><span class="lbl">🥦 Hidden veg:</span> finely chopped broccoli + spinach vanish into the sauce.</div>
       <div class="note spice"><span class="lbl">🌶️ Adults:</span> red pepper flakes or chili crisp on top after the plain bowls.</div>
       <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> add a teaspoon of milk when reheating so it loosens. Reheat 60 s, stir.</div>
+      <div class="savewidget" data-recipe-id="r3">
+        <button class="savebtn" onclick="toggleSave('r3')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-r3">
+          <textarea id="savenotes-r3" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('r3')">Submit</button>
+        </div>
+      </div>
     </div>
   </details>
 
@@ -336,6 +366,13 @@
       <div class="note iron"><span class="lbl">🩸 Iron-rich ★ + high fiber:</span> beans, beef &amp; kale for iron; carrot/celery/zucchini/sweet-potato add fiber. Pair with a vitamin-C side; go easy on milk at this meal.</div>
       <div class="note spice"><span class="lbl">🌶️ Adults:</span> stir harissa or gochugaru into your bowls at the table.</div>
       <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> even better next day. Pack with a bun; reheat 90 s.</div>
+      <div class="savewidget" data-recipe-id="r4">
+        <button class="savebtn" onclick="toggleSave('r4')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-r4">
+          <textarea id="savenotes-r4" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('r4')">Submit</button>
+        </div>
+      </div>
     </div>
   </details>
 
@@ -364,6 +401,13 @@
       <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef + spinach hidden in the loaf. Serve with the tomato glaze (vit C) + green beans.</div>
       <div class="note spice"><span class="lbl">🌶️ Adults:</span> brush your slices with sriracha-spiked glaze.</div>
       <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> a slice + a scoop of mash reheats great.</div>
+      <div class="savewidget" data-recipe-id="r5">
+        <button class="savebtn" onclick="toggleSave('r5')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-r5">
+          <textarea id="savenotes-r5" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('r5')">Submit</button>
+        </div>
+      </div>
     </div>
   </details>
 
@@ -388,6 +432,13 @@
       <div class="note diab"><span class="lbl">🔄 Low-carb:</span> swap white rice for <b>cauliflower rice</b> or a small scoop of quinoa; pile on veg + beef.</div>
       <div class="note iron"><span class="lbl">🩸 Iron-rich ★:</span> beef + spinach + vitamin-C veg — a great iron night to close the week.</div>
       <div class="note kid"><span class="lbl">🥄 Plain option:</span> keep it separate — plain protein + rice, veg on the side.</div>
+      <div class="savewidget" data-recipe-id="rb">
+        <button class="savebtn" onclick="toggleSave('rb')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-rb">
+          <textarea id="savenotes-rb" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('rb')">Submit</button>
+        </div>
+      </div>
     </div>
   </details>
 </div>
@@ -584,6 +635,38 @@
   }
   document.addEventListener('change',function(e){ if(e.target.matches('input[type=checkbox][data-k]')) saveShop(); });
   loadShop();
+
+  var SAVE_WORKER_URL = 'https://family-meal-plan-save.woodcock-s.workers.dev';
+  var NOTES_ALLOWED = /[^A-Za-z0-9 .,!'?-]/g;
+
+  function toggleSave(id){
+    var box = document.getElementById('savebox-'+id);
+    if(box) box.classList.toggle('open');
+  }
+  function filterNotes(el){
+    el.value = el.value.replace(NOTES_ALLOWED, '');
+  }
+  function submitSave(id){
+    document.querySelectorAll('.savebtn').forEach(function(b){ b.disabled = true; });
+    var card = document.getElementById(id);
+    var notesEl = document.getElementById('savenotes-'+id);
+    var notes = notesEl ? notesEl.value.replace(NOTES_ALLOWED, '').slice(0,300) : '';
+    var widget = document.querySelector('.savewidget[data-recipe-id="'+id+'"]');
+    var html = card ? card.outerHTML : '';
+    fetch(SAVE_WORKER_URL, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({recipe_id:id, recipe_html:html, notes:notes})
+    }).then(function(r){
+      if(widget) widget.innerHTML = r.ok
+        ? '<span class="savestatus">✅ Saved — check the Recipe Book in a few minutes.</span>'
+        : '<span class="savestatus">⚠️ Something went wrong. Try again later.</span>';
+      if(!r.ok) document.querySelectorAll('.savebtn').forEach(function(b){ b.disabled = false; });
+    }).catch(function(){
+      if(widget) widget.innerHTML = '<span class="savestatus">⚠️ Network error — try again.</span>';
+      document.querySelectorAll('.savebtn').forEach(function(b){ b.disabled = false; });
+    });
+  }
 </script>
 </body>
 </html>
