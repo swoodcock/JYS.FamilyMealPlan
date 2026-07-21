@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Recipe Book">
+<meta name="theme-color" content="#2e6f5e">
+<title>Family Recipe Book</title>
+<style>
+  :root{
+    --bg:#f6f5f2; --card:#ffffff; --ink:#22201c; --muted:#6b6459;
+    --line:#e7e3dc; --accent:#2e6f5e; --accent2:#2e6f5e;
+    --safe:#2e6f5e; --diab:#7a5cc0; --iron:#b5442f; --veg:#4f8a3d; --spice:#d4791f; --kid:#3f7bb5;
+    --chip:#f0ece5;
+    --shadow:0 1px 3px rgba(0,0,0,.06),0 6px 18px rgba(0,0,0,.05);
+    --radius:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#17150f; --card:#211e18; --ink:#eee9df; --muted:#a49b8b;
+      --line:#332f26; --chip:#2a2620; --shadow:0 1px 3px rgba(0,0,0,.4); }
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5; font-size:17px; padding:0 0 40px;
+    -webkit-text-size-adjust:100%;
+  }
+  header{
+    padding:20px 20px 14px; text-align:center;
+    background:linear-gradient(160deg,var(--accent) 0%,#204f42 100%);
+    color:#fff;
+  }
+  header h1{margin:0; font-size:21px; letter-spacing:.2px;}
+  header .sub{opacity:.9; font-size:13.5px; margin-top:3px;}
+  header .sub a{color:#fff;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 16px;}
+
+  .tip{
+    background:#fff6e9; color:#6a4a15; border:1px solid #f0d9ad;
+    margin:12px 16px 4px; max-width:760px; border-radius:12px; padding:10px 13px; font-size:13.5px;
+  }
+  @media (prefers-color-scheme: dark){ .tip{background:#2c2412; color:#e6cf9c; border-color:#4a3c1c;} }
+
+  .searchbar{position:sticky; top:0; z-index:30; background:var(--bg); padding:10px 0; border-bottom:1px solid var(--line); margin-bottom:4px;}
+  .searchbar input{
+    width:100%; font-size:16px; font-family:inherit; padding:11px 14px; border-radius:12px;
+    border:1px solid var(--line); background:var(--card); color:var(--ink);
+  }
+
+  h2.sec{font-size:14px; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin:20px 4px 10px;}
+
+  details.card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); margin:12px 0; box-shadow:var(--shadow); overflow:hidden; scroll-margin-top:70px;}
+  details.card>summary{list-style:none; cursor:pointer; padding:16px; display:flex; align-items:center; gap:12px;}
+  details.card>summary::-webkit-details-marker{display:none;}
+  .cnum{flex:0 0 auto; width:34px; height:34px; border-radius:10px; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:15px;}
+  .ctitle{flex:1;}
+  .ctitle .t{font-weight:700; font-size:17px;}
+  .ctitle .s{font-size:13px; color:var(--muted); margin-top:2px;}
+  .chev{flex:0 0 auto; color:var(--muted); transition:transform .2s;}
+  details[open]>summary .chev{transform:rotate(180deg);}
+  .cbody{padding:0 16px 18px;}
+
+  .tags{display:flex; flex-wrap:wrap; gap:6px; margin:2px 0 14px;}
+  .tag{font-size:12px; font-weight:600; padding:4px 9px; border-radius:999px; color:#fff;}
+  .t-safe{background:var(--safe);} .t-iron{background:var(--iron);} .t-diab{background:var(--diab);}
+  .t-veg{background:var(--veg);} .t-spice{background:var(--spice);} .t-kid{background:var(--kid);}
+
+  h4{margin:16px 0 6px; font-size:14px; text-transform:uppercase; letter-spacing:.6px; color:var(--accent2);}
+  .cbody ul{margin:6px 0; padding-left:20px;}
+  .cbody ol{margin:6px 0; padding-left:22px;}
+  .cbody li{margin:5px 0;}
+  .note{border-left:3px solid var(--line); padding:8px 12px; margin:10px 0; border-radius:0 8px 8px 0; background:var(--chip); font-size:14.5px;}
+  .note.diab{border-color:var(--diab);} .note.iron{border-color:var(--iron);}
+  .note.veg{border-color:var(--veg);} .note.spice{border-color:var(--spice);} .note.kid{border-color:var(--kid);} .note.safe{border-color:var(--safe);}
+  .note .lbl{font-weight:700;}
+  .pill{display:inline-block; font-size:12px; background:var(--chip); padding:2px 7px; border-radius:6px; margin-left:4px; color:var(--muted);}
+
+  .empty{text-align:center; color:var(--muted); padding:30px 16px; font-size:14.5px; display:none;}
+
+  footer{text-align:center; color:var(--muted); font-size:12.5px; padding:24px 16px 8px;}
+  footer a{color:var(--muted);}
+</style>
+</head>
+<body>
+<header>
+  <h1>📖 Family Recipe Book</h1>
+  <div class="sub">Saved favorites, growing every week · <a href="index.html">📅 This week's plan</a></div>
+</header>
+
+<div class="tip">⭐ <b>How this works:</b> this page only grows — nothing here gets overwritten by the weekly plan. When a meal's a keeper, its recipe gets copied here to stay for good.</div>
+
+<div class="wrap">
+<div class="searchbar"><input type="text" id="search" placeholder="Search saved recipes…" oninput="filterRecipes()"></div>
+
+<div id="list">
+
+<details class="card" data-name="Tater Tot Casserole">
+  <summary><div class="cnum">1</div><div class="ctitle"><div class="t">Tater Tot Casserole</div><div class="s">Saved from week of Jul 20–26, 2026 · serves 4 + lunchbox</div></div><div class="chev">▾</div></summary>
+  <div class="cbody">
+    <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron-rich</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span></div>
+    <div class="note safe"><span class="lbl">Allergen-safe:</span> The classic uses <b>peas</b> — swap to corn + green beans. Cream soup &amp; cheese bake in = cooked dairy (no raw dairy). No egg anywhere.</div>
+    <h4>Ingredients</h4>
+    <ul>
+      <li>700 g lean ground beef <span class="pill">iron</span></li>
+      <li>1 onion (~150 g), diced · 2 carrots (~150 g), grated · 1 zucchini (~150 g), grated <span class="pill">hidden veg</span></li>
+      <li>60 g baby spinach, finely chopped <span class="pill">iron + fiber</span></li>
+      <li>300 g can cream of mushroom soup <em>or</em> roux (15 g flour + 360 ml milk)</li>
+      <li>150 g corn + 150 g green beans, chopped <span class="pill">no peas</span></li>
+      <li>15 g (1 tbsp) tomato paste <span class="pill">vit C</span></li>
+      <li>450 g frozen tater tots · 100 g shredded cheddar</li>
+      <li>Salt, pepper, ½ tsp garlic powder</li>
+    </ul>
+    <h4>Method</h4>
+    <ol>
+      <li>Brown beef with onion. Stir in carrot, zucchini, spinach; cook 3–4 min.</li>
+      <li>Add tomato paste, corn, green beans, soup (or roux). Season. Spread in a baking dish.</li>
+      <li>Top with tater tots, then cheese. Bake <b>200°C (400°F) 30–35 min</b> until golden.</li>
+    </ol>
+    <div class="note diab"><span class="lbl">🔄 Low-carb:</span> tots are high-GI. Plate a portion from the <b>beef-veg layer</b> + a scoop of <b>mashed cauliflower</b> instead of tots.</div>
+    <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef + spinach + tomato paste. Serve with orange segments to boost iron absorption.</div>
+    <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> reheats perfectly — microwave 60–90 s.</div>
+  </div>
+</details>
+
+<details class="card" data-name="Mexican Lasagna">
+  <summary><div class="cnum">2</div><div class="ctitle"><div class="t">Mexican Lasagna</div><div class="s">Saved from week of Jul 20–26, 2026 · serves 4 + lunchbox</div></div><div class="chev">▾</div></summary>
+  <div class="cbody">
+    <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron-rich ★</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-spice">Adult spice</span></div>
+    <div class="note safe"><span class="lbl">Allergen-safe:</span> Skip <b>raw sour cream</b> on the allergen-safe portion. Melted cheese = fine. No egg/nuts. Black beans replace any peas.</div>
+    <h4>Ingredients</h4>
+    <ul>
+      <li>570 g ground beef (or half beef / half turkey) <span class="pill">iron</span></li>
+      <li>400 g can black beans, drained &amp; rinsed <span class="pill">iron + fiber ★</span></li>
+      <li>1 onion (~150 g) + 1 bell pepper (~150 g), diced · 150 g corn <span class="pill">hidden veg</span></li>
+      <li>60 g baby spinach, chopped <span class="pill">iron</span></li>
+      <li>400 g can diced tomatoes + 240 g mild salsa <span class="pill">vit C</span></li>
+      <li>1 tbsp taco seasoning (mild), 1 tsp cumin</li>
+      <li>8 corn or whole-grain tortillas · 150 g shredded Mexican-blend cheese</li>
+      <li>1 avocado (for the low-carb portion) · Adults: jalapeños / hot sauce · optional sour cream (not the allergen-safe portion)</li>
+    </ul>
+    <h4>Method</h4>
+    <ol>
+      <li>Brown beef + onion. Add pepper, corn, spinach, beans, tomatoes, salsa, spices. Simmer 8 min.</li>
+      <li>Layer: sauce → tortillas → sauce → cheese, repeat; finish with cheese.</li>
+      <li>Bake <b>190°C (375°F) 25 min</b>. Rest 5 min before cutting.</li>
+    </ol>
+    <div class="note diab"><span class="lbl">🔄 Low-carb:</span> beans stay (low-GI); tortillas are the load. Build a <b>tortilla-free skillet portion</b> over lettuce, or 1 low-carb tortilla + avocado.</div>
+    <div class="note spice"><span class="lbl">🌶️ Adults:</span> stir jalapeños/hot sauce into one half before layering, or add on top after plating the plain pieces.</div>
+    <div class="note iron"><span class="lbl">🩸 Iron-rich ★:</span> the week's iron star — beef + black beans + spinach + salsa vitamin C.</div>
+    <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> a firm square reheats cleanly; no sour cream.</div>
+  </div>
+</details>
+
+</div>
+<p class="empty" id="empty">No saved recipes match that search.</p>
+</div>
+
+<footer>
+  To add another keeper: copy its <code>&lt;details class="card"&gt;</code> block from that week's <code>index.html</code>, paste it into the <code>#list</code> section of this file, then <code>git add recipes.html &amp;&amp; git commit -m "Save &lt;recipe&gt; to recipe book" &amp;&amp; git push</code>.
+</footer>
+
+<script>
+  function filterRecipes(){
+    var q = document.getElementById('search').value.trim().toLowerCase();
+    var cards = document.querySelectorAll('#list details.card');
+    var shown = 0;
+    cards.forEach(function(c){
+      var match = !q || c.dataset.name.toLowerCase().indexOf(q) !== -1 || c.textContent.toLowerCase().indexOf(q) !== -1;
+      c.style.display = match ? '' : 'none';
+      if(match) shown++;
+    });
+    document.getElementById('empty').style.display = shown ? 'none' : 'block';
+  }
+</script>
+</body>
+</html>
