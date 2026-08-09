@@ -28,6 +28,10 @@
     line-height:1.5; font-size:17px; padding:0 0 40px;
     -webkit-text-size-adjust:100%;
   }
+  body::before{
+    content:''; position:fixed; top:0; left:0; right:0;
+    height:env(safe-area-inset-top); background:var(--accent); z-index:1000;
+  }
   header{
     padding:calc(20px + env(safe-area-inset-top)) 20px 14px; text-align:center;
     background:linear-gradient(160deg,var(--accent) 0%,#a8452f 100%);
