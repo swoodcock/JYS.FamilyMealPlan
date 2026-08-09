@@ -29,7 +29,7 @@
     -webkit-text-size-adjust:100%;
   }
   header{
-    padding:20px 20px 14px; text-align:center;
+    padding:calc(20px + env(safe-area-inset-top)) 20px 14px; text-align:center;
     background:linear-gradient(160deg,var(--accent) 0%,#a8452f 100%);
     color:#fff;
   }
@@ -44,7 +44,7 @@
   @media (prefers-color-scheme: dark){ .tip{background:#2c2412; color:#e6cf9c; border-color:#4a3c1c;} }
 
   .tabs{
-    position:sticky; top:0; z-index:30; background:var(--bg);
+    position:sticky; top:env(safe-area-inset-top); z-index:30; background:var(--bg);
     display:flex; gap:6px; overflow-x:auto; padding:10px 12px;
     border-bottom:1px solid var(--line); scrollbar-width:none;
   }
