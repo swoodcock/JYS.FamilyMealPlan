@@ -41,12 +41,6 @@
   header .sub{opacity:.9; font-size:13.5px; margin-top:3px;}
   .wrap{max-width:760px; margin:0 auto; padding:0 16px;}
 
-  .tip{
-    background:#fff6e9; color:#6a4a15; border:1px solid #f0d9ad;
-    margin:12px 16px 4px; max-width:760px; border-radius:12px; padding:10px 13px; font-size:13.5px;
-  }
-  @media (prefers-color-scheme: dark){ .tip{background:#2c2412; color:#e6cf9c; border-color:#4a3c1c;} }
-
   .tabs{
     position:sticky; top:env(safe-area-inset-top); z-index:30; background:var(--bg);
     display:flex; gap:6px; overflow-x:auto; padding:10px 12px;
@@ -148,10 +142,19 @@
   .detail b{color:var(--ink);}
   .clearbtn{display:inline-block; margin:6px 4px 0; font-size:13px; color:var(--accent); background:none; border:1px solid var(--line); padding:7px 12px; border-radius:999px; cursor:pointer;}
 
-  .prep ol{counter-reset:step; list-style:none; padding-left:0;}
+  .prep ol{counter-reset:step; list-style:none; padding-left:0; margin:10px 0 0;}
   .prep ol>li{position:relative; padding:12px 12px 12px 46px; margin:8px 0; background:var(--card); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow);}
   .prep ol>li::before{counter-increment:step; content:counter(step); position:absolute; left:10px; top:12px; width:26px; height:26px; background:var(--accent2); color:#fff; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px;}
   .prep .time{font-size:12px; color:var(--muted); font-weight:600;}
+
+  .prepday{margin:22px 0 26px;}
+  .pdhead{
+    display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+    background:var(--accent); color:#fff; border-radius:12px; padding:11px 15px;
+  }
+  .pdname{font-size:16.5px; font-weight:800; letter-spacing:.3px;}
+  .pdwhen{font-size:12.5px; font-weight:600; opacity:.9;}
+  .pdtime{margin-left:auto; font-size:12.5px; font-weight:700; background:rgba(255,255,255,.18); padding:3px 10px; border-radius:999px; white-space:nowrap;}
 
   footer{text-align:center; color:var(--muted); font-size:12.5px; padding:24px 16px 8px;}
 </style>
@@ -162,30 +165,19 @@
   <div class="sub">Week of August 30 – September 2, 2026 · Lunch &amp; Dinner · metric · <a href="recipes.html" style="color:#fff;">📖 Recipe Book</a></div>
 </header>
 
-<div class="tip">📲 <b>Tip:</b> tabs &amp; calendar work anywhere. For ticked shopping boxes to persist, add this to your Home Screen from Safari (Share → Add to Home Screen).</div>
-
 <div class="tabs" id="tabbar">
   <button class="active" data-tab="plan" onclick="showTab('plan')">📅 Plan</button>
   <button data-tab="recipes" onclick="showTab('recipes')">🍳 Recipes</button>
   <button data-tab="shop" onclick="showTab('shop')">🛒 Shopping</button>
   <button data-tab="pantry" onclick="showTab('pantry')">🧂 Pantry</button>
-  <button data-tab="prep" onclick="showTab('prep')">🔪 Sunday Prep</button>
+  <button data-tab="prep" onclick="showTab('prep')">🔪 Prep</button>
 </div>
 
 <div class="wrap">
 
 <!-- ============ PLAN ============ -->
 <div class="panel active" id="tab-plan">
-  <h2 class="sec">How to read the tags</h2>
-  <div class="legend">
-    <div class="row"><b>🚫 Allergen-safe</b><span>No <b>raw/uncooked dairy, egg, tree nut, peanut, or pea</b>. ✅ Cooked/baked milk &amp; melted cheese are used.</span></div>
-    <div class="row"><b>🔄 Low-carb</b><span>A <b>low-GI / low-carb swap</b> is given where the dinner needs one.</span></div>
-    <div class="row"><b>🩸 Iron-rich</b><span>Iron sources <b>paired with vitamin C</b> to aid absorption, plus extra <b>fiber</b>.</span></div>
-    <div class="row"><b>🌶️ Adults</b><span>Spice added at the end; a <b>plain portion</b> pulled first where noted.</span></div>
-  </div>
-
   <h2 class="sec">The week — cook once, eat twice</h2>
-  <p class="note">🖥️ <b>Pulled straight from Lillio this week</b> — every dinner, breakfast and snack below is matched to the daycare's actual posted schedule for Aug 31–Sep 2.</p>
   <div class="cal">
     <div class="day weekend">
       <div class="dbadge"><span class="dow">SUN</span><span class="dnum">30</span></div>
@@ -222,6 +214,14 @@
     </div>
   </div>
   <p class="note">Tap any dish to jump to its recipe. Each dinner makes enough for that night <b>plus</b> a lunchbox that mirrors the daycare's own menu the next day.</p>
+
+  <h2 class="sec">How to read the tags</h2>
+  <div class="legend">
+    <div class="row"><b>🚫 Allergen-safe</b><span>No <b>raw/uncooked dairy, egg, tree nut, peanut, or pea</b>. ✅ Cooked/baked milk &amp; melted cheese are used.</span></div>
+    <div class="row"><b>🔄 Low-carb</b><span>A <b>low-GI / low-carb swap</b> is given where the dinner needs one.</span></div>
+    <div class="row"><b>🩸 Iron-rich</b><span>Iron sources <b>paired with vitamin C</b> to aid absorption, plus extra <b>fiber</b>.</span></div>
+    <div class="row"><b>🌶️ Adults</b><span>Spice added at the end; a <b>plain portion</b> pulled first where noted.</span></div>
+  </div>
 </div>
 
 <!-- ============ RECIPES ============ -->
@@ -647,23 +647,46 @@
 
 <!-- ============ PREP ============ -->
 <div class="panel prep" id="tab-prep">
-  <h2 class="sec">Sunday meal prep <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">(~50–60 min)</span></h2>
-  <ol>
-    <li><span class="time">2 min · dice</span><br><b>Onions — 2.</b> Dice now, split into labeled tubs: <em>½ for the tater tot casserole</em>, <em>1 for the Mexican lasagna</em>.</li>
-    <li><span class="time">5 min · carrots</span><br><b>Carrots — ~200 g.</b> Cut into sticks for <em>Tuesday's and Wednesday's snacks</em>.</li>
-    <li><span class="time">2 min · pepper</span><br><b>Bell pepper — 1.</b> Dice for the <em>Mexican lasagna</em> (Mon).</li>
-    <li><span class="time">3 min · spinach</span><br><b>Baby spinach — 80 g used.</b> Chop and split into 2 tubs: <em>Mexican lasagna (60 g), chicken alfredo (20 g)</em>.</li>
-    <li><span class="time">2 min · broccoli</span><br><b>Broccoli — 100 g.</b> Cut into florets, fridge in a sealed container for Tuesday's chicken alfredo.</li>
-    <li><span class="time">2 min · celery</span><br><b>Celery — 1 stalk.</b> Dice and split for both of Tuesday's sandwich fillings.</li>
-    <li><span class="time">2 min · cucumber</span><br><b>Cucumber — 2.</b> Cut into sticks for Tuesday's and Wednesday's snacks.</li>
-    <li><span class="time">15 min · Sun</span><br><b>Chocolate chip cookies</b> (Mon snack) — bake now, they keep well in a sealed container.</li>
-    <li><span class="time">5 min · Sun</span><br><b>Seed trail mix</b> (Wed snack) — mix and portion now, keeps well at room temperature.</li>
-    <li><span class="time">3 min · labels</span><br><b>Assembly-line the fridge</b> front-to-back: Sun tater tots → Mon Mexican lasagna → Tue chicken alfredo, plus a shelf for the week's breakfast/snack items. Sticky-note the 1-line finish step + quantity on each tub.</li>
-    <li><span class="time">20 min · Mon night</span><br><b>Apple cinnamon muffins</b> (Tue breakfast) — bake Monday evening; freeze extras.</li>
-    <li><span class="time">15 min · Mon night</span><br><b>Hard-boil the 6 eggs</b> for Tuesday's egg salad — chill overnight.</li>
-    <li><span class="time">40 min · Tue night</span><br><b>Breakfast rolls</b> (Wed breakfast) — dough needs a rise, so start after dinner Tuesday; bake that evening for Wednesday morning.</li>
-    <li><span class="time">day-of</span><br><b>Tuesday's sandwiches</b> (both versions) come together in a few minutes once the eggs and chickpeas are ready — no other advance prep needed.</li>
-  </ol>
+  <h2 class="sec">Meal prep — by the day it happens</h2>
+
+  <div class="prepday">
+    <div class="pdhead"><span class="pdname">Sunday</span><span class="pdwhen">the big prep session</span><span class="pdtime">~40 min</span></div>
+    <ol>
+      <li><span class="time">2 min · dice</span><br><b>Onions — 2.</b> Dice now, split into labeled tubs: <em>½ for the tater tot casserole</em>, <em>1 for the Mexican lasagna</em>.</li>
+      <li><span class="time">5 min · carrots</span><br><b>Carrots — ~200 g.</b> Cut into sticks for <em>Tuesday's and Wednesday's snacks</em>.</li>
+      <li><span class="time">2 min · pepper</span><br><b>Bell pepper — 1.</b> Dice for the <em>Mexican lasagna</em> (Mon).</li>
+      <li><span class="time">3 min · spinach</span><br><b>Baby spinach — 80 g used.</b> Chop and split into 2 tubs: <em>Mexican lasagna (60 g), chicken alfredo (20 g)</em>.</li>
+      <li><span class="time">2 min · broccoli</span><br><b>Broccoli — 100 g.</b> Cut into florets, fridge in a sealed container for Tuesday's chicken alfredo.</li>
+      <li><span class="time">2 min · celery</span><br><b>Celery — 1 stalk.</b> Dice and split for both of Tuesday's sandwich fillings.</li>
+      <li><span class="time">2 min · cucumber</span><br><b>Cucumber — 2.</b> Cut into sticks for Tuesday's and Wednesday's snacks.</li>
+      <li><span class="time">15 min · bake</span><br><b>Chocolate chip cookies</b> (Mon snack) — bake now, they keep well in a sealed container.</li>
+      <li><span class="time">5 min · assemble</span><br><b>Seed trail mix</b> (Wed snack) — mix and portion now, keeps well at room temperature.</li>
+      <li><span class="time">3 min · labels</span><br><b>Assembly-line the fridge</b> front-to-back: Sun tater tots → Mon Mexican lasagna → Tue chicken alfredo, plus a shelf for the week's breakfast/snack items. Sticky-note the 1-line finish step + quantity on each tub.</li>
+    </ol>
+  </div>
+
+  <div class="prepday">
+    <div class="pdhead"><span class="pdname">Monday evening</span><span class="pdwhen">after dinner</span><span class="pdtime">~35 min</span></div>
+    <ol>
+      <li><span class="time">20 min · bake</span><br><b>Apple cinnamon muffins</b> (Tue breakfast) — bake tonight; freeze extras.</li>
+      <li><span class="time">15 min · boil</span><br><b>Hard-boil the 6 eggs</b> for Tuesday's egg salad — chill overnight.</li>
+    </ol>
+  </div>
+
+  <div class="prepday">
+    <div class="pdhead"><span class="pdname">Tuesday evening</span><span class="pdwhen">start right after dinner — the dough needs a rise</span><span class="pdtime">~40 min</span></div>
+    <ol>
+      <li><span class="time">40 min · bake</span><br><b>Breakfast rolls</b> (Wed breakfast) — mix and knead, rise 1 hr, shape and rise 30 min more, then bake tonight for Wednesday morning.</li>
+    </ol>
+  </div>
+
+  <div class="prepday">
+    <div class="pdhead"><span class="pdname">Nothing to prep ahead</span><span class="pdwhen">these come together same-day</span></div>
+    <ol>
+      <li><span class="time">Tue · 5 min</span><br><b>Tuesday's sandwiches</b> (both versions) come together in a few minutes once the eggs and chickpeas are ready.</li>
+    </ol>
+  </div>
+
   <p class="note"><b>Weeknights become:</b> Sun brown+bake casserole 25 m · Mon brown+layer+bake lasagna 30 m · Tue sear+simmer alfredo 20 m. <b>Mornings:</b> Mon muffins 2 m (toast, ready) · Tue muffins 2 m (baked ahead) · Wed rolls 2 m (baked ahead).</p>
 </div>
 
