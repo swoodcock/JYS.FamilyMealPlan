@@ -148,13 +148,11 @@
   .prep .time{font-size:12px; color:var(--muted); font-weight:600;}
 
   .prepday{margin:22px 0 26px;}
-  .pdhead{
-    display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
-    background:var(--accent); color:#fff; border-radius:12px; padding:11px 15px;
-  }
+  .pdhead{background:var(--accent); color:#fff; border-radius:12px; padding:11px 15px;}
+  .pdtop{display:flex; align-items:baseline; gap:10px;}
   .pdname{font-size:16.5px; font-weight:800; letter-spacing:.3px;}
-  .pdwhen{font-size:12.5px; font-weight:600; opacity:.9;}
   .pdtime{margin-left:auto; font-size:12.5px; font-weight:700; background:rgba(255,255,255,.18); padding:3px 10px; border-radius:999px; white-space:nowrap;}
+  .pdwhen{display:block; font-size:12.5px; font-weight:600; opacity:.9; margin-top:3px;}
 
   footer{text-align:center; color:var(--muted); font-size:12.5px; padding:24px 16px 8px;}
 </style>
@@ -650,7 +648,7 @@
   <h2 class="sec">Meal prep — by the day it happens</h2>
 
   <div class="prepday">
-    <div class="pdhead"><span class="pdname">Sunday</span><span class="pdwhen">the big prep session</span><span class="pdtime">~40 min</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Sunday</span><span class="pdtime">~40 min</span></div><span class="pdwhen">the big prep session</span></div>
     <ol>
       <li><span class="time">2 min · dice</span><br><b>Onions — 2.</b> Dice now, split into labeled tubs: <em>½ for the tater tot casserole</em>, <em>1 for the Mexican lasagna</em>.</li>
       <li><span class="time">5 min · carrots</span><br><b>Carrots — ~200 g.</b> Cut into sticks for <em>Tuesday's and Wednesday's snacks</em>.</li>
@@ -666,7 +664,7 @@
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><span class="pdname">Monday evening</span><span class="pdwhen">after dinner</span><span class="pdtime">~35 min</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Monday evening</span><span class="pdtime">~35 min</span></div><span class="pdwhen">after dinner</span></div>
     <ol>
       <li><span class="time">20 min · bake</span><br><b>Apple cinnamon muffins</b> (Tue breakfast) — bake tonight; freeze extras.</li>
       <li><span class="time">15 min · boil</span><br><b>Hard-boil the 6 eggs</b> for Tuesday's egg salad — chill overnight.</li>
@@ -674,14 +672,14 @@
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><span class="pdname">Tuesday evening</span><span class="pdwhen">start right after dinner — the dough needs a rise</span><span class="pdtime">~40 min</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Tuesday evening</span><span class="pdtime">~40 min</span></div><span class="pdwhen">start right after dinner — the dough needs a rise</span></div>
     <ol>
       <li><span class="time">40 min · bake</span><br><b>Breakfast rolls</b> (Wed breakfast) — mix and knead, rise 1 hr, shape and rise 30 min more, then bake tonight for Wednesday morning.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><span class="pdname">Nothing to prep ahead</span><span class="pdwhen">these come together same-day</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Nothing to prep ahead</span></div><span class="pdwhen">these come together same-day</span></div>
     <ol>
       <li><span class="time">Tue · 5 min</span><br><b>Tuesday's sandwiches</b> (both versions) come together in a few minutes once the eggs and chickpeas are ready.</li>
     </ol>
