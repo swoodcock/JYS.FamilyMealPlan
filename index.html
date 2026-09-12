@@ -179,14 +179,13 @@
 <!-- ============ PLAN ============ -->
 <div class="panel active" id="tab-plan">
   <h2 class="sec">The week — cook once, eat twice</h2>
-  <p class="note">All three parent meals are <b>made ahead this weekend</b> and eaten from the fridge, so the nights below are a suggestion rather than a schedule — swap them around freely. On those three nights the daycare-matched dish is made at <b>kid portions only</b>; the other two nights everyone eats the same meal.</p>
+  <p class="note">All three parent meals are <b>made ahead this weekend</b> and eaten from the fridge. They're laid out below in keeping order — shortest-lived first — but swap them around if you'd rather. On those three nights the daycare-matched dish is made at <b>kid portions only</b>. <b>Sunday and Tuesday everyone eats the same meal.</b></p>
   <div class="cal">
     <div class="day weekend">
       <div class="dbadge"><span class="dow">SUN</span><span class="dnum">13</span></div>
       <div class="dmeals">
         <div class="meal none">Weekend — no daycare</div>
-        <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r1')">Chili with Cheese</a><small>Already made · reheat · matches Monday's daycare lunch</small></div>
-        <div class="meal parent"><span class="k">Dinner · parents</span><a class="dish" onclick="openRecipe('p3')">Hot Honey Shrimp Cobb Salad</a><small>From the weekend batch — eat this one first, the avocado won't keep</small></div>
+        <div class="meal dinner"><span class="k">Dinner · all</span><a class="dish" onclick="openRecipe('r1')">Chili with Cheese</a><small>Whole family · already made, just reheat · matches Monday's daycare lunch</small></div>
       </div>
     </div>
     <div class="day">
@@ -195,7 +194,7 @@
         <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-mon')">Frozen Yogurt Sandwiches</a><small>Home-made (dairy-free swap) · matches daycare: Frozen yogurt sandwiches, Fruit, Water</small></div>
         <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r1')">Chili with Cheese</a><small>Packed · matches daycare: Chili with Cheese, Fruit, Milk</small></div>
         <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r2')">Chicken Broccoli Rice Casserole</a><small>Kid portions · cook ahead → matches Tuesday's daycare lunch</small></div>
-        <div class="meal parent"><span class="k">Dinner · parents</span><a class="dish" onclick="openRecipe('p1')">Big Mac Salad</a><small>From the weekend batch — keeps well with the sauce kept separate</small></div>
+        <div class="meal parent"><span class="k">Dinner · parents</span><a class="dish" onclick="openRecipe('p3')">Hot Honey Shrimp Cobb Salad</a><small>From the weekend batch — eat this one first, the avocado and shrimp won't wait</small></div>
       </div>
     </div>
     <div class="day">
@@ -212,7 +211,7 @@
         <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-wed')">Oatmeal Raisin Cookies</a><small>Home-baked (egg-free) · matches daycare: Cookies, Fruit, Milk</small></div>
         <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r3')">Lasagna</a><small>Packed · matches daycare: Lasagna, Fruit, Milk</small></div>
         <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r4')">Chicken Quesadillas</a><small>Kid portions · cook ahead → matches Thursday's daycare lunch</small></div>
-        <div class="meal parent"><span class="k">Dinner · parents</span><a class="dish" onclick="openRecipe('p2')">Chicken Spinach Artichoke Soup</a><small>From the weekend batch — keeps longest, and reheats best</small></div>
+        <div class="meal parent"><span class="k">Dinner · parents</span><a class="dish" onclick="openRecipe('p1')">Big Mac Salad</a><small>From the weekend batch — fine to here with the sauce kept separate</small></div>
       </div>
     </div>
     <div class="day">
@@ -220,7 +219,8 @@
       <div class="dmeals">
         <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-thu')">Pretzels + Veggies</a><small>Matches daycare: Pretzels, Veggies, Milk</small></div>
         <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r4')">Chicken Quesadillas</a><small>Packed · matches daycare: Chicken Quesadillas, Raw Veggies, Fruit, Milk</small></div>
-        <div class="meal dinner"><span class="k">Dinner · all</span><a class="dish" onclick="openRecipe('r5')">Ham Perogies</a><small>Whole family · cook ahead → matches Friday's daycare lunch</small></div>
+        <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r5')">Ham Perogies</a><small>Kid portions · cook ahead → matches Friday's daycare lunch</small></div>
+        <div class="meal parent"><span class="k">Dinner · parents</span><a class="dish" onclick="openRecipe('p2')">Chicken Spinach Artichoke Soup</a><small>From the weekend batch — keeps longest, so it lands last</small></div>
       </div>
     </div>
     <div class="day">
@@ -248,11 +248,12 @@
   <h2 class="sec">Dinners — kids &amp; family</h2>
 
   <details class="card" id="r1">
-    <summary><div class="cnum">1</div><div class="ctitle"><div class="t">Chili with Cheese</div><div class="s">Sunday dinner → Monday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">1</div><div class="ctitle"><div class="t">Chili with Cheese</div><div class="s">Sunday dinner → Monday lunch · whole family + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron-rich</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron-rich</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-spice">Adult spice</span><span class="tag t-fam">Whole family</span></div>
       <div class="note safe"><span class="lbl">Allergen-safe:</span> Naturally egg-free. The cheese goes on hot to melt, so it's cooked dairy — fine.</div>
-      <div class="note kid"><span class="lbl">✅ Already made:</span> this one's done and in the fridge, so nothing for it appears on the shopping list. Reheat and portion — two servings for Sunday dinner, two packed for Monday.</div>
+      <div class="note kid"><span class="lbl">✅ Already made:</span> this one's done and in the fridge, so nothing for it appears on the shopping list. Just reheat.</div>
+      <div class="note veg"><span class="lbl">⚖️ It has further to stretch now:</span> everyone's eating it Sunday, so the batch needs to cover <b>four at dinner plus two packed lunches</b> for Monday. The quantities below are what a kid-sized batch looks like — if yours was made to that scale it'll be tight, so bulk it with an extra tin of beans, or serve it over rice or baked potatoes.</div>
       <h4>Ingredients</h4>
       <ul>
         <li>200 g ground beef <span class="pill">iron</span></li>
@@ -268,7 +269,9 @@
         <li>Stir in the chili powder and cumin, then the tomatoes and beans.</li>
         <li>Simmer 20 min until thickened. Top each bowl with cheddar and let it melt in.</li>
       </ol>
+      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> the beans are the carb here — a smaller scoop of those with extra beef and veg, and skip any rice or bread on the side.</div>
       <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef plus beans, with the tomatoes bringing the vitamin C to help it absorb.</div>
+      <div class="note spice"><span class="lbl">🌶️ Adults:</span> hot sauce or chili flakes at the table — pull the kids' bowls first.</div>
       <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> matches Monday's daycare tray (Chili with Cheese, Fruit, Milk).</div>
       <div class="savewidget" data-recipe-id="r1">
         <button class="savebtn" onclick="toggleSave('r1')">💾 Save to Recipe Book</button>
@@ -383,28 +386,26 @@
   </details>
 
   <details class="card" id="r5">
-    <summary><div class="cnum">5</div><div class="ctitle"><div class="t">Ham Perogies</div><div class="s">Thursday dinner → Friday lunch · whole family, serves 4 + lunchbox</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">5</div><div class="ctitle"><div class="t">Ham Perogies</div><div class="s">Thursday dinner → Friday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check dough)</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-fam">Whole family</span></div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check dough)</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
       <div class="note safe"><span class="lbl">Allergen-safe:</span> <b>Check the perogie dough</b> — most frozen ones are flour and water, but some brands add egg. The potato-and-cheese filling is cooked, so that part is fine.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>1 kg frozen potato &amp; cheese perogies, egg-free</li>
-        <li>250 g ham, diced</li>
-        <li>1 onion, sliced</li>
-        <li>40 g butter, for the pan</li>
-        <li>200 g green beans <span class="pill">no peas</span> + 2 carrots, sliced <span class="pill">hidden veg</span></li>
-        <li>Adults: sour cream, to serve <span class="pill">raw dairy</span></li>
+        <li>400 g frozen potato &amp; cheese perogies, egg-free</li>
+        <li>100 g ham, diced</li>
+        <li>½ onion, sliced</li>
+        <li>20 g butter, for the pan</li>
+        <li>100 g green beans <span class="pill">no peas</span> + 1 carrot, sliced <span class="pill">hidden veg</span></li>
       </ul>
       <h4>Method</h4>
       <ol>
         <li>Boil the perogies until they float, about 4 min; drain well.</li>
-        <li>Melt the butter in a large pan and soften the onion. Add the ham and brown lightly.</li>
+        <li>Melt the butter in a pan and soften the onion. Add the ham and brown lightly.</li>
         <li>Add the drained perogies and pan-fry until golden on both sides.</li>
         <li>Steam the green beans and carrots alongside.</li>
       </ol>
-      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> a smaller perogie portion bulked out with extra steamed veg, or pan-fried cabbage in place of half the perogies.</div>
-      <div class="note safe"><span class="lbl">⚠️ Sour cream:</span> uncooked dairy — keep it to the adults' plates only.</div>
+      <div class="note kid"><span class="lbl">👶 Sized for kids:</span> makes <b>4 kid-sized portions</b> — two for dinner, two packed for Friday.</div>
       <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> matches Friday's daycare tray (Ham Perogies, Veggies, Fruit, Milk).</div>
       <div class="savewidget" data-recipe-id="r5">
         <button class="savebtn" onclick="toggleSave('r5')">💾 Save to Recipe Book</button>
@@ -417,7 +418,7 @@
   </details>
 
   <h2 class="sec">Dinners — parents</h2>
-  <p class="note">Grown-ups only. All three are <b>made together this weekend</b> and portioned into containers, then eaten across the three nights the kids' dish is made at kid portions. All are naturally low-GI. Quantities converted to metric; each links back to the original recipe.</p>
+  <p class="note">Grown-ups only. All three are <b>made together this weekend</b> and portioned into containers, then eaten Monday, Wednesday and Thursday — the three nights the kids' dish is made at kid portions. All are naturally low-GI. Quantities converted to metric; each links back to the original recipe.</p>
 
   <details class="card" id="p1">
     <summary><div class="cnum">🍴</div><div class="ctitle"><div class="t">Big Mac Salad</div><div class="s">Sunday · parents only · makes 3 servings</div></div><div class="chev">▾</div></summary>
@@ -706,7 +707,7 @@
 <!-- ============ SHOPPING ============ -->
 <div class="panel shop" id="tab-shop">
   <h2 class="sec">Combined shopping list</h2>
-  <p class="note">Covers the four kid dinners still to cook, the three parent meals and all five snacks. <b>Nothing here is for the chili</b> — that's already made. Where an item is split across dishes, tap <b>“For ⓘ”</b> for the breakdown. Basic seasonings are on the <b>Pantry</b> tab.</p>
+  <p class="note">Covers the four dinners still to cook, the three parent meals and all five snacks. <b>Nothing here is for the chili</b> — that's already made. Where an item is split across dishes, tap <b>“For ⓘ”</b> for the breakdown. Basic seasonings are on the <b>Pantry</b> tab.</p>
   <button class="clearbtn" onclick="clearShop()">Reset checkboxes</button>
 
   <div class="grp"><h4>🥩 Meat &amp; seafood</h4>
@@ -718,15 +719,15 @@
     <div class="detail"><b>Shrimp Cobb salad</b> (Wed, parents).</div>
     <div class="item"><label><input type="checkbox" data-k="m4"><span>Bacon — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail"><b>Shrimp Cobb salad</b> — 3 rashers used.</div>
-    <div class="item"><label><input type="checkbox" data-k="m5"><span>Ham — 250 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Diced into <b>Thursday's perogies</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="m5"><span>Ham — 100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Diced into <b>Thursday's perogies</b> (kid portions).</div>
     <div class="item"><label><input type="checkbox" data-k="m6"><span>Deli turkey or ham, sliced — ~300 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail">Splits: <b>Tuesday's rollups (8 slices) · Friday's meat &amp; crackers (~150 g)</b>.</div>
   </div>
 
   <div class="grp"><h4>🥦 Produce</h4>
-    <div class="item"><label><input type="checkbox" data-k="p1"><span>Onions — 4 (1 white, 3 yellow)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">White: <b>Big Mac Salad (¼)</b>. Yellow: <b>soup (½) · lasagna (1) · perogies (1)</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="p1"><span>Onions — 3 (1 white, 2 yellow)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">White: <b>Big Mac Salad (¼)</b>. Yellow: <b>soup (½) · lasagna (1) · perogies (½)</b>.</div>
     <div class="item"><label><input type="checkbox" data-k="p2"><span>Garlic — 1 bulb</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail"><b>Soup 3 cloves · lasagna 2 · Big Mac sauce 1.</b></div>
     <div class="item"><label><input type="checkbox" data-k="p3"><span>Iceberg lettuce — 1 small head</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
@@ -753,11 +754,11 @@
     <div class="detail">Splits: <b>soup 120 g (Mon) · lasagna 100 g (Tue)</b>.</div>
     <div class="item"><label><input type="checkbox" data-k="p14"><span>Broccoli — 150 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail"><b>Kids' casserole</b> (Mon).</div>
-    <div class="item"><label><input type="checkbox" data-k="p15"><span>Carrots — ~350 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Split: <b>2 sliced for Thursday's perogie side</b> · the rest into sticks for Wednesday's, Thursday's and the quesadilla veggie sides.</div>
+    <div class="item"><label><input type="checkbox" data-k="p15"><span>Carrots — ~250 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Split: <b>1 sliced for Thursday's perogie side</b> · the rest into sticks for Wednesday's, Thursday's and the quesadilla veggie sides.</div>
     <div class="item"><label><input type="checkbox" data-k="p16"><span>Cucumber — 2</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail">Raw veggie sticks across <b>Wednesday's and Thursday's</b> snacks and sides.</div>
-    <div class="item"><label><input type="checkbox" data-k="p17"><span>Green beans — 200 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="item"><label><input type="checkbox" data-k="p17"><span>Green beans — 100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail">The <b>pea replacement</b> — steamed with Thursday's perogies.</div>
     <div class="item"><label><input type="checkbox" data-k="p18"><span>Zucchini — 2</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail">Optional — the <b>low-carb lasagna</b> swap in place of pasta sheets (Tue).</div>
@@ -780,7 +781,7 @@
     <div class="detail"><b>Kids' casserole</b> (Mon).</div>
     <div class="item"><label><input type="checkbox" data-k="c8"><span>Lasagna noodles, egg-free — 250 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail"><b>Lasagna</b> (Tue) — plain dried sheets, not fresh or "egg pasta".</div>
-    <div class="item"><label><input type="checkbox" data-k="c9"><span>Frozen perogies, potato &amp; cheese — 1 kg</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="item"><label><input type="checkbox" data-k="c9"><span>Frozen perogies, potato &amp; cheese — 400 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail"><b>Thursday's dinner</b> — check the dough is egg-free.</div>
     <div class="item"><label><input type="checkbox" data-k="c10"><span>Flour tortillas, egg-free — 8 small</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail"><b>Kids' quesadillas</b> (Wed).</div>
@@ -829,8 +830,6 @@
     <div class="detail"><b>Cobb salad only</b> (Wed, parents). ⚠️ Hard-boiled — keep them well clear of the kids' food.</div>
     <div class="item"><label><input type="checkbox" data-k="d10"><span>Heavy cream — small carton (optional)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail">Optional 30 ml in the <b>soup</b> — skip it and the soup still works.</div>
-    <div class="item"><label><input type="checkbox" data-k="d11"><span>Sour cream — optional, adults only</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">With <b>Thursday's perogies</b>. ⚠️ Raw dairy — adults' plates only.</div>
   </div>
 </div>
 
@@ -874,9 +873,9 @@
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Sunday</span><span class="pdtime">~10 min</span></div><span class="pdwhen">nothing to cook — the chili is already made</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Sunday</span><span class="pdtime">~10 min</span></div><span class="pdwhen">nothing to cook — the chili is already made, and everyone's eating it</span></div>
     <ol>
-      <li><span class="time">10 min · reheat</span><br><b>Kids' chili</b> — reheat and portion. Two servings for tonight, two packed for Monday.</li>
+      <li><span class="time">10 min · reheat</span><br><b>Chili</b> — reheat for the whole family, and set aside two kid portions for Monday's lunchbox <em>before</em> dinner, so they don't get eaten.</li>
     </ol>
   </div>
 
@@ -903,9 +902,9 @@
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Thursday evening</span><span class="pdtime">~25 min</span></div><span class="pdwhen">everyone eats the same thing tonight</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Thursday evening</span><span class="pdtime">~20 min</span></div><span class="pdwhen">kid portions only</span></div>
     <ol>
-      <li><span class="time">25 min · pan-fry</span><br><b>Ham perogies</b> — boil, then pan-fry with the ham and onion. Tonight's dinner and Friday's packed lunch.</li>
+      <li><span class="time">20 min · pan-fry</span><br><b>Kids' perogies</b> — boil, then pan-fry with the ham and onion. Tonight's kid dinner and Friday's packed lunch.</li>
     </ol>
   </div>
 
@@ -918,8 +917,8 @@
     </ol>
   </div>
 
-  <p class="note"><b>Weeknights become:</b> Sun reheat 10 m · Mon casserole 25 m · Tue lasagna 50 m · Wed quesadillas 15 m · Thu perogies 25 m · Fri free night. The grown-ups' dinner is a container from the fridge every night except Tuesday and Thursday.</p>
-  <p class="note"><b>Eat the parent meals in this order:</b> Cobb salad first (2 days, the avocado and shrimp won't wait), then the Big Mac Salad (3–4 days with the sauce separate), then the soup (4–5 days, or freeze portions).</p>
+  <p class="note"><b>Weeknights become:</b> Sun reheat 10 m · Mon casserole 25 m · Tue lasagna 50 m · Wed quesadillas 15 m · Thu perogies 20 m · Fri free night. The grown-ups' dinner is a container from the fridge every night except Sunday and Tuesday.</p>
+  <p class="note"><b>Eat the parent meals in this order:</b> Cobb salad Monday (2 days, the avocado and shrimp won't wait), Big Mac Salad Wednesday (3–4 days with the sauce separate), soup Thursday (4–5 days, or freeze your portions and thaw one).</p>
 </div>
 
 <footer>
@@ -928,7 +927,7 @@
 </div>
 
 <script>
-  var KEY='mealplan_2026_09_14_v2';
+  var KEY='mealplan_2026_09_14_v3';
   function showTab(name){
     document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id==='tab-'+name); });
     document.querySelectorAll('#tabbar button').forEach(function(b){ b.classList.toggle('active', b.dataset.tab===name); });
