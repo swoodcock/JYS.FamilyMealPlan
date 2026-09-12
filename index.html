@@ -200,7 +200,7 @@
     <div class="day">
       <div class="dbadge"><span class="dow">TUE</span><span class="dnum">15</span></div>
       <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-tue')">Turkey &amp; Cheese Rollups</a><small>Home-made · matches daycare: Turkey Cheese Rollups, Juice</small></div>
+        <div class="meal none">Snack — skipping the rollups this week</div>
         <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r2')">Chicken Broccoli Rice Casserole</a><small>Packed · matches daycare: Chicken Broccoli Rice Casserole, Fruit, Milk</small></div>
         <div class="meal dinner"><span class="k">Dinner · all</span><a class="dish" onclick="openRecipe('r3')">Lasagna</a><small>Whole family · cook ahead → matches Wednesday's daycare lunch</small></div>
       </div>
@@ -586,34 +586,6 @@
     </div>
   </details>
 
-  <details class="card" id="sn-tue">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Turkey &amp; Cheese Rollups</div><div class="s">Tuesday snack · serves 4</div></div><div class="chev">▾</div></summary>
-    <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> No egg or nuts. The cheese here is cold rather than melted — same call we've made on cheese cubes in previous weeks, so firm sliced cheese is treated as fine.</div>
-      <h4>Ingredients</h4>
-      <ul>
-        <li>8 slices deli turkey</li>
-        <li>8 slices firm cheese</li>
-        <li>Juice, to drink</li>
-      </ul>
-      <h4>Method</h4>
-      <ol>
-        <li>Lay a slice of cheese on a slice of turkey and roll it up tightly.</li>
-        <li>Cut each roll in half crossways so they're easy for small hands — no toothpicks in the lunch bag.</li>
-        <li>Pack with juice.</li>
-      </ol>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Tuesday's daycare snack (Turkey Cheese Rollups, Juice).</div>
-      <div class="savewidget" data-recipe-id="sn-tue">
-        <button class="savebtn" onclick="toggleSave('sn-tue')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-sn-tue">
-          <textarea id="savenotes-sn-tue" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('sn-tue')">Submit</button>
-        </div>
-      </div>
-    </div>
-  </details>
-
   <details class="card" id="sn-wed">
     <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Oatmeal Raisin Cookies</div><div class="s">Wednesday snack · makes ~24</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
@@ -721,8 +693,8 @@
     <div class="detail"><b>Shrimp Cobb salad</b> — 3 rashers used.</div>
     <div class="item"><label><input type="checkbox" data-k="m5"><span>Ham — 100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail">Diced into <b>Thursday's perogies</b> (kid portions).</div>
-    <div class="item"><label><input type="checkbox" data-k="m6"><span>Deli turkey or ham, sliced — ~300 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Splits: <b>Tuesday's rollups (8 slices) · Friday's meat &amp; crackers (~150 g)</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="m6"><span>Deli turkey or ham, sliced — ~150 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Friday's meat &amp; crackers.</b></div>
   </div>
 
   <div class="grp"><h4>🥦 Produce</h4>
@@ -805,8 +777,6 @@
     <div class="detail"><b>Thursday's snack.</b></div>
     <div class="item"><label><input type="checkbox" data-k="c20"><span>Crackers — 1 box, egg-free &amp; nut-free</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail"><b>Friday's snack.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c21"><span>Juice — 1 carton</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Packed with <b>Tuesday's rollups</b>.</div>
   </div>
 
   <div class="grp"><h4>🧀 Dairy</h4>
@@ -820,8 +790,8 @@
     <div class="detail">Splits: <b>soup 90 g + garnish (Mon) · lasagna 60 g (Tue)</b>.</div>
     <div class="item"><label><input type="checkbox" data-k="d5"><span>Ricotta — 250 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail"><b>Lasagna</b> (Tue) — baked in, so it counts as cooked dairy.</div>
-    <div class="item"><label><input type="checkbox" data-k="d6"><span>Firm cheese, sliced or cubed — ~250 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Tuesday's rollups (8 slices) · Friday's meat &amp; crackers (~100 g)</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="d6"><span>Firm cheese, sliced or cubed — ~100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Friday's meat &amp; crackers.</b></div>
     <div class="item"><label><input type="checkbox" data-k="d7"><span>Milk — ~1.5 L</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail">Cooking use: the casserole sauce (200 ml), cooked. The rest is drinking milk with lunches and snacks.</div>
     <div class="item"><label><input type="checkbox" data-k="d8"><span>Butter — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
@@ -911,7 +881,6 @@
   <div class="prepday">
     <div class="pdhead"><div class="pdtop"><span class="pdname">Nothing to prep ahead</span></div><span class="pdwhen">these come together same-day</span></div>
     <ol>
-      <li><span class="time">Tue · 5 min</span><br><b>Turkey &amp; cheese rollups</b> — roll and cut in the morning.</li>
       <li><span class="time">Thu · 2 min</span><br><b>Pretzels</b> — portion into bags with the veggie sticks.</li>
       <li><span class="time">Fri · 5 min</span><br><b>Meat, cheese &amp; crackers</b> — pack into compartments so the crackers stay crisp.</li>
     </ol>
@@ -927,7 +896,7 @@
 </div>
 
 <script>
-  var KEY='mealplan_2026_09_14_v3';
+  var KEY='mealplan_2026_09_14_v4';
   function showTab(name){
     document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id==='tab-'+name); });
     document.querySelectorAll('#tabbar button').forEach(function(b){ b.classList.toggle('active', b.dataset.tab===name); });
