@@ -7,12 +7,12 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Meal Plan">
 <meta name="theme-color" content="#c0533f">
-<title>Meal Plan — Sep 7–11, 2026</title>
+<title>Meal Plan — Sep 13–18, 2026</title>
 <style>
   :root{
     --bg:#f6f5f2; --card:#ffffff; --ink:#22201c; --muted:#6b6459;
     --line:#e7e3dc; --accent:#c0533f; --accent2:#2e6f5e;
-    --safe:#2e6f5e; --diab:#7a5cc0; --iron:#b5442f; --veg:#4f8a3d; --spice:#d4791f; --kid:#3f7bb5;
+    --safe:#2e6f5e; --diab:#7a5cc0; --iron:#b5442f; --veg:#4f8a3d; --spice:#d4791f; --kid:#3f7bb5; --par:#6b7f8c; --fam:#2f7d6a;
     --chip:#f0ece5;
     --shadow:0 1px 3px rgba(0,0,0,.06),0 6px 18px rgba(0,0,0,.05);
     --radius:16px;
@@ -84,11 +84,13 @@
   .meal.dinner .k{background:#f7ece9; color:#a8452f;}
   .meal.breakfast .k{background:#fdf0da; color:#a8722f;}
   .meal.snack .k{background:#eee7f7; color:#6b4fa8;}
+  .meal.parent .k{background:#e8edf0; color:#4a5d6b;}
   @media (prefers-color-scheme: dark){
     .meal.lunch .k{background:#1e2a34; color:#8fbce0;}
     .meal.dinner .k{background:#33231f; color:#e39685;}
     .meal.breakfast .k{background:#332a17; color:#e3b985;}
     .meal.snack .k{background:#251f33; color:#c1ace3;}
+    .meal.parent .k{background:#1f272c; color:#a9bfcc;}
   }
   .dish{font-weight:700; color:var(--ink); text-decoration:none; border-bottom:1.5px dotted var(--accent);}
   .dishx{font-weight:700; color:var(--ink);}
@@ -110,6 +112,7 @@
   .tag{font-size:12px; font-weight:600; padding:4px 9px; border-radius:999px; color:#fff;}
   .t-safe{background:var(--safe);} .t-iron{background:var(--iron);} .t-diab{background:var(--diab);}
   .t-veg{background:var(--veg);} .t-spice{background:var(--spice);} .t-kid{background:var(--kid);}
+  .t-par{background:var(--par);} .t-fam{background:var(--fam);}
 
   h4{margin:16px 0 6px; font-size:14px; text-transform:uppercase; letter-spacing:.6px; color:var(--accent2);}
   .cbody ul{margin:6px 0; padding-left:20px;}
@@ -160,7 +163,7 @@
 <body id="top">
 <header>
   <h1>🍽️ Family Meal Plan</h1>
-  <div class="sub">Week of September 7–11, 2026 · Lunch &amp; Dinner · metric · <a href="recipes.html" style="color:#fff;">📖 Recipe Book</a></div>
+  <div class="sub">Week of September 13–18, 2026 · Kids &amp; Parents · metric · <a href="recipes.html" style="color:#fff;">📖 Recipe Book</a></div>
 </header>
 
 <div class="tabs" id="tabbar">
@@ -176,93 +179,98 @@
 <!-- ============ PLAN ============ -->
 <div class="panel active" id="tab-plan">
   <h2 class="sec">The week — cook once, eat twice</h2>
+  <p class="note">Three nights the grown-ups eat their own thing, so the daycare-matched dish is made at <b>kid portions only</b>. Two nights everyone eats the same meal. The parent meals are placed where they share ingredients and cook steps with that night's kid dish.</p>
   <div class="cal">
     <div class="day weekend">
-      <div class="dbadge"><span class="dow">MON</span><span class="dnum">7</span></div>
+      <div class="dbadge"><span class="dow">SUN</span><span class="dnum">13</span></div>
       <div class="dmeals">
-        <div class="meal none">Holiday — no daycare</div>
-        <div class="meal dinner"><span class="k">Dinner</span><span class="dishx">Spaghetti &amp; Meat Sauce</span><small>Your own recipe · cook ahead → matches Tuesday's daycare lunch</small></div>
+        <div class="meal none">Weekend — no daycare</div>
+        <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r1')">Chili with Cheese</a><small>Kid portions · cook ahead → matches Monday's daycare lunch</small></div>
+        <div class="meal parent"><span class="k">Dinner · parents</span><a class="dish" onclick="openRecipe('p1')">Big Mac Salad</a><small>Shares the ground beef, cheddar and onion with the chili</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">TUE</span><span class="dnum">8</span></div>
+      <div class="dbadge"><span class="dow">MON</span><span class="dnum">14</span></div>
       <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-tue')">Cheese &amp; Veggie Muffins</a><small>Home-baked (egg-free) · matches daycare: Cheese and Veggie muffins, Juice</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><span class="dishx">Spaghetti &amp; Meat Sauce</span><small>Packed · matches daycare: Spaghetti &amp; meat sauce, Veggies, Fruit, Milk</small></div>
-        <div class="meal none">Free night — leftovers / family choice</div>
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-mon')">Frozen Yogurt Sandwiches</a><small>Home-made (dairy-free swap) · matches daycare: Frozen yogurt sandwiches, Fruit, Water</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r1')">Chili with Cheese</a><small>Packed · matches daycare: Chili with Cheese, Fruit, Milk</small></div>
+        <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r2')">Chicken Broccoli Rice Casserole</a><small>Kid portions · cook ahead → matches Tuesday's daycare lunch</small></div>
+        <div class="meal parent"><span class="k">Dinner · parents</span><a class="dish" onclick="openRecipe('p2')">Chicken Spinach Artichoke Soup</a><small>Poach the week's chicken in one batch — soup, casserole and Wednesday's quesadillas</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">WED</span><span class="dnum">9</span></div>
+      <div class="dbadge"><span class="dow">TUE</span><span class="dnum">15</span></div>
       <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-wed')">Veggie Straws + Raw Veggies</a><small>Matches daycare: Veggie Straws, Raw Veggies, Milk</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><span class="dishx">갈비찜 Galbi-jjim</span><small>Packed, premade</small></div>
-        <div class="meal dinner"><span class="k">Dinner</span><span class="dishx">Udon &amp; Bulgogi Stir-Fry</span><small>Your own · cook ahead → matches Thursday's daycare lunch</small></div>
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-tue')">Turkey &amp; Cheese Rollups</a><small>Home-made · matches daycare: Turkey Cheese Rollups, Juice</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r2')">Chicken Broccoli Rice Casserole</a><small>Packed · matches daycare: Chicken Broccoli Rice Casserole, Fruit, Milk</small></div>
+        <div class="meal dinner"><span class="k">Dinner · all</span><a class="dish" onclick="openRecipe('r3')">Lasagna</a><small>Whole family · cook ahead → matches Wednesday's daycare lunch</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">THU</span><span class="dnum">10</span></div>
+      <div class="dbadge"><span class="dow">WED</span><span class="dnum">16</span></div>
       <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-thu')">Grilled Cheese + Raw Veggies</a><small>Home-made · matches daycare: Grilled cheese, Raw veggies, Water</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><span class="dishx">Udon &amp; Bulgogi Stir-Fry</span><small>Packed · matches daycare: Pancit Bihon, Fruit, Milk</small></div>
-        <div class="meal dinner"><span class="k">Dinner</span><a class="dish" onclick="openRecipe('r1')">Egg-Free Chicken Fingers + Rice</a><small>Cook ahead → matches Friday's daycare lunch</small></div>
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-wed')">Oatmeal Raisin Cookies</a><small>Home-baked (egg-free) · matches daycare: Cookies, Fruit, Milk</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r3')">Lasagna</a><small>Packed · matches daycare: Lasagna, Fruit, Milk</small></div>
+        <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r4')">Chicken Quesadillas</a><small>Kid portions · cook ahead → matches Thursday's daycare lunch</small></div>
+        <div class="meal parent"><span class="k">Dinner · parents</span><a class="dish" onclick="openRecipe('p3')">Hot Honey Shrimp Cobb Salad</a><small>Shares the cheddar, avocado, lime and cilantro with the quesadillas</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">FRI</span><span class="dnum">11</span></div>
+      <div class="dbadge"><span class="dow">THU</span><span class="dnum">17</span></div>
       <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-fri')">Frozen Yogurt + Apple Crisp</a><small>Home-made (dairy-free swap) · matches daycare: Frozen yogurt, Apple Crisp, Water</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r1')">Egg-Free Chicken Fingers + Rice</a><small>Packed · matches daycare: Chicken Fingers, Rice, Veggies, Fruit, Milk</small></div>
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-thu')">Pretzels + Veggies</a><small>Matches daycare: Pretzels, Veggies, Milk</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r4')">Chicken Quesadillas</a><small>Packed · matches daycare: Chicken Quesadillas, Raw Veggies, Fruit, Milk</small></div>
+        <div class="meal dinner"><span class="k">Dinner · all</span><a class="dish" onclick="openRecipe('r5')">Ham Perogies</a><small>Whole family · cook ahead → matches Friday's daycare lunch</small></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="dbadge"><span class="dow">FRI</span><span class="dnum">18</span></div>
+      <div class="dmeals">
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-fri')">Meat, Cheese &amp; Crackers</a><small>Matches daycare: Meat Cheese Crackers, Water</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r5')">Ham Perogies</a><small>Packed · matches daycare: Ham Perogies, Veggies, Fruit, Milk</small></div>
         <div class="meal none">Free night — leftovers / family choice</div>
       </div>
     </div>
   </div>
-  <p class="note">Tap any dish to jump to its recipe. Dishes without a link are ones you're handling yourself — your spaghetti recipe, the premade galbi-jjim, and the udon stir-fry from what's already in the freezer.</p>
 
   <h2 class="sec">How to read the tags</h2>
   <div class="legend">
     <div class="row"><b>🚫 Allergen-safe</b><span>No <b>raw/uncooked dairy, egg, tree nut, peanut, or pea</b>. ✅ Cooked/baked milk &amp; melted cheese are used.</span></div>
-    <div class="row"><b>🔄 Low-carb</b><span>A <b>low-GI / low-carb swap</b> is given where the dinner needs one.</span></div>
+    <div class="row"><b>👶 Kid portions</b><span>Sized for <b>2 kid dinners + 2 kid lunches</b> — the grown-ups are eating separately that night.</span></div>
+    <div class="row"><b>👨‍👩‍👧 Whole family</b><span>Everyone eats this one, so the <b>low-carb swap</b> and adult spice notes apply.</span></div>
+    <div class="row"><b>🍴 Parents</b><span>Grown-ups only. Naturally low-GI, and kept clear of the kids' portions.</span></div>
     <div class="row"><b>🩸 Iron-rich</b><span>Iron sources <b>paired with vitamin C</b> to aid absorption, plus extra <b>fiber</b>.</span></div>
-    <div class="row"><b>🌶️ Adults</b><span>Spice added at the end; a <b>plain portion</b> pulled first where noted.</span></div>
   </div>
 </div>
 
 <!-- ============ RECIPES ============ -->
 <div class="panel" id="tab-recipes">
-  <h2 class="sec">Dinner</h2>
+  <h2 class="sec">Dinners — kids &amp; family</h2>
 
   <details class="card" id="r1">
-    <summary><div class="cnum">1</div><div class="ctitle"><div class="t">Egg-Free Chicken Fingers + Rice</div><div class="s">Thursday dinner → Friday lunch · serves 4 + lunchbox</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">1</div><div class="ctitle"><div class="t">Chili with Cheese</div><div class="s">Sunday dinner → Monday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (egg swap)</span><span class="tag t-iron">Iron boost</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-spice">Adult spice</span><span class="tag t-kid">Kid favorite</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Classic chicken fingers dip the strips in beaten egg before breading — this batch uses a milk + cornstarch wash instead, so no egg is needed for anyone. Check the breadcrumbs are egg-free and nut-free.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron-rich</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Naturally egg-free. The cheese goes on hot to melt, so it's cooked dairy — fine.</div>
+      <div class="note kid"><span class="lbl">👶 Sized for kids:</span> makes <b>4 kid-sized portions</b> — two for dinner, two packed for Monday.</div>
+      <div class="note veg"><span class="lbl">🔪 Shared with the parents' salad:</span> brown the full 650 g of beef in one pan with just salt and pepper, lift out 450 g for the Big Mac Salad, then season what's left for this chili.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>700 g chicken breast, cut into finger-sized strips <span class="pill">iron</span></li>
-        <li>Dredge: 80 g flour + 1 tsp paprika + 1 tsp garlic powder + salt &amp; pepper</li>
-        <li>Egg-free wash: 150 ml milk whisked with 20 g cornstarch</li>
-        <li>150 g breadcrumbs, egg-free</li>
-        <li>Oil, for the tray</li>
-        <li>250 g rice (dry) — or ½ cauliflower head (~300 g) for the low-carb version</li>
-        <li>200 g green beans <span class="pill">no peas</span> + 2 carrots <span class="pill">hidden veg</span></li>
-        <li>Vitamin-C side: orange wedges <span class="pill">vit C</span></li>
-        <li>Adults: sriracha or hot sauce, for dipping</li>
+        <li>200 g ground beef <span class="pill">iron</span></li>
+        <li>½ onion, diced</li>
+        <li>400 g can kidney or black beans, drained &amp; rinsed <span class="pill">iron + fiber</span></li>
+        <li>400 g can diced tomatoes <span class="pill">vit C</span></li>
+        <li>1 tsp mild chili powder, ½ tsp ground cumin</li>
+        <li>50 g shredded cheddar, to melt on top</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Preheat oven to <b>200°C (400°F)</b>. Line a tray and brush it with oil.</li>
-        <li>Set out three bowls: the seasoned flour, the milk-cornstarch wash, and the breadcrumbs.</li>
-        <li>Dredge each strip in flour, dip in the wash, then press firmly into the breadcrumbs.</li>
-        <li>Lay on the tray, drizzle with a little oil, and bake 20–25 min, turning once, until golden and 74°C (165°F) inside.</li>
-        <li>Cook the rice; steam the green beans and carrots.</li>
-        <li>Serve with orange wedges, and hot sauce for the adults.</li>
+        <li>Brown the beef with the onion; drain any excess fat.</li>
+        <li>Stir in the chili powder and cumin, then the tomatoes and beans.</li>
+        <li>Simmer 20 min until thickened. Top each bowl with cheddar and let it melt in.</li>
       </ol>
-      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> cauliflower rice instead of the rice; the coating is thin enough to leave as is.</div>
-      <div class="note iron"><span class="lbl">🩸 Iron boost:</span> chicken — pair with the vitamin-C orange wedges.</div>
-      <div class="note veg"><span class="lbl">🥦 Hidden veg:</span> green beans and carrots alongside, standing in for the usual peas.</div>
-      <div class="note spice"><span class="lbl">🌶️ Adults:</span> sriracha or hot sauce for dipping — pull the kids' portion first.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> matches Friday's daycare tray (Chicken Fingers, Rice, Veggies, Fruit, Milk). They pack and reheat well.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef plus beans, with the tomatoes bringing the vitamin C to help it absorb.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> matches Monday's daycare tray (Chili with Cheese, Fruit, Milk).</div>
       <div class="savewidget" data-recipe-id="r1">
         <button class="savebtn" onclick="toggleSave('r1')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-r1">
@@ -273,33 +281,328 @@
     </div>
   </details>
 
-  <h2 class="sec">Snacks</h2>
-  <p class="note">Every snack is home-made this week, matched to what's on the daycare's own tray each day.</p>
-
-  <details class="card" id="sn-tue">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Cheese &amp; Veggie Muffins</div><div class="s">Tuesday snack · makes 12</div></div><div class="chev">▾</div></summary>
+  <details class="card" id="r2">
+    <summary><div class="cnum">2</div><div class="ctitle"><div class="t">Chicken Broccoli Rice Casserole</div><div class="s">Monday dinner → Tuesday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (egg swap)</span><span class="tag t-veg">Hidden veg</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Savory muffins normally use egg — this batch uses a flax egg instead (10 g ground flaxseed + 45 ml water, rested 5 min), so it's safe for everyone. The cheese is baked in, so it's cooked dairy — fine.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Built on a butter-and-flour cheese sauce rather than canned condensed soup, so there's no egg anywhere and the milk is cooked.</div>
+      <div class="note kid"><span class="lbl">👶 Sized for kids:</span> makes <b>4 kid-sized portions</b> — two for dinner, two packed for Tuesday.</div>
+      <div class="note veg"><span class="lbl">🔪 Shared with the parents' soup:</span> the 200 g of chicken here comes out of the same pot as the soup — see the Prep tab for the one-batch poach.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>200 g flour, 2 tsp baking powder, ½ tsp salt, pepper</li>
-        <li>1 flax egg (10 g ground flaxseed + 45 ml water, rested 5 min)</li>
-        <li>180 ml milk, 50 ml oil</li>
-        <li>100 g shredded cheese</li>
-        <li>100 g grated zucchini + 60 g grated carrot <span class="pill">hidden veg</span></li>
-        <li>Juice, to serve</li>
+        <li>200 g cooked chicken breast, shredded <span class="pill">from the shared batch</span></li>
+        <li>150 g broccoli florets, cut small <span class="pill">hidden veg</span></li>
+        <li>100 g rice (dry), cooked</li>
+        <li>Sauce: 15 g butter + 15 g flour + 200 ml milk + 60 g shredded cheddar</li>
+        <li>Salt, pepper, pinch of garlic powder</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Preheat oven to <b>190°C (375°F)</b>. Mix the flour, baking powder, salt and pepper.</li>
-        <li>Whisk the milk, oil and flax egg; stir into the dry ingredients.</li>
-        <li>Squeeze the excess water from the grated zucchini, then fold it in with the carrot and cheese.</li>
-        <li>Divide into a muffin tin; bake 20–22 min until golden and springy. Best baked ahead — Monday evening for Tuesday.</li>
+        <li>Preheat oven to <b>190°C (375°F)</b>. Cook the rice; steam the broccoli until just tender.</li>
+        <li>Make the sauce: melt the butter, whisk in the flour, add the milk and simmer until thickened, then stir in the cheddar.</li>
+        <li>Fold the rice, broccoli and chicken through the sauce; season.</li>
+        <li>Spread in a small baking dish and bake 15–20 min until bubbling.</li>
+      </ol>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> matches Tuesday's daycare tray (Chicken Broccoli Rice Casserole, Fruit, Milk).</div>
+      <div class="savewidget" data-recipe-id="r2">
+        <button class="savebtn" onclick="toggleSave('r2')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-r2">
+          <textarea id="savenotes-r2" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('r2')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" id="r3">
+    <summary><div class="cnum">3</div><div class="ctitle"><div class="t">Lasagna</div><div class="s">Tuesday dinner → Wednesday lunch · whole family, serves 4 + lunchbox</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check noodles)</span><span class="tag t-iron">Iron-rich</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-spice">Adult spice</span><span class="tag t-fam">Whole family</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> <b>Check the lasagna noodles.</b> Plain dried sheets are usually just semolina and water, but fresh and "egg pasta" sheets contain egg. The ricotta and mozzarella are baked, so they count as cooked dairy.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>500 g ground beef <span class="pill">iron</span></li>
+        <li>1 onion, diced · 2 cloves garlic, minced</li>
+        <li>700 g passata or crushed tomatoes + 30 g tomato paste <span class="pill">vit C</span></li>
+        <li>1 tsp dried Italian herbs, salt, pepper</li>
+        <li>100 g spinach, chopped <span class="pill">iron + hidden veg</span></li>
+        <li>250 g ricotta</li>
+        <li>200 g mozzarella, shredded · 60 g parmesan, grated</li>
+        <li>250 g lasagna noodles, egg-free — or 2 zucchini, sliced lengthways, for the low-carb version</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Brown the beef with the onion and garlic. Add the tomatoes, paste and herbs; simmer 20 min, then stir the spinach through to wilt.</li>
+        <li>Layer in a baking dish: sauce, noodles, ricotta, mozzarella — repeat, finishing with mozzarella and the parmesan.</li>
+        <li>Bake <b>190°C (375°F) 35–40 min</b> until golden and bubbling. Rest 10 min before cutting, or it won't hold its shape.</li>
+      </ol>
+      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> replace the pasta sheets with lengthways-sliced zucchini. Salt the slices and pat them dry first so the bake doesn't go watery.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef and spinach together, with tomato for the vitamin C.</div>
+      <div class="note spice"><span class="lbl">🌶️ Adults:</span> chili flakes at the table — pull the kids' portions first.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> matches Wednesday's daycare tray (Lasagna, Fruit, Milk).</div>
+      <div class="savewidget" data-recipe-id="r3">
+        <button class="savebtn" onclick="toggleSave('r3')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-r3">
+          <textarea id="savenotes-r3" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('r3')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" id="r4">
+    <summary><div class="cnum">4</div><div class="ctitle"><div class="t">Chicken Quesadillas</div><div class="s">Wednesday dinner → Thursday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-veg">Raw veg side</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Flour tortillas are normally egg-free — check the label. The cheese is melted, so it's cooked dairy.</div>
+      <div class="note kid"><span class="lbl">👶 Sized for kids:</span> makes <b>4 kid-sized portions</b> — two for dinner, two packed for Thursday.</div>
+      <div class="note veg"><span class="lbl">🔪 Shared with the parents' salad:</span> the cheddar, avocado, lime and cilantro are the same ones the Cobb salad needs — prep them once for both.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>250 g cooked chicken, shredded <span class="pill">from the shared batch</span></li>
+        <li>8 small flour tortillas, egg-free</li>
+        <li>120 g shredded cheddar</li>
+        <li>½ tsp mild taco seasoning</li>
+        <li>Butter or oil, for the pan</li>
+        <li>To serve: raw carrot and cucumber sticks, sliced avocado, a squeeze of lime, chopped cilantro</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Toss the shredded chicken with the taco seasoning.</li>
+        <li>Scatter cheese and chicken over half of each tortilla, fold, and cook in a lightly buttered pan over medium heat until golden and the cheese has melted, about 2 min a side.</li>
+        <li>Cut into wedges. Serve with the raw veggie sticks and avocado.</li>
+      </ol>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> matches Thursday's daycare tray (Chicken Quesadillas, Raw Veggies, Fruit, Milk). They pack well cut into wedges.</div>
+      <div class="savewidget" data-recipe-id="r4">
+        <button class="savebtn" onclick="toggleSave('r4')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-r4">
+          <textarea id="savenotes-r4" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('r4')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" id="r5">
+    <summary><div class="cnum">5</div><div class="ctitle"><div class="t">Ham Perogies</div><div class="s">Thursday dinner → Friday lunch · whole family, serves 4 + lunchbox</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check dough)</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-fam">Whole family</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> <b>Check the perogie dough</b> — most frozen ones are flour and water, but some brands add egg. The potato-and-cheese filling is cooked, so that part is fine.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>1 kg frozen potato &amp; cheese perogies, egg-free</li>
+        <li>250 g ham, diced</li>
+        <li>1 onion, sliced</li>
+        <li>40 g butter, for the pan</li>
+        <li>200 g green beans <span class="pill">no peas</span> + 2 carrots, sliced <span class="pill">hidden veg</span></li>
+        <li>Adults: sour cream, to serve <span class="pill">raw dairy</span></li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Boil the perogies until they float, about 4 min; drain well.</li>
+        <li>Melt the butter in a large pan and soften the onion. Add the ham and brown lightly.</li>
+        <li>Add the drained perogies and pan-fry until golden on both sides.</li>
+        <li>Steam the green beans and carrots alongside.</li>
+      </ol>
+      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> a smaller perogie portion bulked out with extra steamed veg, or pan-fried cabbage in place of half the perogies.</div>
+      <div class="note safe"><span class="lbl">⚠️ Sour cream:</span> uncooked dairy — keep it to the adults' plates only.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> matches Friday's daycare tray (Ham Perogies, Veggies, Fruit, Milk).</div>
+      <div class="savewidget" data-recipe-id="r5">
+        <button class="savebtn" onclick="toggleSave('r5')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-r5">
+          <textarea id="savenotes-r5" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('r5')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <h2 class="sec">Dinners — parents</h2>
+  <p class="note">Grown-ups only, on the three nights the kids' dish is made at kid portions. All three are naturally low-GI. Quantities converted to metric; each links back to the original recipe.</p>
+
+  <details class="card" id="p1">
+    <summary><div class="cnum">🍴</div><div class="ctitle"><div class="t">Big Mac Salad</div><div class="s">Sunday · parents only · makes 3 servings</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-par">Parents only</span><span class="tag t-diab">Naturally low-carb</span></div>
+      <div class="note veg"><span class="lbl">🔪 Shared prep:</span> brown all 650 g of the night's ground beef in one pan with salt and pepper, lift 450 g out for this, then season the rest for the kids' chili. The cheddar and onion come from the same packs too.</div>
+      <h4>Ingredients — salad</h4>
+      <ul>
+        <li>450 g ground beef</li>
+        <li>1 tsp sea salt, ½ tsp ground black pepper</li>
+        <li>1 small head iceberg lettuce, finely chopped</li>
+        <li>85 g cheddar, shredded</li>
+        <li>¼ white onion, finely diced</li>
+        <li>75 g pickle slices</li>
+      </ul>
+      <h4>Ingredients — burger sauce</h4>
+      <ul>
+        <li>120 g Greek yogurt</li>
+        <li>60 g ketchup · 15 g Dijon mustard · 30 g dill relish</li>
+        <li>1 clove garlic, grated</li>
+        <li>½ tsp smoked paprika · ¼ tsp black pepper</li>
+        <li>1 tbsp Frank's RedHot, to taste</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Cook the beef in a large skillet over medium heat with the salt and pepper, crumbling as it goes, until browned through.</li>
+        <li>Whisk all the sauce ingredients together in a separate bowl. Keep it in its own jar rather than dressing the salad.</li>
+        <li>Divide the lettuce, beef, cheese, onion and pickles between bowls and spoon the sauce over at the table. For meal-prep, pack the three portions with the sauce separate.</li>
+      </ol>
+      <div class="note diab"><span class="lbl">🔄 Low-GI:</span> already low-carb. The only real sugar is in the ketchup and relish — no-sugar-added versions cut most of it.</div>
+      <div class="note"><span class="lbl">Source:</span> adapted from <a href="https://fedandfit.com/big-mac-salad/">Fed &amp; Fit</a>, converted to metric.</div>
+      <div class="savewidget" data-recipe-id="p1">
+        <button class="savebtn" onclick="toggleSave('p1')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-p1">
+          <textarea id="savenotes-p1" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('p1')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" id="p2">
+    <summary><div class="cnum">🍴</div><div class="ctitle"><div class="t">Chicken Spinach Artichoke Soup</div><div class="s">Monday · parents only · makes 6 servings</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-par">Parents only</span><span class="tag t-diab">Naturally low-carb</span></div>
+      <div class="note veg"><span class="lbl">🔪 Shared prep:</span> this pot poaches the week's chicken. Simmer the full 1 kg in the broth, then lift out 450 g before the cheese goes in — 200 g for the kids' casserole tonight, 250 g for Wednesday's quesadillas. The mozzarella, parmesan and spinach are the same ones Tuesday's lasagna needs.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>15 ml extra-virgin olive oil</li>
+        <li>½ yellow onion, chopped · 2 celery stalks, chopped</li>
+        <li>3 cloves garlic, minced · ½ tsp red pepper flakes</li>
+        <li>Salt and freshly ground black pepper</li>
+        <li>1.4 L chicken broth</li>
+        <li>Juice of ½ lemon</li>
+        <li>570 g boneless skinless chicken breasts (about 3 large) — <b>or 1 kg if poaching for the week, see above</b></li>
+        <li>400 g can artichoke hearts, drained and quartered</li>
+        <li>110 g mozzarella, shredded · 90 g parmesan, grated, plus more to finish</li>
+        <li>30 ml heavy cream (optional)</li>
+        <li>120 g fresh spinach</li>
+        <li>2 tbsp parsley, chopped, to garnish</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Heat the oil in a large pot over medium. Soften the onion and celery, about 6 min. Add the garlic and pepper flakes and cook 1 min more.</li>
+        <li>Pour in the broth and lemon juice and bring to a boil.</li>
+        <li>Add the chicken breasts, lower the heat, and simmer until cooked through, 10–12 min.</li>
+        <li>Lift the chicken out and shred it with two forks. <b>Set aside the 450 g for the kids' dishes now</b>, then return the rest to the pot.</li>
+        <li>Add the artichokes, mozzarella, parmesan and cream if using. Cook, stirring, until the cheese melts.</li>
+        <li>Stir in the spinach and serve with parsley and extra parmesan.</li>
+      </ol>
+      <div class="note diab"><span class="lbl">🔄 Low-GI:</span> no starch in the pot — it's already a low-carb dinner as written.</div>
+      <div class="note"><span class="lbl">Source:</span> adapted from <a href="https://www.delish.com/cooking/recipe-ideas/a24131957/chicken-spinach-artichoke-soup-recipe/">Delish</a>, converted to metric.</div>
+      <div class="savewidget" data-recipe-id="p2">
+        <button class="savebtn" onclick="toggleSave('p2')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-p2">
+          <textarea id="savenotes-p2" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('p2')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" id="p3">
+    <summary><div class="cnum">🍴</div><div class="ctitle"><div class="t">Hot Honey Shrimp Cobb Salad</div><div class="s">Wednesday · parents only · makes 3 servings</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-par">Parents only</span><span class="tag t-diab">Naturally low-carb</span></div>
+      <div class="note safe"><span class="lbl">⚠️ Contains egg:</span> the hard-boiled eggs make this one to keep well away from the kids' quesadillas — separate board, separate plate, and wash up in between.</div>
+      <div class="note veg"><span class="lbl">🔪 Shared prep:</span> the cheddar, avocado, limes and cilantro are shared with the kids' quesadillas the same night — prep them once for both.</div>
+      <h4>Ingredients — shrimp</h4>
+      <ul>
+        <li>450 g shrimp, frozen or fresh</li>
+        <li>10 ml olive oil</li>
+        <li>2 tsp chili powder · 1 tsp salt · ½ tsp dried oregano · ½ tsp garlic powder</li>
+        <li>30 g hot honey · 30 ml fresh lime juice</li>
+      </ul>
+      <h4>Ingredients — dressing</h4>
+      <ul>
+        <li>240 g Greek yogurt</li>
+        <li>½ cup fresh cilantro (about 15 g)</li>
+        <li>1 jalapeño, stem removed</li>
+        <li>60 ml lime juice (about 2 limes) · ½ tsp sea salt</li>
+      </ul>
+      <h4>Ingredients — salad</h4>
+      <ul>
+        <li>1 head romaine, chopped</li>
+        <li>150 g cherry tomatoes</li>
+        <li>1 large avocado, cut into 1 cm pieces</li>
+        <li>75 g cheddar, shredded</li>
+        <li>3 rashers cooked bacon, chopped</li>
+        <li>3 hard-boiled eggs, halved</li>
+        <li>1 lime, cut into wedges · salt and pepper</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Put the shrimp in a large skillet with the olive oil over medium-high heat. Stir continuously until they thaw and turn opaque.</li>
+        <li>Add the chili powder, salt, oregano, garlic powder, hot honey and lime juice. Toss and keep cooking until the shrimp curl tightly and are opaque through, 10–15 min in total.</li>
+        <li>Blend the yogurt, cilantro, jalapeño, lime juice and salt until smooth.</li>
+        <li>Build the bowls with the lettuce, tomatoes, avocado, cheese, bacon, egg halves and shrimp. Season, add lime wedges, and dress at the table.</li>
+      </ol>
+      <div class="note diab"><span class="lbl">🔄 Low-GI:</span> the hot honey is the only sugar — use it sparingly on the diabetic portion, or dress those shrimp with lime and chili alone.</div>
+      <div class="note"><span class="lbl">Source:</span> adapted from <a href="https://fedandfit.com/shrimp-cobb-salad/">Fed &amp; Fit</a>, converted to metric.</div>
+      <div class="savewidget" data-recipe-id="p3">
+        <button class="savebtn" onclick="toggleSave('p3')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-p3">
+          <textarea id="savenotes-p3" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('p3')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <h2 class="sec">Snacks</h2>
+  <p class="note">Matched to what's on the daycare's own tray each day.</p>
+
+  <details class="card" id="sn-mon">
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Frozen Yogurt Sandwiches</div><div class="s">Monday snack · makes ~8</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe (dairy + egg swaps)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Two swaps in one. Frozen yogurt is still uncooked dairy even frozen, so this uses dairy-free coconut or oat yogurt; and the cookies use a flax egg. That makes the whole batch safe for everyone, with no separate version.</div>
+      <div class="note veg"><span class="lbl">🔪 Shared prep:</span> bake one batch of the <a class="dish" onclick="openRecipe('sn-wed')">oatmeal raisin cookies</a> on Sunday — half go in here, half are Wednesday's snack.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>400 g dairy-free coconut or oat yogurt</li>
+        <li>100 g berries or fruit purée</li>
+        <li>Honey or maple syrup, to taste</li>
+        <li>16 egg-free oatmeal cookies (see Wednesday's snack)</li>
+        <li>Fresh fruit and water, to serve</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Blend the yogurt with the fruit and a little honey.</li>
+        <li>Spread a thick layer onto the flat side of a cookie and sandwich a second on top.</li>
+        <li>Wrap each one and freeze at least 4 hrs — best made Sunday so they're solid by Monday.</li>
+        <li>Pack frozen, with fruit and water.</li>
+      </ol>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Monday's daycare snack (Frozen yogurt sandwiches, Fruit, Water).</div>
+      <div class="savewidget" data-recipe-id="sn-mon">
+        <button class="savebtn" onclick="toggleSave('sn-mon')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-sn-mon">
+          <textarea id="savenotes-sn-mon" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('sn-mon')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" id="sn-tue">
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Turkey &amp; Cheese Rollups</div><div class="s">Tuesday snack · serves 4</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> No egg or nuts. The cheese here is cold rather than melted — same call we've made on cheese cubes in previous weeks, so firm sliced cheese is treated as fine.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>8 slices deli turkey</li>
+        <li>8 slices firm cheese</li>
+        <li>Juice, to drink</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Lay a slice of cheese on a slice of turkey and roll it up tightly.</li>
+        <li>Cut each roll in half crossways so they're easy for small hands — no toothpicks in the lunch bag.</li>
         <li>Pack with juice.</li>
       </ol>
-      <div class="note veg"><span class="lbl">🥦 Hidden veg:</span> zucchini and carrot grated straight into the batter.</div>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Tuesday's daycare snack (Cheese and Veggie muffins, Juice).</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Tuesday's daycare snack (Turkey Cheese Rollups, Juice).</div>
       <div class="savewidget" data-recipe-id="sn-tue">
         <button class="savebtn" onclick="toggleSave('sn-tue')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-sn-tue">
@@ -311,22 +614,29 @@
   </details>
 
   <details class="card" id="sn-wed">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Veggie Straws + Raw Veggies</div><div class="s">Wednesday snack · serves 4</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Oatmeal Raisin Cookies</div><div class="s">Wednesday snack · makes ~24</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Veggie straws are typically potato/starch based and free of egg and nuts — check the label to be sure.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (egg swap)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Standard cookies use egg — this batch uses a flax egg instead (10 g ground flaxseed + 45 ml water, rested 5 min), so it's safe for everyone.</div>
+      <div class="note veg"><span class="lbl">🔪 Bake once, use twice:</span> this batch covers both Monday's frozen yogurt sandwiches and Wednesday's snack. Make it Sunday.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>Veggie straws — 1 bag, egg-free &amp; nut-free</li>
-        <li>Raw veggie sticks: carrot, cucumber</li>
-        <li>Milk, to drink</li>
+        <li>200 g flour · 150 g rolled oats</li>
+        <li>120 g butter, softened</li>
+        <li>100 g brown sugar · 50 g granulated sugar</li>
+        <li>1 flax egg (10 g ground flaxseed + 45 ml water, rested 5 min)</li>
+        <li>1 tsp baking soda · 1 tsp cinnamon</li>
+        <li>80 g raisins</li>
+        <li>Fresh fruit and milk, to serve</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Portion the veggie straws into snack bags.</li>
-        <li>Pack with veggie sticks and milk.</li>
+        <li>Preheat oven to <b>180°C (350°F)</b>. Cream the butter and sugars, then beat in the flax egg.</li>
+        <li>Fold in the flour, oats, baking soda and cinnamon, then the raisins.</li>
+        <li>Scoop onto lined trays and bake 11–13 min until set at the edges. Cool fully before storing or sandwiching.</li>
+        <li>Serve with fruit and milk.</li>
       </ol>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Wednesday's daycare snack (Veggie Straws, Raw Veggies, Milk).</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Wednesday's daycare snack (Cookies, Fruit, Milk).</div>
       <div class="savewidget" data-recipe-id="sn-wed">
         <button class="savebtn" onclick="toggleSave('sn-wed')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-sn-wed">
@@ -338,25 +648,22 @@
   </details>
 
   <details class="card" id="sn-thu">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Grilled Cheese + Raw Veggies</div><div class="s">Thursday snack · serves 4</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Pretzels + Veggies</div><div class="s">Thursday snack · serves 4</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Nothing to swap here — the cheese is melted, so it's cooked dairy. Just check the bread is egg-free.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Plain pretzels are usually flour, water, yeast and salt — check for egg wash and nut warnings on the bag.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>8 slices bread, egg-free</li>
-        <li>120 g cheese, sliced or shredded</li>
-        <li>Butter, for the pan</li>
+        <li>Pretzels — 1 bag, egg-free &amp; nut-free</li>
         <li>Raw veggie sticks: carrot, cucumber</li>
-        <li>Water, to drink</li>
+        <li>Milk, to drink</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Butter the outside faces of the bread; fill with cheese.</li>
-        <li>Grill in a dry pan over medium heat, pressing gently, until golden on both sides and the cheese has melted.</li>
-        <li>Cut into fingers or triangles. Pack with veggie sticks and water — best made the morning of.</li>
+        <li>Portion the pretzels into snack bags.</li>
+        <li>Pack with veggie sticks and milk.</li>
       </ol>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Thursday's daycare snack (Grilled cheese, Raw veggies, Water).</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Thursday's daycare snack (Pretzels, Veggies, Milk).</div>
       <div class="savewidget" data-recipe-id="sn-thu">
         <button class="savebtn" onclick="toggleSave('sn-thu')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-sn-thu">
@@ -368,26 +675,23 @@
   </details>
 
   <details class="card" id="sn-fri">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Frozen Yogurt + Apple Crisp</div><div class="s">Friday snack · serves 4–6</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Meat, Cheese &amp; Crackers</div><div class="s">Friday snack · serves 4</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (dairy swap)</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Frozen yogurt is still raw/uncooked dairy even frozen, so this batch uses dairy-free coconut or oat yogurt — safe for everyone, no separate portion. The apple crisp is naturally egg-free; <b>leave the nuts out</b> of the topping, as many crisp recipes add walnuts or pecans. The butter in the topping is baked, so it's cooked dairy — fine.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Check the crackers are egg-free and nut-free. Firm cheese cold is treated the same as the cheese cubes in earlier weeks.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li><b>Frozen yogurt:</b> 500 g dairy-free coconut or oat yogurt + 150 g berries or fruit purée + honey or maple syrup, to taste</li>
-        <li><b>Apple crisp — filling:</b> 4 apples (~600 g), peeled &amp; sliced + 1 tsp cinnamon + 30 g sugar + juice of ½ lemon <span class="pill">vit C</span></li>
-        <li><b>Apple crisp — topping:</b> 100 g rolled oats + 60 g flour + 60 g brown sugar + 80 g butter, cold and cubed <span class="pill">no nuts</span></li>
+        <li>Deli turkey or ham — ~150 g, sliced and folded</li>
+        <li>Firm cheese — ~100 g, cubed or sliced</li>
+        <li>Crackers, egg-free &amp; nut-free — 1 box</li>
         <li>Water, to drink</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li><b>Frozen yogurt:</b> blend the yogurt with the fruit and a little honey; freeze in a tub at least 4 hrs. Make it early in the week — it keeps in the freezer.</li>
-        <li><b>Apple crisp:</b> preheat oven to <b>180°C (350°F)</b>. Toss the apples with cinnamon, sugar and lemon juice; spread in a baking dish.</li>
-        <li>Rub the butter into the oats, flour and brown sugar until crumbly; scatter over the apples.</li>
-        <li>Bake 35–40 min until the topping is golden and the fruit is bubbling. Bake Thursday evening for Friday.</li>
-        <li>Pack a scoop of each with water.</li>
+        <li>Pack the meat, cheese and crackers into compartments so the crackers stay crisp.</li>
+        <li>Send with water.</li>
       </ol>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Friday's daycare snack (Frozen yogurt, Apple Crisp, Water).</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Friday's daycare snack (Meat Cheese Crackers, Water).</div>
       <div class="savewidget" data-recipe-id="sn-fri">
         <button class="savebtn" onclick="toggleSave('sn-fri')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-sn-fri">
@@ -402,74 +706,135 @@
 <!-- ============ SHOPPING ============ -->
 <div class="panel shop" id="tab-shop">
   <h2 class="sec">Combined shopping list</h2>
-  <p class="note">Covers <b>Thursday's chicken fingers</b> and <b>all four snacks</b>. Nothing here for the spaghetti (your own recipe), the galbi-jjim (premade) or the udon stir-fry (already in the freezer) — add anything those need yourself. Basic seasonings are on the <b>Pantry</b> tab.</p>
+  <p class="note">Covers everything — the kids' five dinners, the three parent meals and all five snacks. Where an item is split across dishes, tap <b>“For ⓘ”</b> for the breakdown. Basic seasonings are on the <b>Pantry</b> tab.</p>
   <button class="clearbtn" onclick="clearShop()">Reset checkboxes</button>
 
-  <div class="grp"><h4>🥩 Meat</h4>
-    <div class="item"><label><input type="checkbox" data-k="m1"><span>Chicken breast — 700 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Chicken fingers</b> — Thursday dinner → Friday lunch.</div>
+  <div class="grp"><h4>🥩 Meat &amp; seafood</h4>
+    <div class="item"><label><input type="checkbox" data-k="m1"><span>Ground beef — ~1.15 kg total</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Splits: <b>Big Mac Salad 450 g + kids' chili 200 g (Sun, browned in one pan) · lasagna 500 g (Tue)</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="m2"><span>Chicken breasts — ~1 kg</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">All poached together Monday in the soup pot. Splits: <b>soup 570 g · kids' casserole 200 g (Mon) · quesadillas 250 g (Wed)</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="m3"><span>Shrimp — 450 g, frozen or fresh</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Shrimp Cobb salad</b> (Wed, parents).</div>
+    <div class="item"><label><input type="checkbox" data-k="m4"><span>Bacon — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Shrimp Cobb salad</b> — 3 rashers used.</div>
+    <div class="item"><label><input type="checkbox" data-k="m5"><span>Ham — 250 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Diced into <b>Thursday's perogies</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="m6"><span>Deli turkey or ham, sliced — ~300 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Splits: <b>Tuesday's rollups (8 slices) · Friday's meat &amp; crackers (~150 g)</b>.</div>
   </div>
 
   <div class="grp"><h4>🥦 Produce</h4>
-    <div class="item"><label><input type="checkbox" data-k="p1"><span>Carrots — ~450 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Split: <b>~200 g steamed with Thursday's dinner · 60 g grated into Tuesday's muffins</b> · the rest cut into sticks for Wednesday's and Thursday's snacks.</div>
-    <div class="item"><label><input type="checkbox" data-k="p2"><span>Green beans — 200 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">The <b>pea replacement</b> — steamed alongside Thursday's chicken fingers.</div>
-    <div class="item"><label><input type="checkbox" data-k="p3"><span>Zucchini — 1 (~150 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Grated into <b>Tuesday's cheese &amp; veggie muffins</b> (100 g used).</div>
-    <div class="item"><label><input type="checkbox" data-k="p4"><span>Cucumber — 2</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Raw veggie sticks for <b>Wednesday's and Thursday's snacks</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="p5"><span>Apples — 4 (~600 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Friday's apple crisp.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="p6"><span>Lemon — 1</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Juice of ½ goes into the <b>apple crisp</b> filling.</div>
-    <div class="item"><label><input type="checkbox" data-k="p7"><span>Mixed berries or fruit — 150 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Blended into <b>Friday's frozen yogurt</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="p8"><span>Cauliflower — ½ head (~300 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Optional — the <b>low-carb rice swap</b> for Thursday's dinner.</div>
-    <div class="item"><label><input type="checkbox" data-k="p9"><span>Oranges — small bag</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Vitamin-C side for <b>Thursday's dinner</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="p10"><span>Mixed fresh fruit</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="item"><label><input type="checkbox" data-k="p1"><span>Onions — 4 (1 white, 3 yellow)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">White: <b>Big Mac Salad (¼)</b>. Yellow: <b>kids' chili (½) · soup (½) · lasagna (1) · perogies (1)</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="p2"><span>Garlic — 1 bulb</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Soup 3 cloves · lasagna 2 · Big Mac sauce 1.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="p3"><span>Iceberg lettuce — 1 small head</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Big Mac Salad</b> (Sun, parents).</div>
+    <div class="item"><label><input type="checkbox" data-k="p4"><span>Romaine — 1 head</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Shrimp Cobb salad</b> (Wed, parents).</div>
+    <div class="item"><label><input type="checkbox" data-k="p5"><span>Cherry tomatoes — 150 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Shrimp Cobb salad.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="p6"><span>Avocados — 2</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">1 large for the <b>Cobb salad</b>, 1 sliced alongside the <b>kids' quesadillas</b> — same night.</div>
+    <div class="item"><label><input type="checkbox" data-k="p7"><span>Limes — 4</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Cobb salad</b> takes most of these — 30 ml over the shrimp, 60 ml in the dressing, plus wedges. The rest goes over the quesadillas.</div>
+    <div class="item"><label><input type="checkbox" data-k="p8"><span>Lemon — 1</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Half, juiced, into the <b>soup</b> (Mon).</div>
+    <div class="item"><label><input type="checkbox" data-k="p9"><span>Cilantro — 1 large bunch</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Cobb dressing</b> (~15 g) plus a scatter over the <b>quesadillas</b> — same night.</div>
+    <div class="item"><label><input type="checkbox" data-k="p10"><span>Jalapeño — 1</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Cobb dressing</b> (Wed, parents).</div>
+    <div class="item"><label><input type="checkbox" data-k="p11"><span>Parsley — small bunch</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Soup</b> garnish (Mon, parents).</div>
+    <div class="item"><label><input type="checkbox" data-k="p12"><span>Celery — 2 stalks</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Soup</b> (Mon, parents).</div>
+    <div class="item"><label><input type="checkbox" data-k="p13"><span>Spinach — 250 g bag</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Splits: <b>soup 120 g (Mon) · lasagna 100 g (Tue)</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="p14"><span>Broccoli — 150 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Kids' casserole</b> (Mon).</div>
+    <div class="item"><label><input type="checkbox" data-k="p15"><span>Carrots — ~350 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Split: <b>2 sliced for Thursday's perogie side</b> · the rest into sticks for Wednesday's, Thursday's and the quesadilla veggie sides.</div>
+    <div class="item"><label><input type="checkbox" data-k="p16"><span>Cucumber — 2</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Raw veggie sticks across <b>Wednesday's and Thursday's</b> snacks and sides.</div>
+    <div class="item"><label><input type="checkbox" data-k="p17"><span>Green beans — 200 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">The <b>pea replacement</b> — steamed with Thursday's perogies.</div>
+    <div class="item"><label><input type="checkbox" data-k="p18"><span>Zucchini — 2</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Optional — the <b>low-carb lasagna</b> swap in place of pasta sheets (Tue).</div>
+    <div class="item"><label><input type="checkbox" data-k="p19"><span>Berries or fruit purée — 100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Blended into <b>Monday's frozen yogurt sandwiches</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="p20"><span>Mixed fresh fruit</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail">Fruit sides with the week's <b>lunches and snacks</b>.</div>
   </div>
 
   <div class="grp"><h4>🥫 Canned &amp; dry</h4>
-    <div class="item"><label><input type="checkbox" data-k="c1"><span>Rice — 250 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Thursday's dinner</b> (low-carb: cauliflower rice instead).</div>
-    <div class="item"><label><input type="checkbox" data-k="c2"><span>Breadcrumbs, egg-free — 150 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Chicken finger</b> coating — check they're egg-free and nut-free.</div>
-    <div class="item"><label><input type="checkbox" data-k="c3"><span>Cornstarch — 20 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Whisked into milk as the <b>egg-free wash</b> for the chicken fingers.</div>
-    <div class="item"><label><input type="checkbox" data-k="c4"><span>Flour — ~340 g total</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Splits: <b>chicken finger dredge 80 g · cheese &amp; veggie muffins 200 g · apple crisp topping 60 g</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="c5"><span>Ground flaxseed — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">The egg swap for <b>Tuesday's muffins</b> — 10 g used.</div>
-    <div class="item"><label><input type="checkbox" data-k="c6"><span>Rolled oats — 100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Apple crisp</b> topping (Fri).</div>
-    <div class="item"><label><input type="checkbox" data-k="c7"><span>Veggie straws — 1 bag, egg-free &amp; nut-free</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Wednesday's snack.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c8"><span>Dairy-free yogurt (coconut or oat) — 500 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Friday's frozen yogurt</b> — makes the whole batch safe, so there's no separate portion.</div>
-    <div class="item"><label><input type="checkbox" data-k="c9"><span>Juice — 1 carton</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Packed with <b>Tuesday's snack</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="c1"><span>Kidney or black beans — 400 g can</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Kids' chili</b> (Sun).</div>
+    <div class="item"><label><input type="checkbox" data-k="c2"><span>Diced tomatoes — 400 g can</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Kids' chili</b> (Sun).</div>
+    <div class="item"><label><input type="checkbox" data-k="c3"><span>Passata or crushed tomatoes — 700 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Lasagna</b> (Tue).</div>
+    <div class="item"><label><input type="checkbox" data-k="c4"><span>Tomato paste — small tube</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Lasagna</b> — 30 g used.</div>
+    <div class="item"><label><input type="checkbox" data-k="c5"><span>Artichoke hearts — 400 g can</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Soup</b> (Mon, parents).</div>
+    <div class="item"><label><input type="checkbox" data-k="c6"><span>Chicken broth — 1.4 L</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Soup</b> — this is also what poaches the week's chicken.</div>
+    <div class="item"><label><input type="checkbox" data-k="c7"><span>Rice — 100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Kids' casserole</b> (Mon).</div>
+    <div class="item"><label><input type="checkbox" data-k="c8"><span>Lasagna noodles, egg-free — 250 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Lasagna</b> (Tue) — plain dried sheets, not fresh or "egg pasta".</div>
+    <div class="item"><label><input type="checkbox" data-k="c9"><span>Frozen perogies, potato &amp; cheese — 1 kg</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Thursday's dinner</b> — check the dough is egg-free.</div>
+    <div class="item"><label><input type="checkbox" data-k="c10"><span>Flour tortillas, egg-free — 8 small</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Kids' quesadillas</b> (Wed).</div>
+    <div class="item"><label><input type="checkbox" data-k="c11"><span>Flour — ~250 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Splits: <b>cookies 200 g · casserole sauce 15 g</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="c12"><span>Rolled oats — 150 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Oatmeal raisin cookies</b> (bake Sunday).</div>
+    <div class="item"><label><input type="checkbox" data-k="c13"><span>Raisins — 80 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Oatmeal raisin cookies.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c14"><span>Ground flaxseed — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">The egg swap for the <b>cookie batch</b> — 10 g used.</div>
+    <div class="item"><label><input type="checkbox" data-k="c15"><span>Dairy-free yogurt (coconut or oat) — 400 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Monday's frozen yogurt sandwiches</b> — makes the whole batch safe.</div>
+    <div class="item"><label><input type="checkbox" data-k="c16"><span>Pickle slices — 1 jar</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Big Mac Salad</b> — 75 g used.</div>
+    <div class="item"><label><input type="checkbox" data-k="c17"><span>Dill relish — small jar</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Big Mac sauce</b> — 30 g used.</div>
+    <div class="item"><label><input type="checkbox" data-k="c18"><span>Hot honey — small jar</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Cobb salad shrimp</b> — 30 g used.</div>
+    <div class="item"><label><input type="checkbox" data-k="c19"><span>Pretzels — 1 bag, egg-free &amp; nut-free</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Thursday's snack.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c20"><span>Crackers — 1 box, egg-free &amp; nut-free</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Friday's snack.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c21"><span>Juice — 1 carton</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Packed with <b>Tuesday's rollups</b>.</div>
   </div>
 
-  <div class="grp"><h4>🍝 Carbs / bakery</h4>
-    <div class="item"><label><input type="checkbox" data-k="b1"><span>Sandwich bread, egg-free — 1 loaf</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Thursday's grilled cheese</b> — 8 slices needed.</div>
-  </div>
-
-  <div class="grp"><h4>🧀 Dairy — cooked uses only</h4>
-    <div class="item"><label><input type="checkbox" data-k="d1"><span>Milk — ~1.5 L total</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Cooking uses: chicken finger wash (150 ml) + muffin batter (180 ml) — both cooked, no raw dairy. The rest is drinking milk with the week's lunches and snacks.</div>
-    <div class="item"><label><input type="checkbox" data-k="d2"><span>Butter — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Grilled cheese (Thu) and the apple crisp topping (Fri).</div>
-    <div class="item"><label><input type="checkbox" data-k="d3"><span>Cheese — ~220 g total</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Splits: <b>cheese &amp; veggie muffins 100 g (shredded) · grilled cheese 120 g (sliced or shredded)</b>.</div>
-  </div>
-
-  <div class="grp"><h4>🌶️ Adult spice / extras</h4>
-    <div class="item"><label><input type="checkbox" data-k="s1"><span>Sriracha or hot sauce</span></label></div>
+  <div class="grp"><h4>🧀 Dairy</h4>
+    <div class="item"><label><input type="checkbox" data-k="d1"><span>Greek yogurt — 500 g tub</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Both parent dressings: <b>Big Mac sauce 120 g (Sun) · Cobb dressing 240 g (Wed)</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="d2"><span>Shredded cheddar — ~400 g total</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Splits: <b>chili 50 g · Big Mac Salad 85 g · casserole 60 g · quesadillas 120 g · Cobb salad 75 g</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="d3"><span>Mozzarella — 320 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Splits: <b>soup 110 g (Mon) · lasagna 200 g (Tue)</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="d4"><span>Parmesan — 160 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Splits: <b>soup 90 g + garnish (Mon) · lasagna 60 g (Tue)</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="d5"><span>Ricotta — 250 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Lasagna</b> (Tue) — baked in, so it counts as cooked dairy.</div>
+    <div class="item"><label><input type="checkbox" data-k="d6"><span>Firm cheese, sliced or cubed — ~250 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Tuesday's rollups (8 slices) · Friday's meat &amp; crackers (~100 g)</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="d7"><span>Milk — ~1.5 L</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Cooking use: the casserole sauce (200 ml), cooked. The rest is drinking milk with lunches and snacks.</div>
+    <div class="item"><label><input type="checkbox" data-k="d8"><span>Butter — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Casserole sauce, the cookie batch, and frying Thursday's perogies.</div>
+    <div class="item"><label><input type="checkbox" data-k="d9"><span>Eggs — 3</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Cobb salad only</b> (Wed, parents). ⚠️ Hard-boiled — keep them well clear of the kids' food.</div>
+    <div class="item"><label><input type="checkbox" data-k="d10"><span>Heavy cream — small carton (optional)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Optional 30 ml in the <b>soup</b> — skip it and the soup still works.</div>
+    <div class="item"><label><input type="checkbox" data-k="d11"><span>Sour cream — optional, adults only</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">With <b>Thursday's perogies</b>. ⚠️ Raw dairy — adults' plates only.</div>
   </div>
 </div>
 
@@ -478,14 +843,22 @@
   <h2 class="sec">Pantry check — assumed at home</h2>
   <p class="note">Left off the buy list assuming these are kept stocked. Quantities used this week shown — move any you're low on into the trip.</p>
   <div class="grp"><h4>🧂 Assumed staples (verify stock)</h4>
-    <div class="item"><label><input type="checkbox" data-k="pan1"><span>Cooking oil / olive oil <span class="pill">chicken finger tray + muffin batter</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan1"><span>Olive oil / neutral cooking oil</span></label></div>
     <div class="item"><label><input type="checkbox" data-k="pan2"><span>Salt &amp; black pepper</span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan3"><span>Paprika <span class="pill">1 tsp, chicken finger dredge</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan4"><span>Garlic powder <span class="pill">1 tsp, chicken finger dredge</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan5"><span>Baking powder <span class="pill">2 tsp, cheese &amp; veggie muffins</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan6"><span>Brown &amp; granulated sugar <span class="pill">apple crisp — 60 g brown, 30 g granulated</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan7"><span>Ground cinnamon <span class="pill">1 tsp, apple crisp</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan8"><span>Honey or maple syrup <span class="pill">to taste, frozen yogurt</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan3"><span>Ketchup <span class="pill">60 g, Big Mac sauce</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan4"><span>Dijon mustard <span class="pill">15 g, Big Mac sauce</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan5"><span>Frank's RedHot or hot sauce <span class="pill">Big Mac sauce + adult spice</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan6"><span>Smoked paprika <span class="pill">½ tsp, Big Mac sauce</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan7"><span>Chili powder <span class="pill">kids' chili + Cobb shrimp</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan8"><span>Ground cumin <span class="pill">½ tsp, kids' chili</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan9"><span>Dried oregano &amp; garlic powder <span class="pill">Cobb shrimp</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan10"><span>Red pepper flakes <span class="pill">½ tsp, soup</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan11"><span>Dried Italian herbs <span class="pill">1 tsp, lasagna</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan12"><span>Taco seasoning <span class="pill">½ tsp, quesadillas</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan13"><span>Baking soda <span class="pill">1 tsp, cookies</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan14"><span>Ground cinnamon <span class="pill">1 tsp, cookies</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan15"><span>Brown &amp; granulated sugar <span class="pill">150 g, cookies</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan16"><span>Honey or maple syrup <span class="pill">to taste, frozen yogurt</span></span></label></div>
   </div>
 </div>
 
@@ -494,42 +867,61 @@
   <h2 class="sec">Meal prep — by the day it happens</h2>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Monday</span><span class="pdtime">~55 min</span></div><span class="pdwhen">the big prep session — nothing is needed before tonight's dinner</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Sunday</span><span class="pdtime">~90 min</span></div><span class="pdwhen">the big session — one beef pan, one cookie batch</span></div>
     <ol>
-      <li><span class="time">8 min · carrots</span><br><b>Carrots — ~450 g.</b> Prep and split into labeled tubs: <em>~200 g cut for Thursday's steamed side</em> · <em>60 g grated for tonight's muffins</em> · the rest into sticks for Wednesday's and Thursday's snacks.</li>
-      <li><span class="time">3 min · zucchini</span><br><b>Zucchini — 1.</b> Grate 100 g for the muffins; squeeze out the excess water before it goes in.</li>
-      <li><span class="time">2 min · cucumber</span><br><b>Cucumber — 2.</b> Cut into sticks for Wednesday's and Thursday's snacks.</li>
-      <li><span class="time">2 min · green beans</span><br><b>Green beans — 200 g.</b> Trim and fridge for Thursday.</li>
-      <li><span class="time">25 min · bake</span><br><b>Cheese &amp; veggie muffins</b> (Tue snack) — bake tonight; freeze any extras.</li>
-      <li><span class="time">10 min · freeze</span><br><b>Dairy-free frozen yogurt</b> (Fri snack) — blend and freeze now. It needs at least 4 hrs and keeps all week.</li>
-      <li><span class="time">tonight</span><br><b>Spaghetti &amp; meat sauce</b> — your own recipe. Make enough for tomorrow's packed lunch as well.</li>
+      <li><span class="time">10 min · chop</span><br><b>Onions, carrots, cucumber.</b> Dice the onions into labeled tubs (chili, soup, lasagna, perogies, and the ¼ white onion for the Big Mac Salad). Cut the carrot and cucumber sticks for the week's snacks.</li>
+      <li><span class="time">15 min · one pan</span><br><b>Brown 650 g of ground beef</b> with just salt and pepper. Lift <em>450 g out for the Big Mac Salad</em>, then add the chili powder and cumin to the 200 g left in the pan.</li>
+      <li><span class="time">25 min · simmer</span><br><b>Kids' chili</b> — finish with the tomatoes and beans. Tonight's kid dinner, and Monday's packed lunch.</li>
+      <li><span class="time">5 min · whisk</span><br><b>Big Mac sauce</b> — whisk and keep in its own jar so the salad doesn't go soggy.</li>
+      <li><span class="time">25 min · bake</span><br><b>Oatmeal raisin cookies</b> — one batch covers Monday's frozen yogurt sandwiches and Wednesday's snack. Cool them fully.</li>
+      <li><span class="time">10 min · freeze</span><br><b>Frozen yogurt sandwiches</b> — blend the dairy-free yogurt with the fruit, sandwich between cooled cookies, wrap and freeze. They need at least 4 hrs.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Wednesday evening</span><span class="pdtime">~30 min</span></div><span class="pdwhen">tomorrow's lunch gets made tonight</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Monday evening</span><span class="pdtime">~50 min</span></div><span class="pdwhen">one pot poaches the week's chicken</span></div>
     <ol>
-      <li><span class="time">first thing</span><br><b>Defrost the bulgogi.</b> Pull it out in the morning if you can, or quick-thaw the sealed pack in cold water before you start cooking.</li>
-      <li><span class="time">~25 min · cook</span><br><b>Udon &amp; bulgogi stir-fry</b> — make enough for Thursday's packed lunch too.</li>
+      <li><span class="time">20 min · poach</span><br><b>Start the soup</b> and simmer the full <b>1 kg of chicken breasts</b> in the broth until cooked through.</li>
+      <li><span class="time">5 min · shred</span><br><b>Lift out 450 g and shred it.</b> 200 g goes into tonight's kids' casserole; bag the other 250 g for Wednesday's quesadillas.</li>
+      <li><span class="time">10 min · finish</span><br><b>Finish the soup</b> — artichokes, cheeses, cream if using, then the spinach.</li>
+      <li><span class="time">25 min · bake</span><br><b>Kids' casserole</b> — sauce, rice, broccoli and chicken, then into the oven. Tonight's kid dinner and Tuesday's packed lunch.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Thursday evening</span><span class="pdtime">~40 min</span></div><span class="pdwhen">alongside the chicken fingers</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Tuesday evening</span><span class="pdtime">~60 min</span></div><span class="pdwhen">everyone eats the same thing tonight</span></div>
     <ol>
-      <li><span class="time">40 min · bake</span><br><b>Apple crisp</b> (Fri snack) — assemble and bake while the chicken fingers are in the oven; they run at similar temperatures.</li>
+      <li><span class="time">50 min · bake</span><br><b>Lasagna</b> — build it and bake. Rest 10 min before cutting so it holds together for Wednesday's lunchbox.</li>
+      <li><span class="time">10 min · boil</span><br><b>Hard-boil 3 eggs</b> for tomorrow's Cobb salad and chill them overnight.</li>
+    </ol>
+  </div>
+
+  <div class="prepday">
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Wednesday evening</span><span class="pdtime">~35 min</span></div><span class="pdwhen">two dishes, shared board</span></div>
+    <ol>
+      <li><span class="time">5 min · prep once</span><br><b>Cheddar, avocado, limes, cilantro</b> — prep for both dishes in one go, then split.</li>
+      <li><span class="time">15 min · griddle</span><br><b>Kids' quesadillas</b> using the chicken bagged on Monday. Tonight's kid dinner and Thursday's packed lunch.</li>
+      <li><span class="time">20 min · cook</span><br><b>Shrimp Cobb salad</b> — cook the shrimp, blend the dressing, build the bowls. Keep the eggs on a separate board from the kids' food.</li>
+    </ol>
+  </div>
+
+  <div class="prepday">
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Thursday evening</span><span class="pdtime">~25 min</span></div><span class="pdwhen">everyone eats the same thing tonight</span></div>
+    <ol>
+      <li><span class="time">25 min · pan-fry</span><br><b>Ham perogies</b> — boil, then pan-fry with the ham and onion. Tonight's dinner and Friday's packed lunch.</li>
     </ol>
   </div>
 
   <div class="prepday">
     <div class="pdhead"><div class="pdtop"><span class="pdname">Nothing to prep ahead</span></div><span class="pdwhen">these come together same-day</span></div>
     <ol>
-      <li><span class="time">Wed · 2 min</span><br><b>Veggie straws</b> — just portion into bags with the veggie sticks and milk.</li>
-      <li><span class="time">Thu · 10 min</span><br><b>Grilled cheese</b> — best made the morning of, so it doesn't go soft.</li>
+      <li><span class="time">Tue · 5 min</span><br><b>Turkey &amp; cheese rollups</b> — roll and cut in the morning.</li>
+      <li><span class="time">Thu · 2 min</span><br><b>Pretzels</b> — portion into bags with the veggie sticks.</li>
+      <li><span class="time">Fri · 5 min</span><br><b>Meat, cheese &amp; crackers</b> — pack into compartments so the crackers stay crisp.</li>
     </ol>
   </div>
 
-  <p class="note"><b>Weeknights become:</b> Mon spaghetti (your recipe) · Tue free night · Wed stir-fry 25 m · Thu bread + bake chicken fingers 35 m · Fri free night.</p>
+  <p class="note"><b>Weeknights become:</b> Sun chili 25 m + salad assembly · Mon soup &amp; casserole 50 m (one pot does both) · Tue lasagna 50 m · Wed quesadillas + Cobb 35 m · Thu perogies 25 m · Fri free night.</p>
 </div>
 
 <footer>
@@ -538,7 +930,7 @@
 </div>
 
 <script>
-  var KEY='mealplan_2026_09_07_v1';
+  var KEY='mealplan_2026_09_14_v1';
   function showTab(name){
     document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id==='tab-'+name); });
     document.querySelectorAll('#tabbar button').forEach(function(b){ b.classList.toggle('active', b.dataset.tab===name); });
