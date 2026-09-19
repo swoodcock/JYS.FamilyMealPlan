@@ -203,18 +203,6 @@
         <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r2')">Ham Potato Soup + Ham Sandwich</a><small>Packed · matches daycare: Ham Potato Soup, Bologna Sandwich, Fruit, Milk</small></div>
       </div>
     </div>
-    <div class="day">
-      <div class="dbadge"><span class="dow">THU</span><span class="dnum">24</span></div>
-      <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-thu')">Pear Bread</a><small>Home-baked (egg-free) · matches daycare: Pear Bread, Milk</small></div>
-      </div>
-    </div>
-    <div class="day">
-      <div class="dbadge"><span class="dow">FRI</span><span class="dnum">25</span></div>
-      <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-fri')">Apple Cinnamon Muffins</a><small>Your standing swap · for daycare's: Apple Salsa Cinnamon Crisps, Milk</small></div>
-      </div>
-    </div>
   </div>
   <p class="note">Tap any dish to jump to its recipe. Monday's meatballs and rice are your own premade batch, so they have no recipe or shopping entries.</p>
 
@@ -409,91 +397,12 @@
       </div>
     </div>
   </details>
-
-  <details class="card" id="sn-thu">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Pear Bread</div><div class="s">Thursday snack · 1 loaf, ~10 slices</div></div><div class="chev">▾</div></summary>
-    <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (egg swap)</span><span class="tag t-veg">Hidden fruit</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Quick breads normally use egg — this one uses a flax egg (10 g ground flaxseed + 45 ml water, rested 5 min). Many pear bread recipes also fold in walnuts; <b>leave them out</b>.</div>
-      <h4>Ingredients</h4>
-      <ul>
-        <li>250 g flour</li>
-        <li>1 tsp baking soda · ½ tsp baking powder · ½ tsp salt</li>
-        <li>1 tsp cinnamon · ¼ tsp ground ginger</li>
-        <li>100 g brown sugar</li>
-        <li>80 ml neutral oil</li>
-        <li>1 flax egg (10 g ground flaxseed + 45 ml water, rested 5 min)</li>
-        <li>120 ml milk · 1 tsp vanilla</li>
-        <li>2 ripe pears (~300 g), peeled and grated</li>
-        <li>Milk, to drink</li>
-      </ul>
-      <h4>Method</h4>
-      <ol>
-        <li>Preheat oven to <b>180°C (350°F)</b>; grease and line a loaf pan.</li>
-        <li>Whisk the flour, baking soda, baking powder, salt and spices.</li>
-        <li>In another bowl, whisk the sugar, oil, flax egg, milk and vanilla. Stir in the grated pear.</li>
-        <li>Fold the dry ingredients into the wet until just combined.</li>
-        <li>Bake 50–60 min, until a skewer comes out clean. Cool completely before slicing, or it'll crumble.</li>
-      </ol>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Thursday's daycare snack (Pear Bread, Milk). Bake Wednesday evening, straight after the apple muffins.</div>
-      <div class="savewidget" data-recipe-id="sn-thu">
-        <button class="savebtn" onclick="toggleSave('sn-thu')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-sn-thu">
-          <textarea id="savenotes-sn-thu" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('sn-thu')">Submit</button>
-        </div>
-      </div>
-    </div>
-  </details>
-
-  <details class="card" id="sn-fri">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Apple Cinnamon Muffins</div><div class="s">Friday snack · makes 12</div></div><div class="chev">▾</div></summary>
-    <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-veg">Hidden fruit</span></div>
-      <div class="note kid"><span class="lbl">🔁 Your standing swap:</span> this is the recipe you chose a while back in place of the daycare's Apple Salsa Cinnamon Crisps, which are on the menu again.</div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Already egg-free — that's the point of this recipe, so no swap is needed. The sour cream is baked into the batter, so it counts as cooked dairy.</div>
-      <h4>Ingredients — muffins</h4>
-      <ul>
-        <li>240 g flour</li>
-        <li>1½ tsp baking powder · ¼ tsp baking soda · ½ tsp salt</li>
-        <li>½ tsp cinnamon · pinch of nutmeg</li>
-        <li>115 g butter, melted</li>
-        <li>100 g brown sugar · 50 g granulated sugar</li>
-        <li>120 g sour cream or plain yogurt</li>
-        <li>120 ml milk · 2 tsp vanilla</li>
-        <li>200 g apples, peeled and chopped (about 2)</li>
-      </ul>
-      <h4>Ingredients — cinnamon-sugar tops</h4>
-      <ul>
-        <li>40 g butter, melted</li>
-        <li>40 g granulated sugar · 1½ tsp cinnamon</li>
-      </ul>
-      <h4>Method</h4>
-      <ol>
-        <li>Preheat oven to <b>220°C (425°F)</b> and line a 12-hole muffin tin.</li>
-        <li>Whisk the flour, baking powder, baking soda, salt, cinnamon and nutmeg.</li>
-        <li>In a second bowl, whisk the melted butter, sour cream, both sugars and vanilla until smooth, then stir in the milk.</li>
-        <li>Fold the dry ingredients into the wet until only just combined, then fold in the apple. Don't overmix.</li>
-        <li>Fill the cases right to the top. Bake 5 min at 220°C, then <b>drop to 180°C (350°F)</b> and bake 14–15 min more, until a tester comes out clean.</li>
-        <li>Cool 5 min in the tin, then on a rack. Brush the tops with melted butter and dip in the cinnamon sugar.</li>
-      </ol>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> for Friday's daycare snack slot (Apple Salsa Cinnamon Crisps, Milk).</div>
-      <div class="note"><span class="lbl">Source:</span> adapted from <a href="https://vegehomecooking.com/apple-muffins/">Vege Home Cooking</a>, converted to metric.</div>
-      <div class="savewidget" data-recipe-id="sn-fri">
-        <button class="savebtn" onclick="toggleSave('sn-fri')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-sn-fri">
-          <textarea id="savenotes-sn-fri" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('sn-fri')">Submit</button>
-        </div>
-      </div>
-    </div>
-  </details>
 </div>
 
 <!-- ============ SHOPPING ============ -->
 <div class="panel shop" id="tab-shop">
   <h2 class="sec">Combined shopping list</h2>
-  <p class="note">Covers both dinners, Tuesday's and Wednesday's lunchboxes, and all five snacks. Nothing for Monday's meatballs and rice or Tuesday's zucchini muffins — you already have those. Tap <b>“For ⓘ”</b> for the breakdown on shared items; basic seasonings are on the <b>Pantry</b> tab.</p>
+  <p class="note">Covers both dinners, Tuesday's and Wednesday's lunchboxes, and the three snacks. Nothing for Monday's meatballs and rice or Tuesday's zucchini muffins — you already have those. Tap <b>“For ⓘ”</b> for the breakdown on shared items; basic seasonings are on the <b>Pantry</b> tab.</p>
   <button class="clearbtn" onclick="clearShop()">Reset checkboxes</button>
 
   <div class="grp"><h4>🥩 Meat</h4>
@@ -520,10 +429,6 @@
     <div class="detail">The <b>pea replacement</b> in the pot pie filling.</div>
     <div class="item"><label><input type="checkbox" data-k="p7"><span>Cucumber — 1</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail">Raw sticks with the celery and carrot.</div>
-    <div class="item"><label><input type="checkbox" data-k="p8"><span>Pears — 2 ripe</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Thursday's pear bread</b> — the riper the better.</div>
-    <div class="item"><label><input type="checkbox" data-k="p9"><span>Apples — 2</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Friday's apple muffins</b> — 200 g chopped.</div>
     <div class="item"><label><input type="checkbox" data-k="p10"><span>Oranges — small bag</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail">Vitamin-C side for <b>both dinners</b>.</div>
     <div class="item"><label><input type="checkbox" data-k="p11"><span>Mixed fresh fruit</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
@@ -535,10 +440,6 @@
     <div class="detail">Pot pie filling, alongside the green beans.</div>
     <div class="item"><label><input type="checkbox" data-k="c2"><span>Chicken broth — 1.5 L</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail">Splits: <b>pot pie 500 ml · soup 1 L</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="c3"><span>Flour — ~600 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Splits: <b>pear bread 250 g · apple muffins 240 g · pot pie 50 g · soup 30 g</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="c4"><span>Ground flaxseed — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">The egg swap in <b>Thursday's pear bread</b> — 10 g. The apple muffins don't need one.</div>
     <div class="item"><label><input type="checkbox" data-k="c5"><span>Sunflower seeds — 100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail"><b>Wednesday's seed trail mix.</b></div>
     <div class="item"><label><input type="checkbox" data-k="c6"><span>Pumpkin seeds — 100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
@@ -561,12 +462,10 @@
   </div>
 
   <div class="grp"><h4>🧀 Dairy</h4>
-    <div class="item"><label><input type="checkbox" data-k="d1"><span>Milk — ~2 L</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Cooking uses: pot pie 250 ml + soup 250 ml + pear bread 120 ml + apple muffins 120 ml, all cooked. The rest is drinking milk.</div>
-    <div class="item"><label><input type="checkbox" data-k="d2"><span>Butter — 1 block (250 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Splits: <b>apple muffins ~155 g with the tops · pot pie 50 g · soup 30 g</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="d3"><span>Sour cream or plain yogurt — 120 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Friday's apple muffins</b> — baked into the batter, so it's cooked dairy.</div>
+    <div class="item"><label><input type="checkbox" data-k="d1"><span>Milk — ~1.5 L</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Cooking uses: pot pie 250 ml + soup 250 ml, both cooked. The rest is drinking milk.</div>
+    <div class="item"><label><input type="checkbox" data-k="d2"><span>Butter — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Splits: <b>pot pie 50 g · soup 30 g</b>, plus a little for the sandwiches.</div>
     <div class="item"><label><input type="checkbox" data-k="d4"><span>Firm cheese — ~100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
     <div class="detail">Cubed for <b>Tuesday's snack</b>.</div>
     <div class="item"><label><input type="checkbox" data-k="d5"><span>Shredded cheddar — 100 g (optional)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
@@ -579,15 +478,10 @@
   <h2 class="sec">Pantry check — assumed at home</h2>
   <p class="note">Left off the buy list assuming these are kept stocked. Quantities used this week shown — move any you're low on into the trip.</p>
   <div class="grp"><h4>🧂 Assumed staples (verify stock)</h4>
-    <div class="item"><label><input type="checkbox" data-k="pan1"><span>Neutral cooking oil <span class="pill">80 ml, pear bread</span></span></label></div>
     <div class="item"><label><input type="checkbox" data-k="pan2"><span>Salt &amp; black pepper</span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan11"><span>Plain flour <span class="pill">80 g, pot pie + soup</span></span></label></div>
     <div class="item"><label><input type="checkbox" data-k="pan3"><span>Dried thyme <span class="pill">pot pie + soup</span></span></label></div>
     <div class="item"><label><input type="checkbox" data-k="pan4"><span>Bay leaf <span class="pill">1, soup</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan5"><span>Baking powder &amp; baking soda <span class="pill">pear bread + muffins</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan6"><span>Brown &amp; granulated sugar <span class="pill">~200 g brown, ~90 g granulated</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan7"><span>Ground cinnamon <span class="pill">pear bread, muffins + tops</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan8"><span>Ground ginger &amp; nutmeg <span class="pill">pear bread, muffins</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan9"><span>Vanilla extract <span class="pill">3 tsp across both bakes</span></span></label></div>
     <div class="item"><label><input type="checkbox" data-k="pan10"><span>Hot sauce <span class="pill">adults, both dinners</span></span></label></div>
   </div>
 </div>
@@ -622,14 +516,6 @@
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Wednesday evening</span><span class="pdtime">~80 min</span></div><span class="pdwhen">one oven session, mostly hands-off</span></div>
-    <ol>
-      <li><span class="time">25 min · bake first</span><br><b>Apple cinnamon muffins</b> (Fri snack). These go in first because they start hotter — 220°C for 5 min, then 180°C.</li>
-      <li><span class="time">60 min · bake second</span><br><b>Pear bread</b> (Thu snack). Mix it while the muffins bake; the oven's already sitting at 180°C when they come out, so it goes straight in.</li>
-    </ol>
-  </div>
-
-  <div class="prepday">
     <div class="pdhead"><div class="pdtop"><span class="pdname">Same-day, no prep ahead</span></div><span class="pdwhen">a few minutes in the morning</span></div>
     <ol>
       <li><span class="time">Mon · 3 min</span><br><b>Yogurt and grahams</b> — spoon, top with fruit, pack the grahams separately.</li>
@@ -638,7 +524,7 @@
     </ol>
   </div>
 
-  <p class="note"><b>Weeknights become:</b> Mon pot pie 50 m · Tue soup 40 m · Wed baking 80 m, most of it oven time.</p>
+  <p class="note"><b>Weeknights become:</b> Mon pot pie 50 m · Tue soup 40 m.</p>
 </div>
 
 <footer>
@@ -647,7 +533,7 @@
 </div>
 
 <script>
-  var KEY='mealplan_2026_09_21_v1';
+  var KEY='mealplan_2026_09_21_v2';
   function showTab(name){
     document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id==='tab-'+name); });
     document.querySelectorAll('#tabbar button').forEach(function(b){ b.classList.toggle('active', b.dataset.tab===name); });
