@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Meal Plan">
 <meta name="theme-color" content="#c0533f">
-<title>Meal Plan — Sep 21–25, 2026</title>
+<title>Meal Plan — Sep 27–Oct 2, 2026</title>
 <style>
   :root{
     --bg:#f6f5f2; --card:#ffffff; --ink:#22201c; --muted:#6b6459;
@@ -163,7 +163,7 @@
 <body id="top">
 <header>
   <h1>🍽️ Family Meal Plan</h1>
-  <div class="sub">Week of September 21–25, 2026 · Lunch &amp; Dinner · metric · <a href="recipes.html" style="color:#fff;">📖 Recipe Book</a></div>
+  <div class="sub">Week of September 27 – October 2, 2026 · Kids' lunches &amp; dinners · metric · <a href="recipes.html" style="color:#fff;">📖 Recipe Book</a></div>
 </header>
 
 <div class="tabs" id="tabbar">
@@ -179,39 +179,60 @@
 <!-- ============ PLAN ============ -->
 <div class="panel active" id="tab-plan">
   <h2 class="sec">The week — cook once, eat twice</h2>
+  <p class="note">Every dinner this week is <b>kid portions only</b> — two for dinner, two packed for the next day's lunch.</p>
   <div class="cal">
-    <div class="day">
-      <div class="dbadge"><span class="dow">MON</span><span class="dnum">21</span></div>
+    <div class="day weekend">
+      <div class="dbadge"><span class="dow">SUN</span><span class="dnum">27</span></div>
       <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-mon')">Dairy-Free Yogurt + Graham Wafers</a><small>Dairy-free swap · matches daycare: Yogurt, Graham Wafers, Fruit, Milk</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><span class="dishx">Meatballs &amp; Rice</span><small>Your premade · with celery and carrot sticks · matches daycare: Meatballs, Rice, Veggies, Fruit, Milk</small></div>
-        <div class="meal dinner"><span class="k">Dinner · all</span><a class="dish" onclick="openRecipe('r1')">Chicken Pot Pie</a><small>Whole family · cook ahead → matches Tuesday's daycare lunch</small></div>
+        <div class="meal none">Weekend — no daycare</div>
+        <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r1')">Cocktail Sausage &amp; Pepper Stir-Fry</a><small>Kid portions · cook ahead → matches Monday's daycare lunch</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">TUE</span><span class="dnum">22</span></div>
+      <div class="dbadge"><span class="dow">MON</span><span class="dnum">28</span></div>
       <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-tue')">Ham, Cheese &amp; Zucchini Muffin</a><small>Muffins from your freezer · matches daycare: Ham, Cheese, Zucchini Muffin, Water</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r1')">Chicken Pot Pie + Bun</a><small>Packed · matches daycare: Chicken Pot Pie, Buns, Fruit, Milk</small></div>
-        <div class="meal dinner"><span class="k">Dinner · all</span><a class="dish" onclick="openRecipe('r2')">Ham Potato Soup</a><small>Whole family · cook ahead → matches Wednesday's daycare lunch</small></div>
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-mon')">Rice Crispy Treats + Veggies</a><small>Home-made · matches daycare: Rice Crispy Treat, Veggie, Milk</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r1')">Cocktail Sausage &amp; Pepper Stir-Fry</a><small>Packed · in place of daycare's: Weiner &amp; Beans, Shredded Cheese, Veggies, Fruit, Milk</small></div>
+        <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r2')">Chicken &amp; Cauliflower Mac and Cheese</a><small>Kid portions · cook ahead → matches Tuesday's daycare lunch</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">WED</span><span class="dnum">23</span></div>
+      <div class="dbadge"><span class="dow">TUE</span><span class="dnum">29</span></div>
       <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-wed')">Seed Trail Mix + Raw Veggies</a><small>Nut-free · matches daycare: Trail Mix, Raw Veggies, Milk</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r2')">Ham Potato Soup + Ham Sandwich</a><small>Packed · matches daycare: Ham Potato Soup, Bologna Sandwich, Fruit, Milk</small></div>
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-tue')">Crispy Minis + Raw Veggies</a><small>Matches daycare: Crispy Minis, Raw Veggies, Milk</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r2')">Chicken &amp; Cauliflower Mac and Cheese</a><small>Packed · matches daycare: Chicken, cheese, Cauliflower Macaroni, Fruit, Milk</small></div>
+        <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r3')">Mexican Chicken and Rice</a><small>Kid portions · cook ahead → matches Wednesday's daycare lunch</small></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="dbadge"><span class="dow">WED</span><span class="dnum">30</span></div>
+      <div class="dmeals">
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-wed')">Hummus + Raw Veggies</a><small>Matches daycare: Hummus, Raw Veggies, Milk</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r3')">Mexican Chicken and Rice</a><small>Packed · matches daycare: Mexican Chicken and Rice, Fruit, Milk</small></div>
+        <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r4')">Cheeseburger Casserole</a><small>Kid portions · cook ahead → matches Thursday's daycare lunch</small></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="dbadge"><span class="dow">THU</span><span class="dnum">1</span></div>
+      <div class="dmeals">
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-thu')">Cinnamon Buns</a><small>Home-baked (egg-free) · matches daycare: Cinnamon Buns, Fruit, Milk</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r4')">Cheeseburger Casserole</a><small>Packed · matches daycare: Cheeseburger Casserole, Veggies, Fruit, Milk</small></div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="dbadge"><span class="dow">FRI</span><span class="dnum">2</span></div>
+      <div class="dmeals">
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-fri')">Dairy-Free Frozen Yogurt Pops</a><small>Make ahead · matches daycare: Frozen Yogurt Pop, Fruit, Water</small></div>
       </div>
     </div>
   </div>
-  <p class="note">Tap any dish to jump to its recipe. Monday's meatballs and rice are your own premade batch, so they have no recipe or shopping entries.</p>
+  <p class="note">Tap any dish to jump to its recipe.</p>
 
   <h2 class="sec">How to read the tags</h2>
   <div class="legend">
     <div class="row"><b>🚫 Allergen-safe</b><span>No <b>raw/uncooked dairy, egg, tree nut, peanut, or pea</b>. ✅ Cooked/baked milk &amp; melted cheese are used.</span></div>
-    <div class="row"><b>🔄 Low-carb</b><span>A <b>low-GI / low-carb swap</b> is given for each dinner.</span></div>
+    <div class="row"><b>👶 Kid portions</b><span>Sized for <b>2 kid dinners + 2 kid lunches</b>.</span></div>
     <div class="row"><b>🩸 Iron-rich</b><span>Iron sources <b>paired with vitamin C</b> to aid absorption, plus extra <b>fiber</b>.</span></div>
-    <div class="row"><b>🌶️ Adults</b><span>Spice added at the end; a <b>plain portion</b> pulled first where noted.</span></div>
   </div>
 </div>
 
@@ -220,38 +241,28 @@
   <h2 class="sec">Dinners</h2>
 
   <details class="card" id="r1">
-    <summary><div class="cnum">1</div><div class="ctitle"><div class="t">Chicken Pot Pie</div><div class="s">Monday dinner → Tuesday lunch · serves 4 + lunchbox</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">1</div><div class="ctitle"><div class="t">Cocktail Sausage &amp; Pepper Stir-Fry</div><div class="s">Sunday dinner → Monday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (2 swaps)</span><span class="tag t-iron">Iron boost</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-spice">Adult spice</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe — two swaps:</span> classic pot pie is built on <b>peas and carrots</b>, so the peas are replaced with green beans and corn. And the lid is normally <b>brushed with beaten egg</b> — this uses milk instead, which browns nearly as well. Also check the pastry itself is egg-free; most puff and shortcrust sheets are, but not all.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check sausages)</span><span class="tag t-iron">Iron-rich</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Check the cocktail sausages — most are just meat and seasoning, but some use egg or milk powder as a binder. The cheese goes on hot, so it's melted.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>700 g chicken thighs or breast, diced <span class="pill">iron</span></li>
-        <li>1 onion, diced · 2 carrots, diced · 2 celery stalks, diced <span class="pill">hidden veg</span></li>
-        <li>150 g green beans, cut short + 150 g frozen corn <span class="pill">no peas</span></li>
-        <li>50 g butter · 50 g flour</li>
-        <li>500 ml chicken broth · 250 ml milk</li>
-        <li>1 tsp dried thyme, salt, pepper</li>
-        <li>1 sheet puff pastry or shortcrust, egg-free</li>
-        <li>2 tbsp milk, for brushing — <b>not egg</b></li>
-        <li>Vitamin-C side: orange wedges <span class="pill">vit C</span></li>
-        <li>For Tuesday's lunchbox: 2 buns, egg-free</li>
+        <li>200 g cocktail sausages, halved <span class="pill">iron</span></li>
+        <li>1 bell pepper, diced · ½ onion, diced <span class="pill">vit C</span></li>
+        <li>Half a 400 g can black beans, drained &amp; rinsed (~120 g) <span class="pill">iron + fiber</span></li>
+        <li>1 tbsp ketchup + 1 tsp soy sauce + 2 tbsp water, for a light glaze</li>
+        <li>1 tsp oil</li>
+        <li>40 g shredded cheddar, to finish</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Preheat oven to <b>200°C (400°F)</b>.</li>
-        <li>Melt the butter in a large pan and soften the onion, carrot and celery, 6–8 min.</li>
-        <li>Add the chicken and cook until it's no longer pink on the outside.</li>
-        <li>Sprinkle in the flour and stir for a minute. Gradually add the broth, then the milk, stirring as it thickens; simmer 5 min.</li>
-        <li>Stir in the green beans, corn and thyme; season. <b>If making the low-carb portion, spoon it out now</b> into a small dish.</li>
-        <li>Pour the rest into a baking dish. Lay the pastry over, trim, press the edges down and cut a few steam slits. Brush with milk.</li>
-        <li>Bake 25–30 min until the pastry is puffed and golden.</li>
+        <li>Brown the sausages in the oil over medium-high heat, 3–4 min.</li>
+        <li>Add the onion and pepper and stir-fry until just soft, about 4 min.</li>
+        <li>Tip in the beans, then the ketchup, soy and water. Toss until glossy and heated through.</li>
+        <li>Scatter the cheddar over each portion so it melts in.</li>
       </ol>
-      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> the pastry is where the carbs are. Serve that portion as filling only, spooned out before the lid goes on, with extra green beans alongside.</div>
-      <div class="note iron"><span class="lbl">🩸 Iron boost:</span> chicken — pair with the vitamin-C orange wedges.</div>
-      <div class="note veg"><span class="lbl">🥦 Hidden veg:</span> carrot, celery, green beans and corn all cooked into the filling.</div>
-      <div class="note spice"><span class="lbl">🌶️ Adults:</span> cracked black pepper or hot sauce at the table.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> matches Tuesday's daycare tray (Chicken Pot Pie, Buns, Fruit, Milk) — pack with a bun and some fruit.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> sausage plus beans, with the bell pepper bringing plenty of vitamin C.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> stands in for Monday's daycare tray (Weiner &amp; Beans, Shredded Cheese, Veggies, Fruit, Milk). The other half-can of beans goes into Tuesday's Mexican chicken.</div>
       <div class="savewidget" data-recipe-id="r1">
         <button class="savebtn" onclick="toggleSave('r1')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-r1">
@@ -263,41 +274,27 @@
   </details>
 
   <details class="card" id="r2">
-    <summary><div class="cnum">2</div><div class="ctitle"><div class="t">Ham Potato Soup</div><div class="s">Tuesday dinner → Wednesday lunch · serves 4 + lunchbox</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">2</div><div class="ctitle"><div class="t">Chicken &amp; Cauliflower Mac and Cheese</div><div class="s">Monday dinner → Tuesday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron boost</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-spice">Adult spice</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Nothing to swap. The milk is heated through and the cheese is melted in, so both are cooked dairy, and there's no egg or peas anywhere.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-veg">Hidden veg</span><span class="tag t-iron">Iron boost</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Check the macaroni is egg-free — most dried pasta is. The cheese sauce is cooked milk.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>30 g butter</li>
-        <li>1 onion, diced · 2 carrots, diced · 2 celery stalks, diced <span class="pill">hidden veg</span></li>
-        <li>30 g flour</li>
-        <li>1 L chicken broth</li>
-        <li>800 g potatoes, peeled &amp; diced — or 400 g potatoes + 400 g cauliflower for the low-carb version</li>
-        <li>400 g cooked ham, diced <span class="pill">iron</span></li>
-        <li>250 ml milk</li>
-        <li>100 g shredded cheddar (optional)</li>
-        <li>1 bay leaf, ½ tsp dried thyme, salt, pepper</li>
-        <li>Vitamin-C side: orange wedges <span class="pill">vit C</span></li>
+        <li>170 g chicken thigh, diced</li>
+        <li>90 g macaroni, egg-free · 120 g cauliflower florets <span class="pill">hidden veg</span></li>
+        <li>Sauce: 10 g butter + 10 g flour + 180 ml milk + 50 g shredded cheddar</li>
+        <li>A handful of baby spinach, finely chopped (optional) <span class="pill">iron</span></li>
+        <li>Salt, pinch of paprika</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Melt the butter in a large pot and soften the onion, carrot and celery, 6–8 min.</li>
-        <li>Stir in the flour for a minute, then gradually whisk in the broth.</li>
-        <li>Add the potatoes, bay leaf and thyme. Simmer 15–20 min until the potatoes are tender.</li>
-        <li>Mash a few potato pieces against the side of the pot to thicken the soup.</li>
-        <li>Stir in the ham and milk and heat through without letting it boil. Add the cheddar if using, and stir until melted.</li>
-        <li>Remove the bay leaf and season.</li>
+        <li>Boil the macaroni and cauliflower together until tender. Keep a few florets whole.</li>
+        <li>Sear the chicken until cooked through.</li>
+        <li>Make the sauce: melt the butter, stir in the flour, whisk in the milk and simmer until thick, then melt in the cheddar. Mash the soft cauliflower into the sauce.</li>
+        <li>Fold the pasta, chicken, spinach and whole florets through the sauce.</li>
       </ol>
-      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> swap half the potatoes for cauliflower florets. They cook down and disappear into the soup, so nobody notices.</div>
-      <div class="note iron"><span class="lbl">🩸 Iron boost:</span> ham brings some iron — pair with the orange wedges.</div>
-      <div class="note spice"><span class="lbl">🌶️ Adults:</span> hot sauce and black pepper at the table.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> matches Wednesday's daycare tray (Ham Potato Soup, Bologna Sandwich, Fruit, Milk). Pack the soup in a thermos with a <b>ham or turkey sandwich in place of the bologna</b>:</div>
-      <ul>
-        <li>4 slices sandwich bread, egg-free</li>
-        <li>~100 g sliced ham or turkey</li>
-        <li>A little butter</li>
-      </ul>
+      <div class="note veg"><span class="lbl">🥦 Hidden veg:</span> cauliflower mashed right into the cheese sauce.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> matches Tuesday's daycare tray (Chicken, cheese, Cauliflower Macaroni, Fruit, Milk).</div>
       <div class="savewidget" data-recipe-id="r2">
         <button class="savebtn" onclick="toggleSave('r2')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-r2">
@@ -308,28 +305,96 @@
     </div>
   </details>
 
-  <h2 class="sec">Snacks</h2>
-  <p class="note">Matched to what's on the daycare's own tray each day. Raw veggies lean on <b>celery</b>, since it went down well last time.</p>
-
-  <details class="card" id="sn-mon">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Dairy-Free Yogurt + Graham Wafers</div><div class="s">Monday snack · serves 4</div></div><div class="chev">▾</div></summary>
+  <details class="card" id="r3">
+    <summary><div class="cnum">3</div><div class="ctitle"><div class="t">Mexican Chicken and Rice</div><div class="s">Tuesday dinner → Wednesday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (dairy swap)</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Regular yogurt is uncooked dairy, so this uses dairy-free coconut or oat yogurt for everyone. Check the graham wafers are egg-free.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron-rich</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Naturally egg-free. Check the taco seasoning is nut-free. Cheese on top is melted.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>400 g dairy-free coconut or oat yogurt</li>
-        <li>Graham wafers, egg-free</li>
-        <li>Fresh fruit — berries or sliced banana, to top</li>
+        <li>200 g chicken thigh, diced</li>
+        <li>½ onion, diced · ½ bell pepper, diced <span class="pill">hidden veg</span></li>
+        <li>70 g rice (dry)</li>
+        <li>⅓ of a 400 g can diced tomatoes (~130 g) <span class="pill">vit C</span></li>
+        <li>The other half-can of black beans (~120 g) + 70 g corn <span class="pill">iron + fiber</span></li>
+        <li>½ tsp mild taco seasoning</li>
+        <li>200 ml chicken broth</li>
+        <li>30 g shredded cheddar, to top</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Sear the chicken with the onion and pepper.</li>
+        <li>Stir in the rice, tomatoes, beans, corn, seasoning and broth. Cover and simmer about 20 min until the rice is tender, adding a splash of water if it dries out.</li>
+        <li>Top with cheddar to melt.</li>
+      </ol>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> chicken and black beans, with tomato for the vitamin C.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> matches Wednesday's daycare tray (Mexican Chicken and Rice, Fruit, Milk).</div>
+      <div class="savewidget" data-recipe-id="r3">
+        <button class="savebtn" onclick="toggleSave('r3')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-r3">
+          <textarea id="savenotes-r3" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('r3')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" id="r4">
+    <summary><div class="cnum">4</div><div class="ctitle"><div class="t">Cheeseburger Casserole</div><div class="s">Wednesday dinner → Thursday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron-rich</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Naturally egg-free — check the pasta label. The cheese is baked on top.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>230 g ground beef <span class="pill">iron</span></li>
+        <li>½ onion, diced · 1 small carrot, grated · ½ zucchini, grated <span class="pill">hidden veg</span></li>
+        <li>90 g macaroni, egg-free</li>
+        <li>⅓ of a 400 g can diced tomatoes (~130 g) + 10 g tomato paste <span class="pill">vit C</span></li>
+        <li>50 g shredded cheddar</li>
+        <li>Salt, pepper, pinch of garlic powder</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Preheat oven to <b>190°C (375°F)</b>. Cook the macaroni.</li>
+        <li>Brown the beef with the onion, then stir in the carrot and zucchini.</li>
+        <li>Add the tomatoes, paste and cooked pasta; season and mix well.</li>
+        <li>Spread in a small baking dish, top with cheddar, and bake 15–20 min until bubbling.</li>
+      </ol>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef, with tomato for the vitamin C.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> matches Thursday's daycare tray (Cheeseburger Casserole, Veggies, Fruit, Milk) — add celery sticks.</div>
+      <div class="savewidget" data-recipe-id="r4">
+        <button class="savebtn" onclick="toggleSave('r4')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-r4">
+          <textarea id="savenotes-r4" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('r4')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <h2 class="sec">Snacks</h2>
+  <p class="note">Matched to what's on the daycare's own tray each day. Raw veggies lead with <b>celery</b>.</p>
+
+  <details class="card" id="sn-mon">
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Rice Crispy Treats + Veggies</div><div class="s">Monday snack · makes ~8 squares</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Standard marshmallows are usually egg- and nut-free — check the bag for a nut warning.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>50 g butter</li>
+        <li>150 g mini marshmallows</li>
+        <li>85 g crisp rice cereal</li>
+        <li>Raw veggie sticks: celery, carrot</li>
         <li>Milk, to drink</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Spoon the yogurt into small lidded containers and top with fruit.</li>
-        <li>Pack the graham wafers separately so they stay crisp.</li>
-        <li>Send with milk.</li>
+        <li>Melt the butter and stir in the marshmallows until smooth.</li>
+        <li>Fold in the cereal, press into a small lined pan, cool and cut into squares.</li>
+        <li>Pack with veggie sticks and milk.</li>
       </ol>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Monday's daycare snack (Yogurt, Graham Wafers, Fruit, Milk).</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Monday's daycare snack (Rice Crispy Treat, Veggie, Milk).</div>
       <div class="savewidget" data-recipe-id="sn-mon">
         <button class="savebtn" onclick="toggleSave('sn-mon')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-sn-mon">
@@ -341,24 +406,22 @@
   </details>
 
   <details class="card" id="sn-tue">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Ham, Cheese &amp; Zucchini Muffin</div><div class="s">Tuesday snack · serves 4</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Crispy Minis + Raw Veggies</div><div class="s">Tuesday snack</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> The muffins are your own frozen batch, so no baking this week. Ham needs no swap, and firm cheese served cold is treated the same as the cheese cubes in earlier weeks.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Check the crackers are egg-free and nut-free.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>Zucchini muffins — from the freezer</li>
-        <li>~100 g sliced deli ham</li>
-        <li>~100 g firm cheese, cubed</li>
-        <li>Water, to drink</li>
+        <li>Whole-grain mini crackers or rice-cake minis, egg-free &amp; nut-free</li>
+        <li>Raw veggie sticks: celery, cucumber</li>
+        <li>Milk, to drink</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li><b>Monday night:</b> move the muffins you need from the freezer to the fridge.</li>
-        <li>Roll up the ham slices and pack with the cheese cubes and a muffin.</li>
-        <li>Send with water.</li>
+        <li>Portion the crackers into snack bags.</li>
+        <li>Pack with veggie sticks and milk.</li>
       </ol>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Tuesday's daycare snack (Ham, Cheese, Zucchini Muffin, Water).</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Tuesday's daycare snack (Crispy Minis, Raw Veggies, Milk).</div>
       <div class="savewidget" data-recipe-id="sn-tue">
         <button class="savebtn" onclick="toggleSave('sn-tue')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-sn-tue">
@@ -370,24 +433,22 @@
   </details>
 
   <details class="card" id="sn-wed">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Seed Trail Mix + Raw Veggies</div><div class="s">Wednesday snack · serves 4</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Hummus + Raw Veggies</div><div class="s">Wednesday snack</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Standard trail mix is built on tree nuts and peanuts — this seed-based version is safe for everyone, so there's no separate batch.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron boost</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Hummus is chickpeas and tahini — no egg, dairy, tree nut, peanut or pea. Glance at the label for any unusual additions.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>100 g roasted sunflower seeds</li>
-        <li>100 g roasted pumpkin seeds</li>
-        <li>50 g dried cranberries or raisins</li>
-        <li>Raw veggie sticks: <b>celery</b>, carrot, cucumber</li>
+        <li>Hummus — 1 small tub</li>
+        <li>Raw veggie sticks: celery, carrot, cucumber</li>
         <li>Milk, to drink</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Mix the seeds and dried fruit; portion into snack bags. Keeps all week at room temperature.</li>
-        <li>Pack with the veggie sticks and milk.</li>
+        <li>Spoon hummus into small lidded pots.</li>
+        <li>Pack with veggie sticks and milk.</li>
       </ol>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Wednesday's daycare snack (Trail Mix, Raw Veggies, Milk).</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Wednesday's daycare snack (Hummus, Raw Veggies, Milk).</div>
       <div class="savewidget" data-recipe-id="sn-wed">
         <button class="savebtn" onclick="toggleSave('sn-wed')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-sn-wed">
@@ -397,92 +458,162 @@
       </div>
     </div>
   </details>
+
+  <details class="card" id="sn-thu">
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Cinnamon Buns</div><div class="s">Thursday snack · makes 12, freeze the extras</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe (egg swap)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Enriched dough usually uses egg — this batch uses a flax egg instead (10 g ground flaxseed + 45 ml water, rested 5 min).</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>500 g bread flour, 7 g instant yeast, 50 g sugar, ½ tsp salt</li>
+        <li>250 ml warm milk, 50 g melted butter</li>
+        <li>1 flax egg (10 g ground flaxseed + 45 ml water, rested 5 min)</li>
+        <li>Filling: 80 g brown sugar, 2 tsp cinnamon, 40 g softened butter</li>
+        <li>Icing (optional): 100 g powdered sugar + 20 ml milk</li>
+        <li>Fresh fruit and milk, to serve</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Mix the flour, yeast, sugar and salt. Add the warm milk, melted butter and flax egg; knead into a soft dough. Rise 1 hr.</li>
+        <li>Roll out, spread with the softened butter, and sprinkle with cinnamon sugar. Roll up and slice into 12.</li>
+        <li>Rise 30 min more, then bake <b>180°C (350°F) 20–25 min</b> until golden. Drizzle with icing if using.</li>
+        <li>Freeze the ones you won't need this week — they reheat well.</li>
+      </ol>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Thursday's daycare snack (Cinnamon Buns, Fruit, Milk).</div>
+      <div class="savewidget" data-recipe-id="sn-thu">
+        <button class="savebtn" onclick="toggleSave('sn-thu')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-sn-thu">
+          <textarea id="savenotes-sn-thu" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('sn-thu')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" id="sn-fri">
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Dairy-Free Frozen Yogurt Pops</div><div class="s">Friday snack · makes ~6 pops</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe (dairy swap)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Frozen yogurt is still uncooked dairy, so this uses dairy-free coconut or oat yogurt — safe for both kids with no separate batch.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>300 g dairy-free coconut or oat yogurt</li>
+        <li>120 g berries, blended</li>
+        <li>Popsicle molds, or small cups and wooden sticks</li>
+        <li>Fresh fruit and water, to serve</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Swirl the blended berries through the yogurt.</li>
+        <li>Pour into molds and freeze at least 4 hrs. They keep all week, so make them early.</li>
+        <li>Pack frozen, with fruit and water.</li>
+      </ol>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Friday's daycare snack (Frozen Yogurt Pop, Fruit, Water).</div>
+      <div class="savewidget" data-recipe-id="sn-fri">
+        <button class="savebtn" onclick="toggleSave('sn-fri')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-sn-fri">
+          <textarea id="savenotes-sn-fri" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('sn-fri')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
 </div>
 
 <!-- ============ SHOPPING ============ -->
 <div class="panel shop" id="tab-shop">
   <h2 class="sec">Combined shopping list</h2>
-  <p class="note">Covers both dinners, Tuesday's and Wednesday's lunchboxes, and the three snacks. Nothing for Monday's meatballs and rice or Tuesday's zucchini muffins — you already have those. Tap <b>“For ⓘ”</b> for the breakdown on shared items; basic seasonings are on the <b>Pantry</b> tab.</p>
+  <p class="note">Four kid-portion dinners and all five snacks. Tap <b>“For ⓘ”</b> for the breakdown on shared items; basic seasonings are on the <b>Pantry</b> tab.</p>
   <button class="clearbtn" onclick="clearShop()">Reset checkboxes</button>
 
   <div class="grp"><h4>🥩 Meat</h4>
-    <div class="item"><label><input type="checkbox" data-k="m1"><span>Chicken thighs or breast — 700 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Chicken pot pie</b> (Mon).</div>
-    <div class="item"><label><input type="checkbox" data-k="m2"><span>Cooked ham, piece or steak — 400 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Diced into <b>Tuesday's ham potato soup</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="m3"><span>Deli ham, sliced — ~200 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Splits: <b>Tuesday's snack ~100 g · Wednesday's sandwich ~100 g</b>. Swap turkey in for the sandwich if you'd rather.</div>
+    <div class="item"><label><input type="checkbox" data-k="m1"><span>Cocktail sausages — 200 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Sunday's stir-fry.</b> Check the label for egg or milk powder.</div>
+    <div class="item"><label><input type="checkbox" data-k="m2"><span>Chicken thighs, boneless — ~400 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Splits: <b>mac and cheese 170 g (Mon) · Mexican chicken 200 g (Tue)</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="m3"><span>Ground beef — 230 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Cheeseburger casserole</b> (Wed).</div>
   </div>
 
   <div class="grp"><h4>🥦 Produce</h4>
-    <div class="item"><label><input type="checkbox" data-k="p1"><span>Celery — 1 bunch</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Splits: <b>pot pie 2 stalks · soup 2 stalks</b> · the rest as raw sticks for Monday's lunch and Wednesday's snack.</div>
-    <div class="item"><label><input type="checkbox" data-k="p2"><span>Carrots — ~700 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Splits: <b>pot pie 2 · soup 2</b> · the rest as raw sticks alongside the celery.</div>
-    <div class="item"><label><input type="checkbox" data-k="p3"><span>Onions — 2</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">1 each for the <b>pot pie</b> and the <b>soup</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="p4"><span>Potatoes — 800 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Ham potato soup</b> — or 400 g if you're doing the half-cauliflower low-carb version.</div>
-    <div class="item"><label><input type="checkbox" data-k="p5"><span>Cauliflower — ½ head (optional)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">The <b>low-carb soup</b> swap, standing in for half the potatoes.</div>
-    <div class="item"><label><input type="checkbox" data-k="p6"><span>Green beans — 150 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">The <b>pea replacement</b> in the pot pie filling.</div>
-    <div class="item"><label><input type="checkbox" data-k="p7"><span>Cucumber — 1</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Raw sticks with the celery and carrot.</div>
-    <div class="item"><label><input type="checkbox" data-k="p10"><span>Oranges — small bag</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Vitamin-C side for <b>both dinners</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="p11"><span>Mixed fresh fruit</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Fruit for the lunchboxes, and to top <b>Monday's yogurt</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="p1"><span>Bell peppers — 2</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">1 for the <b>stir-fry</b> (Sun), ½ for the <b>Mexican chicken</b> (Tue).</div>
+    <div class="item"><label><input type="checkbox" data-k="p2"><span>Onions — 2</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Half each for the <b>stir-fry, Mexican chicken and casserole</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="p3"><span>Celery — 1 bunch</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Raw sticks for <b>Monday, Tuesday and Wednesday's snacks</b> and Thursday's lunchbox.</div>
+    <div class="item"><label><input type="checkbox" data-k="p4"><span>Carrots — ~300 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">1 small grated into the <b>casserole</b> · the rest as snack sticks.</div>
+    <div class="item"><label><input type="checkbox" data-k="p5"><span>Cucumber — 1</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Snack sticks, <b>Tuesday and Wednesday</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="p6"><span>Cauliflower — small head or a bag of florets (120 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Mac and cheese</b> (Mon).</div>
+    <div class="item"><label><input type="checkbox" data-k="p7"><span>Zucchini — 1 small</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Half grated into the <b>casserole</b> (Wed).</div>
+    <div class="item"><label><input type="checkbox" data-k="p8"><span>Baby spinach — a handful (optional)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Mac and cheese</b> iron boost.</div>
+    <div class="item"><label><input type="checkbox" data-k="p9"><span>Berries — 120 g, plus fruit for the week</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Berries for <b>Friday's yogurt pops</b>; fruit for the lunchboxes and snacks.</div>
   </div>
 
   <div class="grp"><h4>🥫 Canned, frozen &amp; dry</h4>
-    <div class="item"><label><input type="checkbox" data-k="c1"><span>Frozen corn — 150 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Pot pie filling, alongside the green beans.</div>
-    <div class="item"><label><input type="checkbox" data-k="c2"><span>Chicken broth — 1.5 L</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Splits: <b>pot pie 500 ml · soup 1 L</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="c5"><span>Sunflower seeds — 100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Wednesday's seed trail mix.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c6"><span>Pumpkin seeds — 100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Wednesday's seed trail mix.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c7"><span>Dried cranberries or raisins — 50 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Wednesday's seed trail mix.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c8"><span>Graham wafers, egg-free — 1 box</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Monday's snack.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c9"><span>Dairy-free yogurt (coconut or oat) — 400 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Monday's snack</b> — the whole batch, so there's no separate portion.</div>
-  </div>
-
-  <div class="grp"><h4>🍞 Bakery</h4>
-    <div class="item"><label><input type="checkbox" data-k="b1"><span>Puff pastry or shortcrust sheet, egg-free — 1</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">The <b>pot pie</b> lid — check the label, as a few brands add egg.</div>
-    <div class="item"><label><input type="checkbox" data-k="b2"><span>Buns, egg-free — 2</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Packed with <b>Tuesday's pot pie</b> lunch.</div>
-    <div class="item"><label><input type="checkbox" data-k="b3"><span>Sandwich bread, egg-free — small loaf</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Wednesday's ham or turkey sandwich</b> — 4 slices.</div>
+    <div class="item"><label><input type="checkbox" data-k="c1"><span>Black beans — 400 g can</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Half into <b>Sunday's stir-fry</b>, half into <b>Tuesday's Mexican chicken</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="c2"><span>Diced tomatoes — 400 g can</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">A third each into the <b>Mexican chicken</b> and <b>casserole</b> — the last third freezes.</div>
+    <div class="item"><label><input type="checkbox" data-k="c3"><span>Tomato paste — small tube</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Casserole</b> — 10 g.</div>
+    <div class="item"><label><input type="checkbox" data-k="c4"><span>Frozen corn — 70 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Mexican chicken.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c5"><span>Macaroni, egg-free — 1 box (180 g used)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">90 g each for the <b>mac and cheese</b> and <b>casserole</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="c6"><span>Rice — 70 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Mexican chicken.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c7"><span>Chicken broth — small carton (200 ml used)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Mexican chicken.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c8"><span>Mini marshmallows — 150 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Rice crispy treats</b> — check for a nut warning.</div>
+    <div class="item"><label><input type="checkbox" data-k="c9"><span>Crisp rice cereal — 85 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Rice crispy treats.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c10"><span>Mini crackers, egg-free &amp; nut-free — 1 box</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Tuesday's snack.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c11"><span>Hummus — 1 small tub</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Wednesday's snack.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c12"><span>Bread flour — 500 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Cinnamon buns.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c13"><span>Instant yeast — 7 g packet</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Cinnamon buns.</b></div>
+    <div class="item"><label><input type="checkbox" data-k="c14"><span>Ground flaxseed — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">The egg swap in the <b>cinnamon buns</b> — 10 g.</div>
+    <div class="item"><label><input type="checkbox" data-k="c15"><span>Dairy-free yogurt (coconut or oat) — 300 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail"><b>Friday's yogurt pops.</b></div>
   </div>
 
   <div class="grp"><h4>🧀 Dairy</h4>
-    <div class="item"><label><input type="checkbox" data-k="d1"><span>Milk — ~1.5 L</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Cooking uses: pot pie 250 ml + soup 250 ml, both cooked. The rest is drinking milk.</div>
-    <div class="item"><label><input type="checkbox" data-k="d2"><span>Butter — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Splits: <b>pot pie 50 g · soup 30 g</b>, plus a little for the sandwiches.</div>
-    <div class="item"><label><input type="checkbox" data-k="d4"><span>Firm cheese — ~100 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Cubed for <b>Tuesday's snack</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="d5"><span>Shredded cheddar — 100 g (optional)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Stirred into the <b>soup</b> at the end.</div>
+    <div class="item"><label><input type="checkbox" data-k="d1"><span>Shredded cheddar — ~200 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Splits: <b>stir-fry 40 g · mac and cheese 50 g · Mexican chicken 30 g · casserole 50 g</b>.</div>
+    <div class="item"><label><input type="checkbox" data-k="d2"><span>Milk — ~1.5 L</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Cooking uses: mac sauce 180 ml + bun dough 250 ml, both cooked. The rest is drinking milk with snacks.</div>
+    <div class="item"><label><input type="checkbox" data-k="d3"><span>Butter — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
+    <div class="detail">Rice crispy treats 50 g · cinnamon buns 90 g · mac sauce 10 g.</div>
   </div>
 </div>
 
 <!-- ============ PANTRY ============ -->
 <div class="panel shop" id="tab-pantry">
   <h2 class="sec">Pantry check — assumed at home</h2>
-  <p class="note">Left off the buy list assuming these are kept stocked. Quantities used this week shown — move any you're low on into the trip.</p>
+  <p class="note">Left off the buy list assuming these are kept stocked.</p>
   <div class="grp"><h4>🧂 Assumed staples (verify stock)</h4>
+    <div class="item"><label><input type="checkbox" data-k="pan1"><span>Cooking oil</span></label></div>
     <div class="item"><label><input type="checkbox" data-k="pan2"><span>Salt &amp; black pepper</span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan11"><span>Plain flour <span class="pill">80 g, pot pie + soup</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan3"><span>Dried thyme <span class="pill">pot pie + soup</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan4"><span>Bay leaf <span class="pill">1, soup</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan10"><span>Hot sauce <span class="pill">adults, both dinners</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan3"><span>Ketchup &amp; soy sauce <span class="pill">stir-fry glaze</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan4"><span>Mild taco seasoning <span class="pill">½ tsp, Mexican chicken</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan5"><span>Paprika &amp; garlic powder <span class="pill">mac, casserole</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan6"><span>Plain flour <span class="pill">10 g, mac sauce</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan7"><span>Sugar, brown sugar &amp; powdered sugar <span class="pill">cinnamon buns</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan8"><span>Ground cinnamon <span class="pill">2 tsp, buns</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan9"><span>Popsicle molds</span></label></div>
   </div>
 </div>
 
@@ -491,49 +622,49 @@
   <h2 class="sec">Meal prep — by the day it happens</h2>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">This weekend</span><span class="pdtime">~25 min</span></div><span class="pdwhen">chopping and the trail mix</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Sunday</span><span class="pdtime">~55 min</span></div><span class="pdwhen">chop for the week, then tonight's stir-fry</span></div>
     <ol>
-      <li><span class="time">15 min · chop</span><br><b>Onion, carrot, celery.</b> Dice for both dinners and split into two labeled tubs — <em>Monday's pot pie</em> and <em>Tuesday's soup</em>, each 1 onion, 2 carrots and 2 celery stalks.</li>
-      <li><span class="time">5 min · sticks</span><br><b>Celery, carrot and cucumber sticks</b> for Monday's lunch and Wednesday's snack. Store them in water in the fridge and they stay crisp all week.</li>
-      <li><span class="time">5 min · mix</span><br><b>Seed trail mix</b> (Wed snack) — mix and portion now.</li>
-      <li><span class="time">Sun night</span><br><b>If the premade meatballs are frozen</b>, move them to the fridge for Monday's lunch.</li>
+      <li><span class="time">10 min · chop</span><br><b>Onions and peppers.</b> Dice both onions and split into three labeled tubs — stir-fry, Mexican chicken, casserole. Dice 1 pepper for tonight and half for Tuesday.</li>
+      <li><span class="time">10 min · sticks</span><br><b>Celery, carrot and cucumber sticks</b> for the week. Kept in water in the fridge, they stay crisp.</li>
+      <li><span class="time">15 min · cook</span><br><b>Sausage &amp; pepper stir-fry</b> — tonight's dinner and Monday's lunch. Put the other half-can of beans in a tub for Tuesday.</li>
+      <li><span class="time">10 min · freeze</span><br><b>Frozen yogurt pops</b> (Fri) — they need 4+ hrs, so make them now.</li>
+      <li><span class="time">10 min · set</span><br><b>Rice crispy treats</b> (Mon) — they keep in a sealed tin.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Monday evening</span><span class="pdtime">~50 min</span></div><span class="pdwhen">everyone eats the same thing tonight</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Monday evening</span><span class="pdtime">~25 min</span></div><span class="pdwhen">kid portions</span></div>
     <ol>
-      <li><span class="time">50 min · bake</span><br><b>Chicken pot pie</b> — tonight's dinner and Tuesday's packed lunch. Brush the lid with milk, not egg.</li>
-      <li><span class="time">1 min · thaw</span><br><b>Move the zucchini muffins</b> from the freezer to the fridge for Tuesday's snack.</li>
+      <li><span class="time">25 min · boil &amp; sauce</span><br><b>Mac and cheese</b> — tonight's dinner and Tuesday's lunch.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Tuesday evening</span><span class="pdtime">~40 min</span></div><span class="pdwhen">everyone eats the same thing tonight</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Tuesday evening</span><span class="pdtime">~30 min</span></div><span class="pdwhen">kid portions</span></div>
     <ol>
-      <li><span class="time">40 min · simmer</span><br><b>Ham potato soup</b> — tonight's dinner and Wednesday's thermos lunch.</li>
+      <li><span class="time">30 min · simmer</span><br><b>Mexican chicken and rice</b> — tonight's dinner and Wednesday's lunch. Uses the saved beans and a third of the tomato can.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Same-day, no prep ahead</span></div><span class="pdwhen">a few minutes in the morning</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Wednesday evening</span><span class="pdtime">~2 hrs, mostly rising</span></div><span class="pdwhen">start the bun dough first, then cook dinner while it rises</span></div>
     <ol>
-      <li><span class="time">Mon · 3 min</span><br><b>Yogurt and grahams</b> — spoon, top with fruit, pack the grahams separately.</li>
-      <li><span class="time">Tue · 3 min</span><br><b>Ham, cheese and muffin</b> — roll the ham, cube the cheese.</li>
-      <li><span class="time">Wed · 3 min</span><br><b>Ham or turkey sandwich</b> — make it the morning of, so the bread doesn't go soggy against the soup.</li>
+      <li><span class="time">15 min · knead</span><br><b>Cinnamon bun dough</b> (Thu snack) — mix and knead, then leave to rise 1 hr.</li>
+      <li><span class="time">35 min · bake</span><br><b>Cheeseburger casserole</b> — tonight's dinner and Thursday's lunch, made while the dough rises.</li>
+      <li><span class="time">55 min · roll &amp; bake</span><br><b>Shape the buns</b>, rise 30 min, bake. Freeze the extras.</li>
     </ol>
   </div>
 
-  <p class="note"><b>Weeknights become:</b> Mon pot pie 50 m · Tue soup 40 m.</p>
+  <p class="note"><b>Weeknights become:</b> Sun stir-fry 15 m · Mon mac 25 m · Tue Mexican chicken 30 m · Wed casserole + buns. Thursday is clear.</p>
 </div>
 
 <footer>
-  Allergen-safe: no raw dairy, egg, tree nut, peanut, or pea · Low-GI/low-carb swaps + iron-rich options included · metric.<br>Refresh next week with the new plan.
+  Allergen-safe: no raw dairy, egg, tree nut, peanut, or pea · iron-rich options included · metric.<br>Refresh next week with the new plan.
 </footer>
 </div>
 
 <script>
-  var KEY='mealplan_2026_09_21_v2';
+  var KEY='mealplan_2026_09_28_v1';
   function showTab(name){
     document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id==='tab-'+name); });
     document.querySelectorAll('#tabbar button').forEach(function(b){ b.classList.toggle('active', b.dataset.tab===name); });
