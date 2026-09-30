@@ -537,7 +537,7 @@
         have.appendChild(el('span', 'inv-unit', unitLabel));
 
         var par = el('label', 'inv-field inv-parf');
-        par.appendChild(el('span', null, 'Restock at'));
+        par.appendChild(el('span', null, 'Restock'));
         var pi = numInput(parOf(d.id) || null, '0', function (v) {
           if (v === null || v === (d.par || 0)) delete inv.par[d.id]; else inv.par[d.id] = v;
           if (v === null && d.par) inv.par[d.id] = 0;
