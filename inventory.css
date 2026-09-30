@@ -1,0 +1,44 @@
+/* Inventory, "made" tracking and computed shopping list — see inventory.js */
+
+/* "Mark as made" on recipe cards */
+.inv-madebox{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:0 0 12px; padding:10px 12px; border:1px dashed var(--line); border-radius:12px;}
+.inv-madebox.on{border-style:solid; border-color:var(--accent2); background:var(--chip);}
+.inv-madebtn{font-family:inherit; font-size:14px; font-weight:700; color:var(--accent2); background:var(--card); border:1px solid var(--accent2); border-radius:999px; padding:7px 14px; cursor:pointer;}
+.inv-madebox.on .inv-madebtn{color:#fff; background:var(--accent2);}
+.inv-madehint{font-size:12.5px; color:var(--muted);}
+.inv-badge{flex:0 0 auto; font-size:11px; font-weight:800; color:#fff; background:var(--accent2); border-radius:999px; padding:3px 8px;}
+
+/* Small toggle on the plan's dinner and snack rows */
+.inv-planbtn{font-family:inherit; font-size:11px; font-weight:700; color:var(--muted); background:transparent; border:1px solid var(--line); border-radius:999px; padding:1px 8px; margin-left:6px; cursor:pointer; vertical-align:middle;}
+.inv-planbtn.on{color:#fff; background:var(--accent2); border-color:var(--accent2);}
+.meal:has(.inv-planbtn.on) .dish{opacity:.6;}
+
+/* Shopping list */
+.inv-shop.done span{text-decoration:line-through; color:var(--muted);}
+.inv-extra{display:block; margin-top:3px; font-size:12.5px; font-weight:700; color:var(--spice); text-decoration:none;}
+.inv-shop.done .inv-extra{display:none;}
+details.inv-fold>summary{cursor:pointer; list-style:none; padding:12px 16px; font-size:13.5px; font-weight:700; background:var(--chip);}
+details.inv-fold>summary::-webkit-details-marker{display:none;}
+details.inv-fold[open]>summary{border-bottom:1px solid var(--line);}
+.inv-plain{font-size:14px; color:var(--muted);}
+
+/* Inventory tab */
+.inv-tools{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:8px 4px 4px;}
+.inv-view{display:inline-flex; background:var(--chip); border-radius:999px; padding:3px;}
+.inv-view button{font-family:inherit; font-size:13px; font-weight:700; color:var(--muted); background:transparent; border:none; border-radius:999px; padding:6px 12px; cursor:pointer;}
+.inv-view button.active{color:#fff; background:var(--accent2);}
+.inv-tools .clearbtn{margin:0;}
+.inv-row{align-items:center; flex-wrap:wrap;}
+.inv-dot{display:inline-block; flex:0 0 10px; width:10px; height:10px; border-radius:50%; background:var(--line);}
+.inv-dot.ok{background:var(--veg);} .inv-dot.low{background:var(--spice);} .inv-dot.short{background:var(--accent);}
+.inv-main{flex:1 1 150px; min-width:0;}
+.inv-name{font-weight:700; font-size:15px;}
+.inv-meta{font-size:12px; color:var(--muted);}
+.inv-fields{display:flex; gap:10px; flex:0 0 auto; margin-left:auto;}
+.inv-field{display:flex; flex-direction:column; font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.3px;}
+.inv-field>span:first-child{margin-bottom:2px;}
+.inv-num{width:84px; font-family:inherit; font-size:16px; padding:6px 8px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--ink);}
+.inv-parf .inv-num{width:70px;}
+.inv-unit{font-size:11px; font-weight:600; text-transform:none; letter-spacing:0; margin-top:2px;}
+.inv-legend{display:flex; flex-wrap:wrap; gap:12px; font-size:12.5px; color:var(--muted); margin:6px 4px;}
+.inv-legend span{display:inline-flex; align-items:center; gap:5px;}

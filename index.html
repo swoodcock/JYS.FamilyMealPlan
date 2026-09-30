@@ -159,7 +159,9 @@
   .pdwhen{display:block; font-size:12.5px; font-weight:600; opacity:.9; margin-top:3px;}
 
   footer{text-align:center; color:var(--muted); font-size:12.5px; padding:24px 16px 8px;}
-</style></head>
+</style>
+<link rel="stylesheet" href="inventory.css?v=1">
+</head>
 <body id="top">
 <header>
   <h1>🍽️ Family Meal Plan</h1>
@@ -170,6 +172,7 @@
   <button class="active" data-tab="plan" onclick="showTab('plan')">📅 Plan</button>
   <button data-tab="recipes" onclick="showTab('recipes')">🍳 Recipes</button>
   <button data-tab="shop" onclick="showTab('shop')">🛒 Shopping</button>
+  <button data-tab="inv" onclick="showTab('inv')">📦 Inventory</button>
   <button data-tab="pantry" onclick="showTab('pantry')">🧂 Pantry</button>
   <button data-tab="prep" onclick="showTab('prep')">🔪 Prep</button>
 </div>
@@ -185,44 +188,44 @@
       <div class="dbadge"><span class="dow">SUN</span><span class="dnum">27</span></div>
       <div class="dmeals">
         <div class="meal none">Weekend — no daycare</div>
-        <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r1')">Cocktail Sausage &amp; Pepper Stir-Fry</a><small>Kid portions · cook ahead → matches Monday's daycare lunch</small></div>
+        <div class="meal dinner" data-made="r1"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r1')">Cocktail Sausage &amp; Pepper Stir-Fry</a><small>Kid portions · cook ahead → matches Monday's daycare lunch</small></div>
       </div>
     </div>
     <div class="day">
       <div class="dbadge"><span class="dow">MON</span><span class="dnum">28</span></div>
       <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-mon')">Rice Crispy Treats + Veggies</a><small>Home-made · matches daycare: Rice Crispy Treat, Veggie, Milk</small></div>
+        <div class="meal snack" data-made="sn-mon"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-mon')">Rice Crispy Treats + Veggies</a><small>Home-made · matches daycare: Rice Crispy Treat, Veggie, Milk</small></div>
         <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r1')">Cocktail Sausage &amp; Pepper Stir-Fry</a><small>Packed · in place of daycare's: Weiner &amp; Beans, Shredded Cheese, Veggies, Fruit, Milk</small></div>
-        <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r2')">Chicken &amp; Cauliflower Mac and Cheese</a><small>Kid portions · cook ahead → matches Tuesday's daycare lunch</small></div>
+        <div class="meal dinner" data-made="r2"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r2')">Chicken &amp; Cauliflower Mac and Cheese</a><small>Kid portions · cook ahead → matches Tuesday's daycare lunch</small></div>
       </div>
     </div>
     <div class="day">
       <div class="dbadge"><span class="dow">TUE</span><span class="dnum">29</span></div>
       <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-tue')">Crispy Minis + Raw Veggies</a><small>Matches daycare: Crispy Minis, Raw Veggies, Milk</small></div>
+        <div class="meal snack" data-made="sn-tue"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-tue')">Crispy Minis + Raw Veggies</a><small>Matches daycare: Crispy Minis, Raw Veggies, Milk</small></div>
         <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r2')">Chicken &amp; Cauliflower Mac and Cheese</a><small>Packed · matches daycare: Chicken, cheese, Cauliflower Macaroni, Fruit, Milk</small></div>
-        <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r3')">Mexican Chicken and Rice</a><small>Kid portions · cook ahead → matches Wednesday's daycare lunch</small></div>
+        <div class="meal dinner" data-made="r3"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r3')">Mexican Chicken and Rice</a><small>Kid portions · cook ahead → matches Wednesday's daycare lunch</small></div>
       </div>
     </div>
     <div class="day">
       <div class="dbadge"><span class="dow">WED</span><span class="dnum">30</span></div>
       <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-wed')">Hummus + Raw Veggies</a><small>Matches daycare: Hummus, Raw Veggies, Milk</small></div>
+        <div class="meal snack" data-made="sn-wed"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-wed')">Hummus + Raw Veggies</a><small>Matches daycare: Hummus, Raw Veggies, Milk</small></div>
         <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r3')">Mexican Chicken and Rice</a><small>Packed · matches daycare: Mexican Chicken and Rice, Fruit, Milk</small></div>
-        <div class="meal dinner"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r4')">Cheeseburger Casserole</a><small>Kid portions · cook ahead → matches Thursday's daycare lunch</small></div>
+        <div class="meal dinner" data-made="r4"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r4')">Cheeseburger Casserole</a><small>Kid portions · cook ahead → matches Thursday's daycare lunch</small></div>
       </div>
     </div>
     <div class="day">
       <div class="dbadge"><span class="dow">THU</span><span class="dnum">1</span></div>
       <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-thu')">Cinnamon Buns</a><small>Home-baked (egg-free) · matches daycare: Cinnamon Buns, Fruit, Milk</small></div>
+        <div class="meal snack" data-made="sn-thu"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-thu')">Cinnamon Buns</a><small>Home-baked (egg-free) · matches daycare: Cinnamon Buns, Fruit, Milk</small></div>
         <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r4')">Cheeseburger Casserole</a><small>Packed · matches daycare: Cheeseburger Casserole, Veggies, Fruit, Milk</small></div>
       </div>
     </div>
     <div class="day">
       <div class="dbadge"><span class="dow">FRI</span><span class="dnum">2</span></div>
       <div class="dmeals">
-        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-fri')">Dairy-Free Frozen Yogurt Pops</a><small>Make ahead · matches daycare: Frozen Yogurt Pop, Fruit, Water</small></div>
+        <div class="meal snack" data-made="sn-fri"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-fri')">Dairy-Free Frozen Yogurt Pops</a><small>Make ahead · matches daycare: Frozen Yogurt Pop, Fruit, Water</small></div>
       </div>
     </div>
   </div>
@@ -523,81 +526,22 @@
 
 <!-- ============ SHOPPING ============ -->
 <div class="panel shop" id="tab-shop">
-  <h2 class="sec">Combined shopping list</h2>
-  <p class="note">Four kid-portion dinners and all five snacks. Tap <b>“For ⓘ”</b> for the breakdown on shared items; basic seasonings are on the <b>Pantry</b> tab.</p>
-  <button class="clearbtn" onclick="clearShop()">Reset checkboxes</button>
+  <h2 class="sec">Shopping list</h2>
+  <p class="note">Worked out from this week's recipes and what's in <b>Inventory</b>. Anything already on hand drops off. Ticking an item adds it to inventory; ticking <b>made</b> on a recipe takes its ingredients back out. Basic seasonings are on the <b>Pantry</b> tab.</p>
+  <div id="inv-shop"></div>
+</div>
 
-  <div class="grp"><h4>🥩 Meat</h4>
-    <div class="item"><label><input type="checkbox" data-k="m1"><span>Cocktail sausages — 200 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Sunday's stir-fry.</b> Check the label for egg or milk powder.</div>
-    <div class="item"><label><input type="checkbox" data-k="m2"><span>Chicken thighs, boneless — ~400 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Splits: <b>mac and cheese 170 g (Mon) · Mexican chicken 200 g (Tue)</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="m3"><span>Ground beef — 230 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Cheeseburger casserole</b> (Wed).</div>
+<!-- ============ INVENTORY ============ -->
+<div class="panel shop" id="tab-inv">
+  <h2 class="sec">Inventory — what's on hand</h2>
+  <p class="note">Enter what you have and it carries over from week to week. Leave a box blank for anything you don't want to track. <b>Restock at</b> is the level you like to keep; below it, the shopping list suggests topping up. Saved on this device only — use the backup buttons to copy it to another phone.</p>
+  <div class="inv-tools">
+    <div class="inv-view"><button type="button" data-view="week">This week's items</button><button type="button" data-view="all">All items</button></div>
+    <button type="button" class="clearbtn" id="inv-export">Copy backup</button>
+    <button type="button" class="clearbtn" id="inv-import">Restore</button>
   </div>
-
-  <div class="grp"><h4>🥦 Produce</h4>
-    <div class="item"><label><input type="checkbox" data-k="p1"><span>Bell peppers — 2</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">1 for the <b>stir-fry</b> (Sun), ½ for the <b>Mexican chicken</b> (Tue).</div>
-    <div class="item"><label><input type="checkbox" data-k="p2"><span>Onions — 2</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Half each for the <b>stir-fry, Mexican chicken and casserole</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="p3"><span>Celery — 1 bunch</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Raw sticks for <b>Monday, Tuesday and Wednesday's snacks</b> and Thursday's lunchbox.</div>
-    <div class="item"><label><input type="checkbox" data-k="p4"><span>Carrots — ~300 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">1 small grated into the <b>casserole</b> · the rest as snack sticks.</div>
-    <div class="item"><label><input type="checkbox" data-k="p5"><span>Cucumber — 1</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Snack sticks, <b>Tuesday and Wednesday</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="p6"><span>Cauliflower — small head or a bag of florets (120 g)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Mac and cheese</b> (Mon).</div>
-    <div class="item"><label><input type="checkbox" data-k="p7"><span>Zucchini — 1 small</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Half grated into the <b>casserole</b> (Wed).</div>
-    <div class="item"><label><input type="checkbox" data-k="p8"><span>Baby spinach — a handful (optional)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Mac and cheese</b> iron boost.</div>
-    <div class="item"><label><input type="checkbox" data-k="p9"><span>Berries — 120 g, plus fruit for the week</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Berries for <b>Friday's yogurt pops</b>; fruit for the lunchboxes and snacks.</div>
-  </div>
-
-  <div class="grp"><h4>🥫 Canned, frozen &amp; dry</h4>
-    <div class="item"><label><input type="checkbox" data-k="c1"><span>Black beans — 400 g can</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Half into <b>Sunday's stir-fry</b>, half into <b>Tuesday's Mexican chicken</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="c2"><span>Diced tomatoes — 400 g can</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">A third each into the <b>Mexican chicken</b> and <b>casserole</b> — the last third freezes.</div>
-    <div class="item"><label><input type="checkbox" data-k="c3"><span>Tomato paste — small tube</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Casserole</b> — 10 g.</div>
-    <div class="item"><label><input type="checkbox" data-k="c4"><span>Frozen corn — 70 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Mexican chicken.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c5"><span>Macaroni, egg-free — 1 box (180 g used)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">90 g each for the <b>mac and cheese</b> and <b>casserole</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="c6"><span>Rice — 70 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Mexican chicken.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c7"><span>Chicken broth — small carton (200 ml used)</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Mexican chicken.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c8"><span>Mini marshmallows — 150 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Rice crispy treats</b> — check for a nut warning.</div>
-    <div class="item"><label><input type="checkbox" data-k="c9"><span>Crisp rice cereal — 85 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Rice crispy treats.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c10"><span>Mini crackers, egg-free &amp; nut-free — 1 box</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Tuesday's snack.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c11"><span>Hummus — 1 small tub</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Wednesday's snack.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c12"><span>Bread flour — 500 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Cinnamon buns.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c13"><span>Instant yeast — 7 g packet</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Cinnamon buns.</b></div>
-    <div class="item"><label><input type="checkbox" data-k="c14"><span>Ground flaxseed — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">The egg swap in the <b>cinnamon buns</b> — 10 g.</div>
-    <div class="item"><label><input type="checkbox" data-k="c15"><span>Dairy-free yogurt (coconut or oat) — 300 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail"><b>Friday's yogurt pops.</b></div>
-  </div>
-
-  <div class="grp"><h4>🧀 Dairy</h4>
-    <div class="item"><label><input type="checkbox" data-k="d1"><span>Shredded cheddar — ~200 g</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Splits: <b>stir-fry 40 g · mac and cheese 50 g · Mexican chicken 30 g · casserole 50 g</b>.</div>
-    <div class="item"><label><input type="checkbox" data-k="d2"><span>Milk — ~1.5 L</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Cooking uses: mac sauce 180 ml + bun dough 250 ml, both cooked. The rest is drinking milk with snacks.</div>
-    <div class="item"><label><input type="checkbox" data-k="d3"><span>Butter — small pack</span></label><button class="info" onclick="tog(this)">For ⓘ</button></div>
-    <div class="detail">Rice crispy treats 50 g · cinnamon buns 90 g · mac sauce 10 g.</div>
-  </div>
+  <div class="inv-legend"><span><i class="inv-dot ok"></i>enough</span><span><i class="inv-dot low"></i>below restock level</span><span><i class="inv-dot short"></i>short this week</span><span><i class="inv-dot unk"></i>not tracked</span></div>
+  <div id="inv-list"></div>
 </div>
 
 <!-- ============ PANTRY ============ -->
@@ -713,7 +657,8 @@
     var notesEl = document.getElementById('savenotes-'+id);
     var notes = notesEl ? notesEl.value.replace(NOTES_ALLOWED, '').slice(0,300) : '';
     var widget = document.querySelector('.savewidget[data-recipe-id="'+id+'"]');
-    var html = card ? card.outerHTML : '';
+    var html = '';
+    if(card){ var copy = card.cloneNode(true); copy.querySelectorAll('.inv-ui').forEach(function(e){ e.remove(); }); html = copy.outerHTML; }
     fetch(SAVE_WORKER_URL, {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
@@ -729,5 +674,30 @@
     });
   }
 </script>
+<script>
+  // This week's recipes and what each uses. Ids match inventory.js's catalog;
+  // anything in `items` is a one-off for this week and isn't tracked.
+  var WEEK = {
+    id: '2026-09-28',
+    recipes: {
+      'r1':     { name: 'Sausage stir-fry', when: 'Sun', uses: { 'cocktail-sausage': 200, 'bell-pepper': 1, 'onion': 0.5, 'black-beans': 0.5, 'cheddar': 40 } },
+      'r2':     { name: 'Mac and cheese', when: 'Mon', uses: { 'chicken-thigh': 170, 'macaroni': 90, 'cauliflower': 120, 'butter': 10, 'flour': 10, 'milk': 180, 'cheddar': 50, 'baby-spinach': 20 } },
+      'r3':     { name: 'Mexican chicken', when: 'Tue', uses: { 'chicken-thigh': 200, 'onion': 0.5, 'bell-pepper': 0.5, 'rice': 70, 'diced-tomatoes': 0.33, 'black-beans': 0.5, 'frozen-corn': 70, 'chicken-broth': 200, 'cheddar': 30 } },
+      'r4':     { name: 'Cheeseburger casserole', when: 'Wed', uses: { 'ground-beef': 230, 'onion': 0.5, 'carrot': 60, 'zucchini': 0.5, 'macaroni': 90, 'diced-tomatoes': 0.33, 'tomato-paste': 10, 'cheddar': 50, 'celery': 2 } },
+      'sn-mon': { name: 'Rice crispy treats', when: 'Mon', uses: { 'butter': 50, 'mini-marshmallows': 150, 'rice-cereal': 85, 'celery': 2, 'carrot': 60, 'milk': 250 } },
+      'sn-tue': { name: 'Crispy minis', when: 'Tue', uses: { 'mini-crackers': 1, 'celery': 2, 'cucumber': 0.5, 'milk': 250 } },
+      'sn-wed': { name: 'Hummus + veggies', when: 'Wed', uses: { 'hummus': 1, 'celery': 2, 'carrot': 60, 'cucumber': 0.5, 'milk': 250 } },
+      'sn-thu': { name: 'Cinnamon buns', when: 'Thu', uses: { 'bread-flour': 500, 'yeast': 7, 'sugar': 50, 'brown-sugar': 80, 'milk': 520, 'butter': 90, 'flaxseed': 10 } },
+      'sn-fri': { name: 'Yogurt pops', when: 'Fri', uses: { 'dairy-free-yogurt': 300, 'frozen-berries': 120 } }
+    },
+    items: {
+      'cocktail-sausage': { name: 'Cocktail sausages', group: 'meat', unit: 'g', note: 'Check the label for egg or milk powder.' },
+      'mini-crackers':    { name: 'Mini crackers, egg-free & nut-free', group: 'dry', unit: 'box' },
+      'hummus':           { name: 'Hummus', group: 'dry', unit: 'tub' },
+      'fresh-fruit':      { name: 'Fresh fruit', group: 'produce', text: 'for lunchboxes and snacks', always: true }
+    }
+  };
+</script>
+<script src="inventory.js?v=1"></script>
 </body>
 </html>
