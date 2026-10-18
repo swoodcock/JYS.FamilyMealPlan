@@ -45,6 +45,8 @@
     { id: 'baby-spinach', name: 'Baby spinach', group: 'produce', unit: 'g', pack: 150, packName: 'bag' },
     { id: 'potato', name: 'Potatoes', group: 'produce', unit: 'g' },
     { id: 'green-beans', name: 'Green beans', group: 'produce', unit: 'g' },
+    { id: 'green-onion', name: 'Green onions', group: 'produce', unit: 'stalk', pack: 6, packName: 'bunch', packPlural: 'bunches' },
+    { id: 'mushrooms', name: 'Mushrooms', group: 'produce', unit: 'g', pack: 227, packName: 'pack' },
     { id: 'garlic', name: 'Garlic', group: 'produce', unit: 'clove', pack: 10, packName: 'bulb', par: 5 },
     { id: 'lemon', name: 'Lemons', group: 'produce', unit: '' },
     { id: 'lime', name: 'Limes', group: 'produce', unit: '' },
