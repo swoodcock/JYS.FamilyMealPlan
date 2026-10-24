@@ -219,7 +219,7 @@
         <div class="meal snack" data-made="sn-thu"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-thu')">Pretzels + Veggies + Milk</a><small>Check label · matches daycare: Pretzels, Veggies, Milk</small></div>
         <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r4')">Chicken &amp; Bean Quesadillas</a><small>Packed · matches daycare: Chicken Quesadillas, Raw Veggies, Fruit, Milk</small></div>
         <div class="meal dinner" data-made="r5"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r5')">Ham &amp; Perogies + Veggies</a><small>Kid portions · cook ahead → matches Friday's daycare lunch</small></div>
-        <div class="meal parent" data-made="p1"><span class="k">Dinner · parents</span><a class="dish" onclick="openRecipe('p1')">Beef Chili</a><small>Parents only · extra portions freeze well</small></div>
+        <div class="meal parent" data-made="p1"><span class="k">Dinner · parents</span><a class="dish" onclick="openRecipe('p1')">Beef Chili</a><small>From the freezer · parents only</small></div>
       </div>
     </div>
     <div class="day">
@@ -410,26 +410,24 @@
   </details>
 
   <details class="card" id="p1">
-    <summary><div class="cnum">P</div><div class="ctitle"><div class="t">Beef Chili</div><div class="s">Thursday parents' dinner · 2 parent dinners + 2 to freeze</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">P</div><div class="ctitle"><div class="t">Beef Chili</div><div class="s">Thursday parents' dinner · from the freezer · 2 parent dinners</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
       <div class="tags"><span class="tag t-par">Parents</span><span class="tag t-iron">Iron-rich</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-spice">Adult spice</span></div>
       <h4>Ingredients</h4>
       <ul>
-        <li>450 g ground beef <span class="pill">iron</span></li>
-        <li>1 onion, 1 red bell pepper <span class="pill">vit C</span>, 3 cloves garlic, chopped</li>
-        <li>1 can kidney beans, drained · 1 can diced tomatoes · 30 g tomato paste</li>
-        <li>1 tbsp chili powder + 1 tsp cumin + ½ tsp oregano</li>
+        <li>Your chili from the freezer, 2 portions <span class="pill">iron</span></li>
         <li>300 g cauliflower, riced, to serve</li>
+        <li>Optional: ½ cucumber or a few pepper sticks from the week's veg, on the side <span class="pill">vit C</span></li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Brown the beef in a heavy pot. Add the onion, pepper and garlic and cook 5 min.</li>
-        <li>Stir in the spices and tomato paste for 1 min, then the tomatoes, beans and 200 ml water.</li>
-        <li>Simmer 30 min, partly covered, until thick. Freeze any leftovers in portions.</li>
+        <li>Move the chili to the fridge on Wednesday night to thaw.</li>
+        <li>Reheat in a covered pot with a splash of water, stirring now and then, until bubbling right through, 10–15 min.</li>
+        <li>Meanwhile, pan-fry the riced cauliflower in a little oil with a pinch of salt, 5 min.</li>
       </ol>
-      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> already fairly low-GI with the beans. Serve over the riced cauliflower, pan-fried 5 min, instead of rice or bread.</div>
+      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> serve over the riced cauliflower instead of rice or bread.</div>
       <div class="note spice"><span class="lbl">🌶️ Adult spice:</span> chipotle, cayenne or hot sauce to taste.</div>
-      <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef and kidney beans, with tomato and red pepper for vitamin C.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef and beans, with fresh veg on the side for vitamin C.</div>
       <div class="savewidget" data-recipe-id="p1">
         <button class="savebtn" onclick="toggleSave('p1')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-p1">
@@ -612,12 +610,15 @@
 <!-- ============ PANTRY ============ -->
 <div class="panel shop" id="tab-pantry">
   <h2 class="sec">Pantry check — assumed at home</h2>
-  <p class="note">Seasonings and odds and ends. None of this is on the shopping list.</p>
+  <p class="note">Seasonings, odds and ends, and what's coming out of the freezer. None of this is on the shopping list.</p>
+  <div class="grp"><h4>🧊 From the freezer</h4>
+    <div class="item"><label><input type="checkbox" data-k="frz1"><span>Beef chili, 2 parent portions <span class="pill">Thu parents</span></span></label></div>
+  </div>
   <div class="grp"><h4>🧂 Assumed staples (verify stock)</h4>
     <div class="item"><label><input type="checkbox" data-k="pan1"><span>Cooking oil &amp; olive oil</span></label></div>
     <div class="item"><label><input type="checkbox" data-k="pan2"><span>Salt &amp; black pepper</span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan3"><span>Dried oregano &amp; nutmeg <span class="pill">lasagna, chili</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan4"><span>Chili powder, cumin &amp; smoked paprika <span class="pill">chili, quesadillas</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan3"><span>Dried oregano &amp; nutmeg <span class="pill">lasagna</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan4"><span>Cumin &amp; smoked paprika <span class="pill">quesadillas</span></span></label></div>
     <div class="item"><label><input type="checkbox" data-k="pan5"><span>Hot sauce or chipotle <span class="pill">adult spice</span></span></label></div>
     <div class="item"><label><input type="checkbox" data-k="pan6"><span>Vanilla extract <span class="pill">cookies</span></span></label></div>
     <div class="item"><label><input type="checkbox" data-k="pan7"><span>Gel food colouring, orange &amp; black <span class="pill">cookies</span></span></label></div>
@@ -660,13 +661,14 @@
       <li><span class="time">10 min · dough</span><br><b>Cookie dough</b> first, so it can chill while you cook.</li>
       <li><span class="time">25 min · stovetop</span><br><b>Chicken &amp; bean quesadillas</b> — kids' dinner and Thursday's lunch.</li>
       <li><span class="time">20 min · bake</span><br><b>Halloween cookies</b> (Fri) — roll, cut and bake. Store in a tin once cool.</li>
+      <li><span class="time">1 min · freezer</span><br><b>Chili</b> into the fridge to thaw for Thursday.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Thursday evening</span><span class="pdtime">~45 min</span></div><span class="pdwhen">chili simmers while the perogies cook</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Thursday evening</span><span class="pdtime">~25 min</span></div><span class="pdwhen">chili reheats while the perogies cook</span></div>
     <ol>
-      <li><span class="time">10 min + 30 min simmer</span><br><b>Beef chili</b> — parents' dinner. Get it simmering first.</li>
+      <li><span class="time">15 min · reheat</span><br><b>Beef chili</b> from the freezer — parents' dinner, over pan-fried riced cauliflower.</li>
       <li><span class="time">20 min · stovetop</span><br><b>Ham &amp; perogies</b> — kids' dinner and Friday's lunch.</li>
       <li><span class="time">5 min · icing</span><br><b>Cookie icing</b> into small tubs, with the sprinkles.</li>
     </ol>
@@ -759,6 +761,7 @@
 <script>
   // This week's recipes and what each uses. Ids match inventory.js's catalog;
   // anything in `items` is a one-off for this week and isn't tracked.
+  // The chili comes from the freezer and isn't listed.
   // Drinking milk for each packed lunch (2 kids) is counted on the dinner that makes it.
   // Thursday's snack also comes with milk, counted on the snack.
   var WEEK = {
@@ -769,7 +772,7 @@
       'r3':     { name: 'Beef lasagna (family)', when: 'Tue', uses: { 'ground-beef': 500, 'onion': 1, 'garlic': 3, 'carrot': 100, 'zucchini': 0.5, 'crushed-tomatoes': 2, 'tomato-paste': 30, 'baby-spinach': 60, 'lasagna-noodles': 250, 'butter': 40, 'flour': 40, 'milk': 850, 'mozzarella': 150, 'bell-pepper': 1, 'cucumber': 0.5 } },
       'r4':     { name: 'Chicken & bean quesadillas (kids)', when: 'Wed', uses: { 'tortillas': 4, 'chicken-breast': 250, 'black-beans': 1, 'frozen-corn': 60, 'bell-pepper': 0.5, 'baby-spinach': 20, 'cucumber': 0.5, 'carrot': 60, 'milk': 250 } },
       'r5':     { name: 'Ham & perogies + veggies (kids)', when: 'Thu', uses: { 'frozen-perogies': 600, 'ham-steak': 150, 'onion': 0.5, 'butter': 20, 'green-beans': 200, 'carrot': 60, 'milk': 250 } },
-      'p1':     { name: 'Beef chili (parents)', when: 'Thu', uses: { 'ground-beef': 450, 'onion': 1, 'bell-pepper': 1, 'garlic': 3, 'kidney-beans': 1, 'diced-tomatoes': 1, 'tomato-paste': 30, 'cauliflower': 300 } },
+      'p1':     { name: 'Beef chili from the freezer (parents)', when: 'Thu', uses: { 'cauliflower': 300 } },
       'sn-mon': { name: 'Sorbet bar + fruit', when: 'Mon', uses: { 'sorbet-bars': 2 } },
       'sn-tue': { name: 'Turkey roll-ups + juice', when: 'Tue', uses: { 'tortillas': 2, 'deli-meat': 60, 'cucumber': 0.25, 'juice': 2 } },
       'sn-wed': { name: 'Ham + crackers + fruit', when: 'Wed', uses: { 'deli-meat': 60, 'crackers': 1 } },
