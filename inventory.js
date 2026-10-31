@@ -189,8 +189,13 @@
   /* ---------------- core calculations ---------------- */
   function isMade(rid) { return Object.prototype.hasOwnProperty.call(ws.made, rid); }
 
+  // A recipe can list ingredient ids under `later`: perishables bought closer
+  // to the day, shown in their own "buy later" list instead of the main one.
+  function isLater(r, id) { return Array.isArray(r.later) && r.later.indexOf(id) >= 0; }
+
   // What the rest of the week still needs, with the per-recipe breakdown.
-  function needs() {
+  // which: 'now' leaves out `later` uses, 'later' keeps only them, omitted = everything.
+  function needs(which) {
     var out = {};
     Object.keys(W.recipes).forEach(function (rid) {
       if (isMade(rid)) return;
@@ -198,6 +203,8 @@
       Object.keys(uses).forEach(function (id) {
         var q = num(uses[id]);
         if (!q || !def(id)) return;
+        if (which === 'now' && isLater(r, id)) return;
+        if (which === 'later' && !isLater(r, id)) return;
         if (!out[id]) out[id] = { total: 0, by: [] };
         out[id].total = round(out[id].total + q);
         out[id].by.push([rid, q]);
@@ -345,7 +352,7 @@
     var host = document.getElementById('inv-shop');
     if (!host) return;
     host.textContent = '';
-    var need = needs();
+    var need = needs('now'), allNeed = needs();
     var buckets = {}, onHand = [], check = [], restock = [];
     GROUPS.forEach(function (g) { buckets[g[0]] = []; });
 
@@ -422,7 +429,7 @@
 
     // Not needed this week, but tracked and below the restock level.
     CATALOG.forEach(function (d) {
-      if (need[d.id] || ws.bought[d.id] || !has(d.id)) return;
+      if (allNeed[d.id] || ws.bought[d.id] || !has(d.id)) return;
       var p = parOf(d.id), h = inv.have[d.id];
       if (p > 0 && h < p) restock.push([d.id, roundBuy(p - h, d), 0]);
     });
@@ -474,6 +481,45 @@
       });
       host.appendChild(os);
     }
+    renderLater(need);
+  }
+
+  // Perishables for later in the plan: tick-only, so buying them early doesn't
+  // change inventory. Counts what's left after the main list's recipes.
+  function renderLater(nowNeed) {
+    var host = document.getElementById('inv-shop-later');
+    if (!host) return;
+    host.textContent = '';
+    var ln = needs('later'), buckets = {}, any = false;
+    GROUPS.forEach(function (g) { buckets[g[0]] = []; });
+    Object.keys(ln).forEach(function (id) {
+      var d = def(id), n = ln[id], key = 'later:' + id;
+      var detail = [breakdown(id, n)];
+      if (d.note) detail.push(d.note);
+      var qty;
+      if (LOCAL[id]) qty = d.text || qtyText(roundBuy(n.total, d), d);
+      else {
+        if (!has(id) && d.staple) return;
+        var left = has(id) ? Math.max(0, inv.have[id] - (nowNeed[id] ? nowNeed[id].total : 0)) : 0;
+        var short = round(n.total - left);
+        if (short <= 0) return;
+        qty = qtyText(roundBuy(short, d), d);
+        detail.push('Need ' + amt(n.total, d) + ' · ' + (has(id) ? amt(left, d) + ' left after the main list' : 'none tracked') + '.');
+      }
+      (buckets[d.group] || buckets.other).push(shopRow({
+        name: d.name, qty: qty, detail: detail, done: !!ws.ticked[key],
+        onToggle: function () { ws.ticked[key] = !ws.ticked[key]; saveWeek(); renderShop(); }
+      }));
+    });
+    GROUPS.forEach(function (g) {
+      if (!buckets[g[0]].length) return;
+      any = true;
+      var grp = el('div', 'grp');
+      grp.appendChild(el('h4', null, g[1]));
+      buckets[g[0]].forEach(function (f) { grp.appendChild(f); });
+      host.appendChild(grp);
+    });
+    if (!any) host.appendChild(el('p', 'note', 'Nothing left to buy later.'));
   }
 
   /* ---------------- inventory tab ---------------- */

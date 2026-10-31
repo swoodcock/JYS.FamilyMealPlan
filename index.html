@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Meal Plan">
 <meta name="theme-color" content="#c0533f">
-<title>Meal Plan — Oct 25–30, 2026</title>
+<title>Meal Plan — Nov 1–13, 2026</title>
 <style>
   :root{
     --bg:#f6f5f2; --card:#ffffff; --ink:#22201c; --muted:#6b6459;
@@ -160,12 +160,12 @@
 
   footer{text-align:center; color:var(--muted); font-size:12.5px; padding:24px 16px 8px;}
 </style>
-<link rel="stylesheet" href="inventory.css?v=4">
+<link rel="stylesheet" href="inventory.css?v=5">
 </head>
 <body id="top">
 <header>
   <h1>🍽️ Family Meal Plan</h1>
-  <div class="sub">Week of October 25–30, 2026 · Kids' lunches &amp; dinners, parents three nights · metric · <a href="recipes.html" style="color:#fff;">📖 Recipe Book</a></div>
+  <div class="sub">Nov 1–4 &amp; Nov 9–13, 2026 · Kids' portions · metric · <a href="recipes.html" style="color:#fff;">📖 Recipe Book</a></div>
 </header>
 
 <div class="tabs" id="tabbar">
@@ -180,53 +180,92 @@
 <div class="wrap">
 <!-- ============ PLAN ============ -->
 <div class="panel active" id="tab-plan">
-  <h2 class="sec">The week — cook once, eat twice</h2>
-  <p class="note">Each kids' dinner makes <b>2 kid dinners + 2 packed lunches</b> for the next day. Parents join the chicken fingers and lasagna, and have their own chili on Thursday. Breakfasts are at home as usual. Tap <b>made?</b> once a dish is cooked and its ingredients come out of inventory.</p>
+  <h2 class="sec">This week — Nov 1–4</h2>
+  <p class="note">Kids' portions only. Each kids' dinner makes <b>2 kid dinners + 2 packed lunches</b> for the next day. You're away Thursday and Friday. On Sunday you also make the <b>cheeseburger casserole</b> and freeze it for Nov 12. Tap <b>made?</b> once a dish is cooked and its ingredients come out of inventory.</p>
   <div class="cal">
     <div class="day">
-      <div class="dbadge"><span class="dow">SUN</span><span class="dnum">25</span></div>
+      <div class="dbadge"><span class="dow">SUN</span><span class="dnum">1</span></div>
       <div class="dmeals">
-        <div class="meal dinner" data-made="r1"><span class="k">Dinner · family</span><a class="dish" onclick="openRecipe('r1')">Chicken Fingers + Rice</a><small>Frozen premade · kids + parents → matches Monday's daycare lunch</small></div>
+        <div class="meal dinner" data-made="r1"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r1')">Meatballs + Rice + Veggies</a><small>Kid portions · cook ahead → matches Monday's daycare lunch</small></div>
+        <div class="meal dinner" data-made="r2"><span class="k">Cook &amp; freeze</span><a class="dish" onclick="openRecipe('r2')">Cheeseburger Casserole</a><small>Kid portions · into the freezer for Thursday Nov 12's lunch</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">MON</span><span class="dnum">26</span></div>
+      <div class="dbadge"><span class="dow">MON</span><span class="dnum">2</span></div>
       <div class="dmeals">
-        <div class="meal snack" data-made="sn-mon"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-mon')">Fruit Sorbet Bar + Fruit</a><small>Instead of frozen yogurt · daycare has: Frozen yogurt sandwiches, Fruit, Water</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r1')">Chicken Fingers + Rice</a><small>Packed · matches daycare (updated): Chicken fingers, Rice, Fruit, Milk</small></div>
-        <div class="meal dinner" data-made="r2"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r2')">Chicken, Broccoli &amp; Rice Bake</a><small>Kid portions · cook ahead → matches Tuesday's daycare lunch</small></div>
+        <div class="meal snack" data-made="sn1"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn1')">Graham Wafers + Fruit + Milk</a><small>No yogurt · daycare has: Yogurt, Graham Wafers, Fruit, Milk</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r1')">Meatballs + Rice + Veggies</a><small>Packed · matches daycare: Meatballs, Rice, Veggies, Fruit, Milk</small></div>
+        <div class="meal dinner" data-made="r3"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r3')">Chicken Pot Pie Stew + Buns</a><small>Kid portions · cook ahead → matches Tuesday's daycare lunch</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">TUE</span><span class="dnum">27</span></div>
+      <div class="dbadge"><span class="dow">TUE</span><span class="dnum">3</span></div>
       <div class="dmeals">
-        <div class="meal snack" data-made="sn-tue"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-tue')">Fresh Fruit + Crackers + Juice</a><small>No prep · daycare has: Turkey Cheese Rollups, Juice</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r2')">Chicken, Broccoli &amp; Rice Bake</a><small>Packed · matches daycare: Chicken Broccoli Rice Casserole, Fruit, Milk</small></div>
-        <div class="meal dinner" data-made="r3"><span class="k">Dinner · family</span><a class="dish" onclick="openRecipe('r3')">Beef Lasagna</a><small>Kids + parents → matches Wednesday's daycare lunch</small></div>
+        <div class="meal snack" data-made="sn2"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn2')">Ham + Crackers + Cucumber</a><small>No cheese · daycare has: Ham, Cheese, Zucchini Muffin, Water</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r3')">Chicken Pot Pie Stew + Buns</a><small>Packed · matches daycare: Chicken Pot Pie, Buns, Fruit, Milk</small></div>
+        <div class="meal dinner" data-made="r4"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r4')">Ham &amp; Potato Soup + Bologna Sandwich</a><small>Kid portions · cook ahead → matches Wednesday's daycare lunch</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">WED</span><span class="dnum">28</span></div>
+      <div class="dbadge"><span class="dow">WED</span><span class="dnum">4</span></div>
       <div class="dmeals">
-        <div class="meal snack" data-made="sn-wed"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-wed')">Ham + Crackers + Fruit</a><small>No cheese · daycare has (updated): Meat, Cheese, Crackers</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r3')">Beef Lasagna</a><small>Packed · matches daycare: Lasagna, Fruit, Milk</small></div>
-        <div class="meal dinner" data-made="r4"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r4')">Kids' Dinner from the Freezer</a><small>Your pick · kid portions → Thursday's lunch</small></div>
+        <div class="meal snack" data-made="sn3"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn3')">Nut-free Trail Mix + Veggies + Milk</a><small>No nuts · daycare has: Trail Mix, Raw Veggies, Milk</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r4')">Ham &amp; Potato Soup + Bologna Sandwich</a><small>Packed · matches daycare: Ham Potato Soup, Bologna Sandwich, Fruit, Milk</small></div>
+        <div class="meal none">Dinner: something you have around. Make the rice crispy treats for Nov 9 tonight.</div>
+      </div>
+    </div>
+    <div class="day weekend">
+      <div class="dbadge"><span class="dow">THU–FRI</span><span class="dnum">5–6</span></div>
+      <div class="dmeals">
+        <div class="meal none">Away. No daycare lunches or snacks.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sec">Back from out of town — Nov 8–13</h2>
+  <p class="note">Hardly any cooking: one dinner, the rest comes from the freezer. Buy the <b>perishables on the way back</b> (Shopping tab, second list).</p>
+  <div class="cal">
+    <div class="day weekend">
+      <div class="dbadge"><span class="dow">SUN</span><span class="dnum">8</span></div>
+      <div class="dmeals">
+        <div class="meal none">Buy the "on the way back" list. Move the chili to the fridge to thaw.</div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">THU</span><span class="dnum">29</span></div>
+      <div class="dbadge"><span class="dow">MON</span><span class="dnum">9</span></div>
       <div class="dmeals">
-        <div class="meal snack" data-made="sn-thu"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-thu')">Pretzels + Veggies + Milk</a><small>Check label · matches daycare: Pretzels, Veggies, Milk</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r4')">Freezer Meal + Raw Veggies</a><small>Packed · daycare has: Chicken Quesadillas, Raw Veggies, Fruit, Milk</small></div>
-        <div class="meal dinner" data-made="r5"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r5')">Ham &amp; Perogies + Veggies</a><small>Kid portions · cook ahead → matches Friday's daycare lunch</small></div>
-        <div class="meal parent" data-made="p1"><span class="k">Dinner · parents</span><a class="dish" onclick="openRecipe('p1')">Beef Chili</a><small>From the freezer · parents only</small></div>
+        <div class="meal snack" data-made="sn4"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn4')">Rice Crispy Treat + Veggies + Milk</a><small>Made Nov 4 · matches daycare: Rice Crispy Treat, Veggie, Milk</small></div>
+        <div class="meal lunch" data-made="n1"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('n1')">Chili + Wieners</a><small>From the freezer · daycare has: Weiner &amp; Beans, Shredded Cheese, Veggies, Fruit, Milk</small></div>
+        <div class="meal dinner" data-made="n2"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('n2')">Chicken &amp; Cauliflower Macaroni</a><small>Kid portions · cook ahead → matches Tuesday's daycare lunch</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">FRI</span><span class="dnum">30</span></div>
+      <div class="dbadge"><span class="dow">TUE</span><span class="dnum">10</span></div>
       <div class="dmeals">
-        <div class="meal snack" data-made="sn-fri"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn-fri')">🎃 Halloween Cookies to Decorate</a><small>Egg-free cookies + your own icing · daycare (updated): Halloween cookie decorating</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r5')">Ham &amp; Perogies + Veggies</a><small>Packed · matches daycare: Ham Perogies, Veggies, Fruit, Milk</small></div>
+        <div class="meal snack" data-made="sn5"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn5')">Crispy Minis + Raw Veggies + Milk</a><small>Check label · matches daycare: Crispy Minis, Raw Veggies, Milk</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('n2')">Chicken &amp; Cauliflower Macaroni</a><small>Packed · matches daycare: Chicken, Cheese, Cauliflower Macaroni, Fruit, Milk</small></div>
+        <div class="meal none">Dinner: from the freezer or takeout.</div>
+      </div>
+    </div>
+    <div class="day weekend">
+      <div class="dbadge"><span class="dow">WED</span><span class="dnum">11</span></div>
+      <div class="dmeals">
+        <div class="meal none">Remembrance Day, no daycare. Tonight, move the casserole to the fridge.</div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="dbadge"><span class="dow">THU</span><span class="dnum">12</span></div>
+      <div class="dmeals">
+        <div class="meal snack" data-made="sn6"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn6')">Cinnamon Toast + Fruit + Milk</a><small>Egg-free · daycare has: Cinnamon Buns, Fruit, Milk</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r2')">Cheeseburger Casserole</a><small>From the freezer (made Nov 1) · matches daycare: Cheeseburger Casserole, Veggies, Fruit, Milk</small></div>
+        <div class="meal none">Dinner: your choice. Move Friday's freezer meal to the fridge.</div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="dbadge"><span class="dow">FRI</span><span class="dnum">13</span></div>
+      <div class="dmeals">
+        <div class="meal snack" data-made="sn7"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn7')">Fruit Sorbet Bar + Fruit</a><small>Instead of frozen yogurt · daycare has: Frozen Yogurt Pop, Fruit, Water</small></div>
+        <div class="meal lunch" data-made="n3"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('n3')">Freezer Meal + Veggies</a><small>From the freezer · daycare has: Pork Loin, Mashed Potatoes, Veggies, Fruit, Milk</small></div>
       </div>
     </div>
   </div>
@@ -235,36 +274,39 @@
   <div class="legend">
     <div class="row"><b>🚫 Allergen-safe</b><span>No <b>raw/uncooked dairy, egg, tree nut, peanut, or pea</b>. ✅ Cooked/baked milk is used.</span></div>
     <div class="row"><b>👶 Kid portions</b><span>Sized for <b>2 kid dinners + 2 kid lunches</b>.</span></div>
-    <div class="row"><b>👪 Family</b><span>Kid portions <b>plus 2 parent dinners</b>.</span></div>
-    <div class="row"><b>🔄 Low-carb</b><span>A <b>low-GI / low-carb swap</b> for each parent dinner.</span></div>
     <div class="row"><b>🩸 Iron-rich</b><span>Iron sources <b>paired with vitamin C</b> to aid absorption, plus extra <b>fiber</b>.</span></div>
   </div>
 </div>
 
 <!-- ============ RECIPES ============ -->
 <div class="panel" id="tab-recipes">
-  <h2 class="sec">Dinners</h2>
+  <h2 class="sec">Cooking — Nov 1–4</h2>
 
   <details class="card" id="r1">
-    <summary><div class="cnum">1</div><div class="ctitle"><div class="t">Chicken Fingers + Rice</div><div class="s">Sunday dinner → Monday lunch · 2 kid dinners + 2 kid lunches + 2 parent dinners</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">1</div><div class="ctitle"><div class="t">Meatballs + Rice + Veggies</div><div class="s">Sunday dinner → Monday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check box)</span><span class="tag t-iron">Iron boost</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-fam">Family</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Many frozen breaded chicken strips use <b>egg</b> in the batter or breading. <b>Check the box for egg and for a nut warning.</b> Milk in the breading is fine once baked.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (no egg)</span><span class="tag t-iron">Iron-rich ★</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Breadcrumbs soaked in milk bind the meatballs instead of egg, and the milk is baked in. <b>Check the breadcrumbs are egg-free.</b> No parmesan.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>Frozen premade chicken strips, egg-free — enough for 6 portions (about 700 g) <span class="pill">iron</span></li>
-        <li>220 g rice (dry), with 40 g carrot and ¼ zucchini, finely diced, cooked in <span class="pill">hidden veg</span></li>
-        <li>250 g broccoli, steamed <span class="pill">vit C</span></li>
-        <li>Orange wedges, to serve <span class="pill">vit C</span></li>
+        <li>350 g ground beef <span class="pill">iron ★</span></li>
+        <li>25 g breadcrumbs, egg-free, soaked in 30 ml milk</li>
+        <li>¼ onion + 1 clove garlic, grated · 30 g carrot, finely grated <span class="pill">hidden veg</span></li>
+        <li>½ tsp dried oregano, a pinch of salt</li>
+        <li>Sauce: 1 small can (398 ml) crushed tomatoes <span class="pill">vit C</span></li>
+        <li>120 g rice (dry)</li>
+        <li>150 g broccoli <span class="pill">vit C</span> + 50 g carrot, steamed</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Bake the strips as the box says, on two trays if needed.</li>
-        <li>Meanwhile, cook the rice with the diced carrot and zucchini stirred in. Steam the broccoli.</li>
+        <li>Preheat the oven to <b>200°C (400°F)</b>. Start the rice.</li>
+        <li>Mix the beef, soaked crumbs, onion, garlic, carrot, oregano and salt with your hands. Roll into 2–3 cm balls (about 20).</li>
+        <li>Bake on a lined tray 15–18 min, until cooked through.</li>
+        <li>Warm the crushed tomatoes in a pan, add the meatballs and simmer 5 min. Steam the broccoli and carrots.</li>
       </ol>
-      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> skip the rice and double up on broccoli.</div>
-      <div class="note iron"><span class="lbl">🩸 Iron boost:</span> chicken, with broccoli and orange for vitamin C.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> they pack and reheat well. Cut the strips into small pieces for the younger one. Matches Monday's updated daycare lunch (Chicken fingers, Rice, Fruit, Milk).</div>
+      <div class="note"><span class="lbl">👶 Little ones:</span> quarter the meatballs for the younger one; round, firm foods are a choking risk.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich ★:</span> beef, with tomato and broccoli for vitamin C.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> meatballs and sauce over rice, veg on the side. Matches Monday's daycare tray (Meatballs, Rice, Veggies, Fruit, Milk).</div>
       <div class="savewidget" data-recipe-id="r1">
         <button class="savebtn" onclick="toggleSave('r1')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-r1">
@@ -276,29 +318,27 @@
   </details>
 
   <details class="card" id="r2">
-    <summary><div class="cnum">2</div><div class="ctitle"><div class="t">Chicken, Broccoli &amp; Rice Bake</div><div class="s">Monday dinner → Tuesday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">❄</div><div class="ctitle"><div class="t">Cheeseburger Casserole</div><div class="s">Make Sunday Nov 1 and freeze → Thursday Nov 12 lunch · 4 kid portions</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (cooked milk)</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> The creamy sauce is milk cooked into a roux, with no cheese and no canned cream-of soup (some contain egg). <b>Check the breadcrumbs are egg-free.</b></div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check pasta)</span><span class="tag t-iron">Iron-rich</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> No egg or raw dairy. <b>Check the macaroni isn't egg pasta.</b> It's made without cheese, since the kids don't like it. If you want some, stir 40 g of shredded cheddar into one tub before freezing; it's fine once melted.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>300 g boneless chicken thighs, in small pieces <span class="pill">iron</span></li>
-        <li>120 g rice (dry)</li>
-        <li>200 g broccoli, in small florets <span class="pill">vit C</span> · 60 g carrot, grated <span class="pill">hidden veg</span></li>
-        <li>½ onion + 1 clove garlic, finely chopped</li>
-        <li>Sauce: 20 g butter + 20 g flour + 250 ml milk + 300 ml chicken broth</li>
-        <li>Topping: 20 g breadcrumbs, egg-free</li>
+        <li>300 g ground beef <span class="pill">iron</span></li>
+        <li>½ onion, finely chopped · 60 g carrot, finely grated <span class="pill">hidden veg</span></li>
+        <li>1 small can (398 ml) crushed tomatoes + 20 g tomato paste <span class="pill">vit C</span></li>
+        <li>1 tbsp ketchup + 1 tsp mild mustard</li>
+        <li>150 g macaroni, egg-free</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Cook the rice. Preheat the oven to <b>190°C (375°F)</b>.</li>
-        <li>Brown the chicken in a little oil, 5 min. Add the onion, garlic and carrot and soften 3 min. Tip into a small baking dish.</li>
-        <li>Melt the butter in the same pan, stir in the flour for 1 min, then whisk in the milk and broth. Simmer until it thickens, 3–4 min.</li>
-        <li>Stir the rice, raw broccoli and sauce into the chicken. Top with the breadcrumbs and bake 25 min, until bubbling.</li>
+        <li>Cook the macaroni 2 min less than the packet says (it softens when reheated). Drain.</li>
+        <li>Brown the beef with the onion and carrot, 6–7 min. Stir in the tomato paste, tomatoes, ketchup and mustard and simmer 10 min.</li>
+        <li>Stir in the macaroni. Cool, then pack into 2 freezer tubs of 2 portions each and label with the date.</li>
+        <li><b>Nov 11 evening:</b> move one tub to the fridge. <b>Nov 12 morning:</b> reheat with a splash of water until piping hot and pack in a warmed thermos.</li>
       </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> chop the chicken and broccoli small for the younger one.</div>
-      <div class="note iron"><span class="lbl">🩸 Lighter iron night:</span> chicken with broccoli for vitamin C. The lasagna follows with beef and spinach.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> reheats well with a splash of milk or water. Matches Tuesday's daycare tray (Chicken Broccoli Rice Casserole, Fruit, Milk).</div>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef, with tomato for vitamin C.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> with veggie sticks on the side. Matches Nov 12's daycare tray (Cheeseburger Casserole, Veggies, Fruit, Milk). The second tub can be Friday Nov 13's freezer lunch.</div>
       <div class="savewidget" data-recipe-id="r2">
         <button class="savebtn" onclick="toggleSave('r2')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-r2">
@@ -310,31 +350,28 @@
   </details>
 
   <details class="card" id="r3">
-    <summary><div class="cnum">3</div><div class="ctitle"><div class="t">Beef Lasagna</div><div class="s">Tuesday dinner → Wednesday lunch · 2 kid dinners + 2 kid lunches + 2 parent dinners</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">2</div><div class="ctitle"><div class="t">Chicken Pot Pie Stew + Buns</div><div class="s">Monday dinner → Tuesday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (baked dairy)</span><span class="tag t-iron">Iron-rich ★</span><span class="tag t-veg">Hidden veg</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-fam">Family</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> A white sauce stands in for the usual ricotta-and-egg layer. All the milk and cheese is baked. <b>Check the noodles are plain dried sheets, not egg pasta.</b> The kids don't like cheese, so leave the mozzarella off one end of the dish for their portions.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (cooked milk)</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Green beans and corn stand in for the usual peas. The creamy sauce is milk cooked into a roux. <b>Check the buns are egg-free</b>; some soft rolls are glazed with egg.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>500 g ground beef <span class="pill">iron ★</span></li>
-        <li>1 onion + 3 cloves garlic, finely chopped · 100 g carrot + ½ zucchini, grated <span class="pill">hidden veg</span></li>
-        <li>2 small cans (398 ml) crushed tomatoes + 30 g tomato paste + 1 tsp dried oregano</li>
-        <li>60 g baby spinach, chopped <span class="pill">iron</span></li>
-        <li>250 g lasagna noodles, egg-free (about 12 sheets)</li>
-        <li>White sauce: 40 g butter + 40 g flour + 600 ml milk + a pinch of nutmeg</li>
-        <li>150 g shredded mozzarella, for the parents' end</li>
-        <li>Lunchbox &amp; side veggies: 1 red bell pepper + ½ cucumber, as sticks <span class="pill">vit C</span></li>
+        <li>300 g boneless chicken thighs, in small pieces</li>
+        <li>1 medium potato (~200 g), in small cubes · 100 g carrot, diced · 2 celery stalks, diced · ½ onion, chopped</li>
+        <li>80 g green beans, in short pieces <span class="pill">no peas</span> · 50 g frozen corn</li>
+        <li>Sauce: 20 g butter + 20 g flour + 300 ml chicken broth + 150 ml milk · ½ tsp thyme</li>
+        <li>4 dinner buns, egg-free</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li><b>Meat sauce</b> (can be made Monday while the rice bake is in the oven): brown the beef, add the onion, garlic, carrot and zucchini and cook 5 min. Stir in the tomatoes, paste and oregano and simmer 15 min. Stir in the spinach to wilt.</li>
-        <li><b>White sauce:</b> melt the butter, stir in the flour for 1 min, then whisk in the milk gradually. Simmer until thick, 5 min. Season with salt and nutmeg.</li>
-        <li>Preheat the oven to <b>190°C (375°F)</b>. In a 23 × 33 cm dish, layer sauce, noodles, meat sauce and white sauce three times, finishing with white sauce.</li>
-        <li>Scatter the mozzarella over two-thirds of the top, leaving the kids' end bare. Cover with foil and bake 30 min, then uncover for 15 min until golden. Rest 10 min before cutting.</li>
+        <li>Brown the chicken in a little oil, 5 min. Add the onion, celery and carrot and soften 4 min.</li>
+        <li>Stir in the butter until melted, then the flour for 1 min. Gradually stir in the broth, then the milk.</li>
+        <li>Add the potato and thyme, cover and simmer 12 min. Add the green beans and corn and cook 5 min more, until the potato is tender.</li>
+        <li>Serve with warm buns for dunking.</li>
       </ol>
-      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> a small square of lasagna with a big side of the pepper and cucumber sticks or a green salad. Or bake a parent portion in a small dish with zucchini slices in place of the noodles.</div>
-      <div class="note iron"><span class="lbl">🩸 Iron-rich ★:</span> beef and spinach, with tomato and red pepper for vitamin C.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> cut 2 squares from the cheese-free end once cooled, with pepper sticks alongside. Matches Wednesday's daycare tray (Lasagna, Fruit, Milk).</div>
+      <div class="note"><span class="lbl">👶 Little ones:</span> chop the chicken small and check the potato is soft enough to squash.</div>
+      <div class="note iron"><span class="lbl">🩸 Lighter iron night:</span> pack fruit with vitamin C (orange, berries) alongside.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> stew in a warmed thermos with a bun on the side. Matches Tuesday's daycare tray (Chicken Pot Pie, Buns, Fruit, Milk).</div>
       <div class="savewidget" data-recipe-id="r3">
         <button class="savebtn" onclick="toggleSave('r3')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-r3">
@@ -346,22 +383,30 @@
   </details>
 
   <details class="card" id="r4">
-    <summary><div class="cnum">4</div><div class="ctitle"><div class="t">Kids' Dinner from the Freezer</div><div class="s">Wednesday dinner → Thursday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">3</div><div class="ctitle"><div class="t">Ham &amp; Potato Soup + Bologna Sandwich</div><div class="s">Tuesday dinner → Wednesday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Your freezer meal</span><span class="tag t-kid">Kid portions</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> if it's a store-bought freezer meal, check the label for egg, nuts and peas.</div>
-      <h4>Ingredients</h4>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check labels)</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> The milk is simmered into the soup. <b>Check the bologna and bread</b> for egg and milk binders.</div>
+      <h4>Soup</h4>
       <ul>
-        <li>Your pick from the freezer, enough for 2 kid dinners + 2 lunches</li>
-        <li>Raw veggies for the lunchbox: ½ cucumber + 60 g carrot, as sticks</li>
+        <li>150 g ham steak, diced <span class="pill">iron</span></li>
+        <li>2 medium potatoes (~400 g), diced · 60 g carrot, diced · 1 celery stalk · ½ onion, chopped</li>
+        <li>15 g butter + 15 g flour · 500 ml chicken broth + 150 ml milk</li>
+      </ul>
+      <h4>Sandwiches</h4>
+      <ul>
+        <li>4 slices sandwich bread, egg-free · 10 g butter</li>
+        <li>60 g sliced bologna</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Reheat as usual. Set aside 2 lunch portions before serving.</li>
-        <li>Cut the veggie sticks for Thursday's lunch.</li>
+        <li>Soften the onion, carrot and celery in the butter, 5 min. Stir in the flour for 1 min.</li>
+        <li>Add the broth and potatoes. Simmer, covered, until the potatoes are very soft, 15 min.</li>
+        <li>Mash about half the potatoes in the pot to thicken. Stir in the ham and milk and heat through without boiling hard.</li>
+        <li>Sandwiches: butter the bread, fill with bologna and cut into fingers. For lunch, make them fresh Wednesday morning.</li>
       </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> grate the carrot or steam the sticks for 2 min for the younger one. Raw carrot sticks are a choking risk.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> the freezer meal with the veggie sticks and fruit. Stands in for Thursday's daycare tray (Chicken Quesadillas, Raw Veggies, Fruit, Milk).</div>
+      <div class="note"><span class="lbl">👶 Little ones:</span> cut the bologna into small pieces; whole slices can be hard to chew.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> soup in a warmed thermos, sandwich fingers on the side. Matches Wednesday's daycare tray (Ham Potato Soup, Bologna Sandwich, Fruit, Milk).</div>
       <div class="savewidget" data-recipe-id="r4">
         <button class="savebtn" onclick="toggleSave('r4')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-r4">
@@ -372,60 +417,87 @@
     </div>
   </details>
 
-  <details class="card" id="r5">
-    <summary><div class="cnum">5</div><div class="ctitle"><div class="t">Ham &amp; Perogies + Veggies</div><div class="s">Thursday kids' dinner → Friday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
+  <h2 class="sec">Cooking — Nov 9–13</h2>
+
+  <details class="card" id="n1">
+    <summary><div class="cnum">4</div><div class="ctitle"><div class="t">Chili + Wieners</div><div class="s">Monday Nov 9 lunch · from the freezer · 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check bag)</span><span class="tag t-kid">Kid portions</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Some perogy dough uses <b>egg</b>, so check the bag. A potato &amp; onion or potato &amp; bacon filling avoids cheese; potato &amp; cheddar is safe once cooked, if the kids will eat it.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check wieners)</span><span class="tag t-iron">Iron-rich</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Some wieners use egg as a binder, so check the pack. Daycare adds shredded cheese; leave it off.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>600 g frozen perogies, egg-free (about 16)</li>
-        <li>150 g ham steak, diced <span class="pill">iron</span></li>
-        <li>½ onion, sliced · 20 g butter</li>
-        <li>200 g green beans + 60 g carrot, steamed <span class="pill">no peas</span></li>
+        <li>2 kid portions of chili from the freezer <span class="pill">iron</span></li>
+        <li>2 all-beef wieners, egg-free</li>
+        <li>Veggies: ½ cucumber, as sticks <span class="pill">vit C with fruit</span></li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Boil the perogies as the bag says, until they float, then drain.</li>
-        <li>Meanwhile, soften the onion in the butter, 5 min. Add the ham and perogies and fry until golden, 4–5 min.</li>
-        <li>Steam the green beans and carrots.</li>
+        <li><b>Sunday Nov 8:</b> move the chili to the fridge to thaw.</li>
+        <li><b>Monday morning:</b> slice the wieners and simmer them in the chili until it's piping hot, 8–10 min. Pack in warmed thermoses.</li>
       </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> cut perogies into quarters and the ham small for the younger one.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> 4 perogies with ham and veg each. Pack fruit for vitamin C. Matches Friday's daycare tray (Ham Perogies, Veggies, Fruit, Milk).</div>
-      <div class="savewidget" data-recipe-id="r5">
-        <button class="savebtn" onclick="toggleSave('r5')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-r5">
-          <textarea id="savenotes-r5" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('r5')">Submit</button>
+      <div class="note"><span class="lbl">👶 Little ones:</span> round slices of wiener are a choking risk. Quarter them lengthwise, then chop small.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> stands in for Monday's daycare tray (Weiner &amp; Beans, Shredded Cheese, Veggies, Fruit, Milk).</div>
+      <div class="savewidget" data-recipe-id="n1">
+        <button class="savebtn" onclick="toggleSave('n1')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-n1">
+          <textarea id="savenotes-n1" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('n1')">Submit</button>
         </div>
       </div>
     </div>
   </details>
 
-  <details class="card" id="p1">
-    <summary><div class="cnum">P</div><div class="ctitle"><div class="t">Beef Chili</div><div class="s">Thursday parents' dinner · from the freezer · 2 parent dinners</div></div><div class="chev">▾</div></summary>
+  <details class="card" id="n2">
+    <summary><div class="cnum">5</div><div class="ctitle"><div class="t">Chicken &amp; Cauliflower Macaroni</div><div class="s">Monday Nov 9 dinner → Tuesday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-par">Parents</span><span class="tag t-iron">Iron-rich</span><span class="tag t-diab">Low-carb swap</span><span class="tag t-spice">Adult spice</span></div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (cooked milk)</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> A cooked milk sauce instead of cheese. <b>Check the macaroni isn't egg pasta.</b></div>
       <h4>Ingredients</h4>
       <ul>
-        <li>Your chili from the freezer, 2 portions <span class="pill">iron</span></li>
-        <li>300 g cauliflower, riced, to serve</li>
-        <li>Optional: ½ cucumber or a few pepper sticks from the week's veg, on the side <span class="pill">vit C</span></li>
+        <li>250 g chicken breast, in small pieces <span class="pill">buy fresh</span></li>
+        <li>150 g macaroni, egg-free</li>
+        <li>200 g cauliflower, in small florets <span class="pill">vit C</span> · 40 g carrot, finely grated <span class="pill">hidden veg</span></li>
+        <li>Sauce: 20 g butter + 20 g flour + 300 ml milk, a pinch of salt</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Move the chili to the fridge on Wednesday night to thaw.</li>
-        <li>Reheat in a covered pot with a splash of water, stirring now and then, until bubbling right through, 10–15 min.</li>
-        <li>Meanwhile, pan-fry the riced cauliflower in a little oil with a pinch of salt, 5 min.</li>
+        <li>Boil the macaroni, adding the cauliflower for the last 6 min. Drain.</li>
+        <li>Meanwhile, cook the chicken in a little oil until no pink remains, 6–7 min. Add the carrot for the last minute.</li>
+        <li>Melt the butter in the pasta pot, stir in the flour for 1 min, then whisk in the milk and simmer until thick, 3 min.</li>
+        <li>Stir in the macaroni, cauliflower and chicken. Mash some of the cauliflower into the sauce for creaminess.</li>
       </ol>
-      <div class="note diab"><span class="lbl">🔄 Low-carb:</span> serve over the riced cauliflower instead of rice or bread.</div>
-      <div class="note spice"><span class="lbl">🌶️ Adult spice:</span> chipotle, cayenne or hot sauce to taste.</div>
-      <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef and beans, with fresh veg on the side for vitamin C.</div>
-      <div class="savewidget" data-recipe-id="p1">
-        <button class="savebtn" onclick="toggleSave('p1')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-p1">
-          <textarea id="savenotes-p1" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('p1')">Submit</button>
+      <div class="note"><span class="lbl">👶 Little ones:</span> chop the chicken small for the younger one.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> reheats well with a splash of milk. Matches Tuesday's daycare tray (Chicken, Cheese, Cauliflower Macaroni, Fruit, Milk).</div>
+      <div class="savewidget" data-recipe-id="n2">
+        <button class="savebtn" onclick="toggleSave('n2')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-n2">
+          <textarea id="savenotes-n2" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('n2')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" id="n3">
+    <summary><div class="cnum">6</div><div class="ctitle"><div class="t">Freezer Meal + Veggies</div><div class="s">Friday Nov 13 lunch · 2 kid lunches</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Your freezer meal</span><span class="tag t-kid">Kid portions</span></div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>2 kid portions from the freezer (the spare tub of cheeseburger casserole works)</li>
+        <li>Veggies: 60 g carrot, as sticks</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li><b>Thursday evening:</b> move it to the fridge. <b>Friday morning:</b> reheat until piping hot and pack in warmed thermoses.</li>
+      </ol>
+      <div class="note"><span class="lbl">👶 Little ones:</span> grate the carrot or steam the sticks for 2 min for the younger one.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> stands in for Friday's daycare tray (Pork Loin, Mashed Potatoes, Veggies, Fruit, Milk).</div>
+      <div class="savewidget" data-recipe-id="n3">
+        <button class="savebtn" onclick="toggleSave('n3')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-n3">
+          <textarea id="savenotes-n3" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('n3')">Submit</button>
         </div>
       </div>
     </div>
@@ -434,145 +506,172 @@
   <h2 class="sec">Snacks</h2>
   <p class="note">Matched to what's on the daycare's own tray each day, without yogurt, pudding or cheese.</p>
 
-  <details class="card" id="sn-mon">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Fruit Sorbet Bar + Fruit</div><div class="s">Monday snack · 2 portions</div></div><div class="chev">▾</div></summary>
-    <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span><span class="tag t-iron">Vit C</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Daycare has frozen yogurt sandwiches today, so this swaps in a sorbet bar. Check the box says <b>sorbet, not sherbet</b>: sherbet contains milk.</div>
-      <h4>Ingredients</h4>
-      <ul>
-        <li>2 fruit sorbet bars, dairy-free</li>
-        <li>Fresh fruit: berries, orange segments or sliced apple <span class="pill">vit C</span></li>
-        <li>Water, to drink</li>
-      </ul>
-      <h4>Method</h4>
-      <ol>
-        <li>Send the sorbet bar in an insulated bag with an ice pack, or ask the daycare to keep it in their freezer until snack time.</li>
-      </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> quarter grapes and blueberries, and cut apple into thin slices.</div>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Monday's daycare snack (Frozen yogurt sandwiches, Fruit, Water).</div>
-      <div class="savewidget" data-recipe-id="sn-mon">
-        <button class="savebtn" onclick="toggleSave('sn-mon')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-sn-mon">
-          <textarea id="savenotes-sn-mon" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('sn-mon')">Submit</button>
-        </div>
-      </div>
-    </div>
-  </details>
-
-  <details class="card" id="sn-tue">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Fresh Fruit + Crackers + Juice</div><div class="s">Tuesday snack · 2 portions</div></div><div class="chev">▾</div></summary>
-    <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span><span class="tag t-iron">Vit C</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Daycare has turkey and cheese roll-ups today. This skips them for something with no prep. Check the crackers for egg and for a nut "may contain" warning.</div>
-      <h4>Ingredients</h4>
-      <ul>
-        <li>A handful of crackers each, egg-free &amp; nut-free</li>
-        <li>Fresh fruit: berries, orange segments or sliced apple <span class="pill">vit C</span></li>
-        <li>Juice, to drink</li>
-      </ul>
-      <h4>Method</h4>
-      <ol>
-        <li>Pack the crackers and fruit in separate compartments so the crackers stay crisp.</li>
-      </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> quarter grapes and blueberries, and cut apple into thin slices.</div>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Tuesday's daycare snack (Turkey Cheese Rollups, Juice).</div>
-      <div class="savewidget" data-recipe-id="sn-tue">
-        <button class="savebtn" onclick="toggleSave('sn-tue')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-sn-tue">
-          <textarea id="savenotes-sn-tue" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('sn-tue')">Submit</button>
-        </div>
-      </div>
-    </div>
-  </details>
-
-  <details class="card" id="sn-wed">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Ham + Crackers + Fruit</div><div class="s">Wednesday snack · 2 portions</div></div><div class="chev">▾</div></summary>
+  <details class="card" id="sn1">
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Graham Wafers + Fruit + Milk</div><div class="s">Monday Nov 2 snack · 2 portions</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
       <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Daycare has meat, cheese and crackers today. This skips the cheese and adds fruit. Check the crackers for egg and for a nut "may contain" warning.</div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Daycare has yogurt today, so this skips it. Graham wafers often contain <b>honey</b>, which isn't recommended under age one, even baked. Check the label, and for a nut warning.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>2 graham wafers each</li>
+        <li>Fresh fruit <span class="pill">vit C</span></li>
+        <li>Milk, to drink</li>
+      </ul>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Monday's daycare snack (Yogurt, Graham Wafers, Fruit, Milk).</div>
+      <div class="savewidget" data-recipe-id="sn1">
+        <button class="savebtn" onclick="toggleSave('sn1')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-sn1">
+          <textarea id="savenotes-sn1" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('sn1')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" id="sn2">
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Ham + Crackers + Cucumber</div><div class="s">Tuesday Nov 3 snack · 2 portions</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Daycare has ham, cheese and a zucchini muffin today. This skips the cheese and the muffin, which likely has egg. Check the crackers for egg and for a nut "may contain" warning.</div>
       <h4>Ingredients</h4>
       <ul>
         <li>60 g sliced deli ham, cut into cracker-size squares <span class="pill">iron</span></li>
         <li>A handful of crackers each, egg-free &amp; nut-free</li>
-        <li>Fresh fruit <span class="pill">vit C</span></li>
+        <li>½ cucumber, as sticks</li>
         <li>Water, to drink</li>
       </ul>
-      <h4>Method</h4>
-      <ol>
-        <li>Pack the ham, crackers and fruit in separate compartments so the crackers stay crisp.</li>
-      </ol>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Wednesday's updated daycare snack (Meat, Cheese, Crackers).</div>
-      <div class="savewidget" data-recipe-id="sn-wed">
-        <button class="savebtn" onclick="toggleSave('sn-wed')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-sn-wed">
-          <textarea id="savenotes-sn-wed" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('sn-wed')">Submit</button>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Tuesday's daycare snack (Ham, Cheese, Zucchini Muffin, Water).</div>
+      <div class="savewidget" data-recipe-id="sn2">
+        <button class="savebtn" onclick="toggleSave('sn2')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-sn2">
+          <textarea id="savenotes-sn2" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('sn2')">Submit</button>
         </div>
       </div>
     </div>
   </details>
 
-  <details class="card" id="sn-thu">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Pretzels + Veggies + Milk</div><div class="s">Thursday snack · 2 portions</div></div><div class="chev">▾</div></summary>
+  <details class="card" id="sn3">
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Nut-free Trail Mix + Veggies + Milk</div><div class="s">Wednesday Nov 4 snack · 2 portions</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Plain pretzels are usually just flour, water and salt. Check the bag for egg and for a nut "may contain" warning.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check labels)</span><span class="tag t-iron">Iron boost</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Trail mix is usually nut-based, so this is a nut-free mix. Check every bag for a nut "may contain" warning.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>Pretzels, about 20 g each</li>
-        <li>Veggies: 2 celery stalks + ¼ cucumber, as sticks</li>
+        <li>30 g crisp rice cereal · 20 g raisins · 20 g pumpkin seeds <span class="pill">iron</span> · 15 g nut-free chocolate chips</li>
+        <li>Veggies: ½ cucumber + 40 g carrot, as sticks</li>
+        <li>Milk, to drink</li>
+      </ul>
+      <div class="note"><span class="lbl">👶 Little ones:</span> raisins, seeds and raw carrot are choking risks. Give the younger one just the rice cereal and soft cucumber.</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Wednesday's daycare snack (Trail Mix, Raw Veggies, Milk).</div>
+      <div class="savewidget" data-recipe-id="sn3">
+        <button class="savebtn" onclick="toggleSave('sn3')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-sn3">
+          <textarea id="savenotes-sn3" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('sn3')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" id="sn4">
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Rice Crispy Treats + Veggies + Milk</div><div class="s">Make Wednesday Nov 4 → Monday Nov 9 snack · 16 squares</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check labels)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Just butter, marshmallows and rice cereal, with the butter melted. Check the marshmallows and cereal for a nut warning.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>30 g butter · 150 g mini marshmallows · 120 g crisp rice cereal</li>
+        <li>Veggies for Nov 9: ½ cucumber, as sticks</li>
         <li>Milk, to drink</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Portion the pretzels into snack bags and pack with the veggie sticks.</li>
+        <li>Line a 20 cm square pan with baking paper. Melt the butter in a large pot over low heat, add the marshmallows and stir until smooth.</li>
+        <li>Off the heat, stir in the cereal until coated. Press firmly into the pan with a buttered spatula. Cool 1 hour.</li>
+        <li>Cut into 16 squares. Freeze them in an airtight tub with baking paper between layers, and pack 2 straight from the freezer on Nov 9; they thaw by snack time.</li>
       </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> hard pretzels are a choking risk for the younger one. Choose soft pretzel thins or break them into small pieces. Peel the strings off the celery and cut it into thin matchsticks, or swap in soft cucumber.</div>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Thursday's daycare snack (Pretzels, Veggies, Milk).</div>
-      <div class="savewidget" data-recipe-id="sn-thu">
-        <button class="savebtn" onclick="toggleSave('sn-thu')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-sn-thu">
-          <textarea id="savenotes-sn-thu" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('sn-thu')">Submit</button>
+      <div class="note"><span class="lbl">👶 Little ones:</span> sticky treats are hard for very young eaters. Give the younger one a small, thin piece, or skip it and send soft veggies.</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Nov 9's daycare snack (Rice Crispy Treat, Veggie, Milk). The rest are for home.</div>
+      <div class="savewidget" data-recipe-id="sn4">
+        <button class="savebtn" onclick="toggleSave('sn4')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-sn4">
+          <textarea id="savenotes-sn4" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('sn4')">Submit</button>
         </div>
       </div>
     </div>
   </details>
 
-  <details class="card" id="sn-fri">
-    <summary><div class="cnum">🎃</div><div class="ctitle"><div class="t">Halloween Cookies to Decorate</div><div class="s">Friday afternoon · about 16 cookies, 2–3 each to send</div></div><div class="chev">▾</div></summary>
+  <details class="card" id="sn5">
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Crispy Minis + Raw Veggies + Milk</div><div class="s">Tuesday Nov 10 snack · 2 portions</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check sprinkles)</span><span class="tag t-kid">Halloween</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Most cut-out cookies and royal icing use <b>egg</b>, and decorating kits often carry nut warnings. These cookies are egg-free, with baked butter and milk. Send your own icing and sprinkles too, and ask the daycare to use only those. <b>Check the sprinkles and food colouring for egg, nuts and dairy.</b></div>
-      <h4>Cookies</h4>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Plain or lightly salted rice chips are usually egg- and nut-free. Flavoured ones can contain milk powder. Check the bag.</div>
+      <h4>Ingredients</h4>
       <ul>
-        <li>90 g soft butter + 70 g sugar</li>
-        <li>20 ml milk + 1 tsp vanilla</li>
-        <li>180 g flour + a pinch of salt</li>
+        <li>Crispy Minis rice chips, a small handful each</li>
+        <li>Veggies: ½ cucumber + 40 g carrot, as sticks</li>
+        <li>Milk, to drink</li>
       </ul>
-      <h4>Icing (egg-free)</h4>
+      <div class="note"><span class="lbl">👶 Little ones:</span> break rice chips into small pieces, and grate or steam the carrot for the younger one.</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Nov 10's daycare snack (Crispy Minis, Raw Veggies, Milk).</div>
+      <div class="savewidget" data-recipe-id="sn5">
+        <button class="savebtn" onclick="toggleSave('sn5')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-sn5">
+          <textarea id="savenotes-sn5" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('sn5')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" id="sn6">
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Cinnamon Toast + Fruit + Milk</div><div class="s">Thursday Nov 12 snack · 2 portions</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check bread)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Store cinnamon buns usually contain egg, and their icing often has raw dairy. This gives the same flavour with no prep. Check the bread is egg-free.</div>
+      <h4>Ingredients</h4>
       <ul>
-        <li>100 g icing sugar + about 15 ml water</li>
-        <li>Orange and black gel food colouring</li>
-        <li>Halloween sprinkles, egg-free &amp; nut-free</li>
+        <li>2 slices sandwich bread, egg-free (freeze them on Nov 4 so they're fresh)</li>
+        <li>10 g butter + 10 g sugar + ½ tsp cinnamon</li>
+        <li>Fresh fruit <span class="pill">vit C</span> · milk, to drink</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Beat the butter and sugar until pale. Beat in the milk and vanilla, then stir in the flour and salt to make a soft dough. Chill 20 min.</li>
-        <li>Preheat the oven to <b>180°C (350°F)</b>. Roll out to 5 mm between two sheets of baking paper and cut out pumpkins, ghosts or bats.</li>
-        <li>Bake 10–12 min, until just golden at the edges. Cool completely and store in a tin.</li>
-        <li>Stir the icing sugar with the water to a thick, pipeable icing. Split it and tint it. Pack in small lidded tubs with a spoon each, with the sprinkles in a separate tub.</li>
+        <li>Toast the bread from frozen. Butter it while hot, sprinkle with the cinnamon sugar and cut into fingers.</li>
       </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> a plain cookie with a little icing is plenty for the younger one, and skip hard sprinkles.</div>
-      <div class="note kid"><span class="lbl">🎃 Snack:</span> for Friday's Halloween cookie decorating at daycare. The extras are for decorating at home.</div>
-      <div class="savewidget" data-recipe-id="sn-fri">
-        <button class="savebtn" onclick="toggleSave('sn-fri')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-sn-fri">
-          <textarea id="savenotes-sn-fri" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('sn-fri')">Submit</button>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Nov 12's daycare snack (Cinnamon Buns, Fruit, Milk).</div>
+      <div class="savewidget" data-recipe-id="sn6">
+        <button class="savebtn" onclick="toggleSave('sn6')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-sn6">
+          <textarea id="savenotes-sn6" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('sn6')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" id="sn7">
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Fruit Sorbet Bar + Fruit</div><div class="s">Friday Nov 13 snack · 2 portions</div></div><div class="chev">▾</div></summary>
+    <div class="cbody">
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> <b>Sorbet, not sherbet</b>: sherbet contains milk. You may have some left from the Oct 26 box.</div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li>2 fruit sorbet bars, dairy-free</li>
+        <li>Fresh fruit <span class="pill">vit C</span> · water, to drink</li>
+      </ul>
+      <h4>Method</h4>
+      <ol>
+        <li>Send in an insulated bag with an ice pack, or ask the daycare to keep it in their freezer.</li>
+      </ol>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Nov 13's daycare snack (Frozen Yogurt Pop, Fruit, Water).</div>
+      <div class="savewidget" data-recipe-id="sn7">
+        <button class="savebtn" onclick="toggleSave('sn7')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-sn7">
+          <textarea id="savenotes-sn7" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('sn7')">Submit</button>
         </div>
       </div>
     </div>
@@ -581,9 +680,12 @@
 
 <!-- ============ SHOPPING ============ -->
 <div class="panel shop" id="tab-shop">
-  <h2 class="sec">Shopping list</h2>
-  <p class="note">Worked out from this week's recipes and what's in <b>Inventory</b>. Anything already on hand drops off. Ticking an item adds it to inventory; ticking <b>made</b> on a recipe takes its ingredients back out. Basic seasonings are on the <b>Pantry</b> tab.</p>
+  <h2 class="sec">Buy today — both weeks</h2>
+  <p class="note">Everything for Nov 1–4, plus whatever keeps for Nov 9–13. Worked out from the recipes and what's in <b>Inventory</b>. Anything already on hand drops off. Ticking an item adds it to inventory; ticking <b>made</b> on a recipe takes its ingredients back out. Basic seasonings are on the <b>Pantry</b> tab.</p>
   <div id="inv-shop"></div>
+  <h2 class="sec">🕒 Buy on the way back — Nov 7–8</h2>
+  <p class="note">Perishables for Nov 9–13: the macaroni's chicken, fresh veg and milk. Plus fruit for the week. Ticking these doesn't change inventory.</p>
+  <div id="inv-shop-later"></div>
 </div>
 
 <!-- ============ INVENTORY ============ -->
@@ -602,20 +704,21 @@
 <!-- ============ PANTRY ============ -->
 <div class="panel shop" id="tab-pantry">
   <h2 class="sec">Pantry check — assumed at home</h2>
-  <p class="note">Seasonings, odds and ends, and what's coming out of the freezer. None of this is on the shopping list.</p>
+  <p class="note">Seasonings, odds and ends, and the freezer. None of this is on the shopping list.</p>
   <div class="grp"><h4>🧊 From the freezer</h4>
-    <div class="item"><label><input type="checkbox" data-k="frz1"><span>Beef chili, 2 parent portions <span class="pill">Thu parents</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="frz2"><span>Kids' dinner, 2 dinners + 2 lunches <span class="pill">Wed kids, Thu lunch</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="frz1"><span>Chili, 2 kid portions <span class="pill">Nov 9 lunch</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="frz2"><span>A kids' freezer meal, 2 portions (or the spare casserole tub) <span class="pill">Nov 13 lunch</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="frz3"><span>Something for dinner Nov 4 and Nov 10 <span class="pill">or takeout</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="frz4"><span>Room for 2 casserole tubs, the rice crispy treats and 2 bread slices <span class="pill">goes in Nov 1–4</span></span></label></div>
   </div>
   <div class="grp"><h4>🧂 Assumed staples (verify stock)</h4>
-    <div class="item"><label><input type="checkbox" data-k="pan1"><span>Cooking oil &amp; olive oil</span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan1"><span>Cooking oil</span></label></div>
     <div class="item"><label><input type="checkbox" data-k="pan2"><span>Salt &amp; black pepper</span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan3"><span>Dried oregano &amp; nutmeg <span class="pill">lasagna</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan5"><span>Hot sauce or chipotle <span class="pill">adult spice</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan6"><span>Vanilla extract <span class="pill">cookies</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan7"><span>Gel food colouring, orange &amp; black <span class="pill">cookies</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan8"><span>Baking paper &amp; foil <span class="pill">cookies, lasagna</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan9"><span>Ketchup <span class="pill">chicken fingers</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan3"><span>Dried oregano &amp; thyme <span class="pill">meatballs, pot pie</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan4"><span>Ketchup &amp; mild mustard <span class="pill">casserole</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan5"><span>Cinnamon <span class="pill">cinnamon toast</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan6"><span>Freezer tubs, labels &amp; baking paper</span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan7"><span>2 thermoses <span class="pill">soup, stew, chili, casserole</span></span></label></div>
   </div>
 </div>
 
@@ -624,67 +727,73 @@
   <h2 class="sec">Meal prep — by the day it happens</h2>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Sunday</span><span class="pdtime">~35 min</span></div><span class="pdwhen">cut sticks, tonight's chicken fingers</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Sunday Nov 1</span><span class="pdtime">~1 hr 15 min</span></div><span class="pdwhen">the big cook: meatballs in the oven, casserole on the stove</span></div>
     <ol>
-      <li><span class="time">10 min · sticks</span><br><b>Cucumber, pepper and celery sticks.</b> Cut 1 cucumber, 1 red pepper and 2 celery stalks for the lasagna side and Thursday's snack. Stored in water in the fridge, they stay crisp.</li>
-      <li><span class="time">25 min · oven</span><br><b>Chicken fingers + rice</b> — family dinner and Monday's lunch.</li>
+      <li><span class="time">15 min · mix &amp; roll</span><br><b>Meatballs</b> into the oven; start the rice.</li>
+      <li><span class="time">30 min · stovetop</span><br><b>Cheeseburger casserole</b> while the meatballs bake. Cool, split into 2 labelled tubs and freeze.</li>
+      <li><span class="time">10 min · finish</span><br>Simmer the meatballs in the sauce, steam the veg — dinner and Monday's lunch.</li>
+      <li><span class="time">10 min · sticks</span><br><b>Cucumber and carrot sticks</b> for Tuesday's and Wednesday's snacks, stored in water in the fridge.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Monday evening</span><span class="pdtime">~55 min</span></div><span class="pdwhen">rice bake in the oven, lasagna meat sauce on the stove</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Monday Nov 2</span><span class="pdtime">~35 min</span></div><span class="pdwhen">one pot</span></div>
     <ol>
-      <li><span class="time">30 min · stovetop</span><br><b>Chicken, broccoli &amp; rice bake</b> — kids' dinner and Tuesday's lunch. Assemble and get it in the oven.</li>
-      <li><span class="time">25 min · while it bakes</span><br><b>Lasagna meat sauce</b> — make it now and keep it in the fridge, so Tuesday is just assembly.</li>
+      <li><span class="time">35 min · stovetop</span><br><b>Chicken pot pie stew</b> — kids' dinner and Tuesday's lunch, with buns.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Tuesday evening</span><span class="pdtime">~1 hr 10 min, mostly oven</span></div><span class="pdwhen">assemble and bake</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Tuesday Nov 3</span><span class="pdtime">~35 min</span></div><span class="pdwhen">one pot</span></div>
     <ol>
-      <li><span class="time">15 min · assemble</span><br><b>White sauce</b>, then layer the lasagna. Leave the mozzarella off the kids' end.</li>
-      <li><span class="time">45 min + 10 min rest · bake</span><br><b>Beef lasagna</b> — family dinner and Wednesday's lunch.</li>
+      <li><span class="time">30 min · stovetop</span><br><b>Ham &amp; potato soup</b> — kids' dinner and Wednesday's lunch.</li>
+      <li><span class="time">5 min</span><br><b>Bologna sandwiches</b> for tonight. Make Wednesday's fresh in the morning.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Wednesday evening</span><span class="pdtime">~45 min</span></div><span class="pdwhen">freezer dinner, then Halloween cookies</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Wednesday Nov 4</span><span class="pdtime">~20 min</span></div><span class="pdwhen">no dinner to cook — set up for Nov 9</span></div>
     <ol>
-      <li><span class="time">10 min · dough</span><br><b>Cookie dough</b> first, so it can chill while you cook.</li>
-      <li><span class="time">Reheat · plus 5 min sticks</span><br><b>Kids' dinner from the freezer</b> — tonight and Thursday's lunch. Cut cucumber and carrot sticks for the lunchbox.</li>
-      <li><span class="time">20 min · bake</span><br><b>Halloween cookies</b> (Fri) — roll, cut and bake. Store in a tin once cool.</li>
-      <li><span class="time">1 min · freezer</span><br><b>Chili</b> into the fridge to thaw for Thursday.</li>
+      <li><span class="time">15 min + cooling</span><br><b>Rice crispy treats</b> for Nov 9. Cut and freeze.</li>
+      <li><span class="time">1 min · freezer</span><br><b>2 slices of bread</b> into the freezer for Nov 12's cinnamon toast.</li>
+      <li><span class="time">2 min · check</span><br>Use up or freeze any fresh fruit and veg before you leave.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Thursday evening</span><span class="pdtime">~25 min</span></div><span class="pdwhen">chili reheats while the perogies cook</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Sunday Nov 8</span><span class="pdtime">~5 min</span></div><span class="pdwhen">on the way back</span></div>
     <ol>
-      <li><span class="time">15 min · reheat</span><br><b>Beef chili</b> from the freezer — parents' dinner, over pan-fried riced cauliflower.</li>
-      <li><span class="time">20 min · stovetop</span><br><b>Ham &amp; perogies</b> — kids' dinner and Friday's lunch.</li>
-      <li><span class="time">5 min · icing</span><br><b>Cookie icing</b> into small tubs, with the sprinkles.</li>
+      <li><span class="time">shop</span><br>The <b>"Buy on the way back"</b> list: chicken, cauliflower, cucumbers, milk, fruit.</li>
+      <li><span class="time">1 min · freezer</span><br><b>Chili</b> into the fridge to thaw for Monday's lunch.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Same-day, no prep ahead</span></div><span class="pdwhen">a few minutes in the morning</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Monday Nov 9</span><span class="pdtime">~10 min am · ~30 min pm</span></div><span class="pdwhen">the only cooking of the week</span></div>
     <ol>
-      <li><span class="time">Mon · 2 min</span><br><b>Sorbet bar</b> into an insulated bag with an ice pack, plus fruit.</li>
-      <li><span class="time">Tue · 2 min</span><br><b>Fruit and crackers</b> into separate compartments, plus a juice box.</li>
-      <li><span class="time">Wed · 3 min</span><br><b>Ham, crackers and fruit</b> into separate compartments.</li>
-      <li><span class="time">Thu · 2 min</span><br><b>Pretzels</b> into snack bags with the veggie sticks.</li>
-      <li><span class="time">Fri · 2 min</span><br><b>Cookies, icing and sprinkles</b> in a labelled bag for the daycare.</li>
+      <li><span class="time">morning · 10 min</span><br><b>Chili + wieners</b> into thermoses. Cucumber sticks, and 2 rice crispy treats from the freezer.</li>
+      <li><span class="time">evening · 30 min</span><br><b>Chicken &amp; cauliflower macaroni</b> — kids' dinner and Tuesday's lunch.</li>
+    </ol>
+  </div>
+
+  <div class="prepday">
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Nov 10–13</span><span class="pdtime">a few minutes a day</span></div><span class="pdwhen">thaw the night before, reheat in the morning</span></div>
+    <ol>
+      <li><span class="time">Tue 10</span><br>Pack the macaroni, Crispy Minis and veggies. Dinner from the freezer or takeout.</li>
+      <li><span class="time">Wed 11 · evening</span><br><b>Casserole</b> from the freezer to the fridge.</li>
+      <li><span class="time">Thu 12 · 10 min</span><br>Reheat the casserole into thermoses; cinnamon toast from frozen bread. Evening: move Friday's freezer meal to the fridge.</li>
+      <li><span class="time">Fri 13 · 10 min</span><br>Reheat the freezer meal; sorbet bars in an insulated bag.</li>
     </ol>
   </div>
 </div>
 
 <footer>
-  Allergen-safe: no raw dairy, egg, tree nut, peanut, or pea · iron-rich options included · metric.<br>Refresh next week with the new plan.
+  Allergen-safe: no raw dairy, egg, tree nut, peanut, or pea · iron-rich options included · metric.<br>Refresh with the next plan after Nov 13.
 </footer>
 </div>
 
 <script>
-  var KEY='mealplan_2026_10_26_v1';
+  var KEY='mealplan_2026_11_02_v1';
   function showTab(name){
     document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id==='tab-'+name); });
     document.querySelectorAll('#tabbar button').forEach(function(b){ b.classList.toggle('active', b.dataset.tab===name); });
@@ -751,39 +860,43 @@
   }
 </script>
 <script>
-  // This week's recipes and what each uses. Ids match inventory.js's catalog;
-  // anything in `items` is a one-off for this week and isn't tracked.
-  // The chili and Wednesday's kids' dinner come from the freezer and aren't listed.
-  // Drinking milk for each packed lunch (2 kids) is counted on the dinner that makes it.
-  // Thursday's snack also comes with milk, counted on the snack.
+  // Two weeks: Nov 1–4 and Nov 9–13 (away Nov 5–6). Ids match inventory.js's catalog;
+  // anything in `items` is a one-off and isn't tracked.
+  // `later` lists the perishables for Nov 9–13, bought on the way back (separate list).
+  // Freezer meals (chili, Friday's lunch) aren't listed.
+  // Drinking milk for each packed lunch (2 kids) is counted on the recipe that makes it;
+  // snack milk is counted on the snack.
   var WEEK = {
-    id: '2026-10-26',
+    id: '2026-11-02',
     recipes: {
-      'r1':     { name: 'Chicken fingers + rice (family)', when: 'Sun', uses: { 'chicken-strips': 1, 'rice': 220, 'carrot': 40, 'zucchini': 0.25, 'broccoli': 250, 'milk': 250 } },
-      'r2':     { name: 'Chicken, broccoli & rice bake (kids)', when: 'Mon', uses: { 'chicken-thigh': 300, 'rice': 120, 'broccoli': 200, 'carrot': 60, 'onion': 0.5, 'garlic': 1, 'butter': 20, 'flour': 20, 'milk': 500, 'chicken-broth': 300, 'breadcrumbs': 20 } },
-      'r3':     { name: 'Beef lasagna (family)', when: 'Tue', uses: { 'ground-beef': 500, 'onion': 1, 'garlic': 3, 'carrot': 100, 'zucchini': 0.5, 'crushed-tomatoes': 2, 'tomato-paste': 30, 'baby-spinach': 60, 'lasagna-noodles': 250, 'butter': 40, 'flour': 40, 'milk': 850, 'mozzarella': 150, 'bell-pepper': 1, 'cucumber': 0.5 } },
-      'r4':     { name: 'Kids\' dinner from the freezer', when: 'Wed', uses: { 'cucumber': 0.5, 'carrot': 60, 'milk': 250 } },
-      'r5':     { name: 'Ham & perogies + veggies (kids)', when: 'Thu', uses: { 'frozen-perogies': 600, 'ham-steak': 150, 'onion': 0.5, 'butter': 20, 'green-beans': 200, 'carrot': 60, 'milk': 250 } },
-      'p1':     { name: 'Beef chili from the freezer (parents)', when: 'Thu', uses: { 'cauliflower': 300 } },
-      'sn-mon': { name: 'Sorbet bar + fruit', when: 'Mon', uses: { 'sorbet-bars': 2 } },
-      'sn-tue': { name: 'Fresh fruit + crackers + juice', when: 'Tue', uses: { 'crackers': 1, 'juice': 2 } },
-      'sn-wed': { name: 'Ham + crackers + fruit', when: 'Wed', uses: { 'deli-meat': 60, 'crackers': 1 } },
-      'sn-thu': { name: 'Pretzels + veggies + milk', when: 'Thu', uses: { 'pretzels': 1, 'celery': 2, 'cucumber': 0.25, 'milk': 250 } },
-      'sn-fri': { name: 'Halloween cookies to decorate', when: 'Fri', uses: { 'butter': 90, 'sugar': 70, 'milk': 20, 'flour': 180, 'icing-sugar': 100, 'sprinkles': 1 } }
+      'r1':  { name: 'Meatballs + rice', when: 'Sun 1', uses: { 'ground-beef': 350, 'breadcrumbs': 25, 'milk': 280, 'onion': 0.25, 'garlic': 1, 'carrot': 80, 'crushed-tomatoes': 1, 'rice': 120, 'broccoli': 150 } },
+      'r2':  { name: 'Cheeseburger casserole (freeze)', when: 'Sun 1', later: ['milk'], uses: { 'ground-beef': 300, 'onion': 0.5, 'carrot': 60, 'crushed-tomatoes': 1, 'tomato-paste': 20, 'macaroni': 150, 'milk': 250 } },
+      'r3':  { name: 'Chicken pot pie stew + buns', when: 'Mon 2', uses: { 'chicken-thigh': 300, 'potato': 200, 'carrot': 100, 'celery': 2, 'onion': 0.5, 'green-beans': 80, 'frozen-corn': 50, 'butter': 20, 'flour': 20, 'chicken-broth': 300, 'milk': 400, 'dinner-buns': 4 } },
+      'r4':  { name: 'Ham & potato soup + bologna sandwich', when: 'Tue 3', uses: { 'ham-steak': 150, 'potato': 400, 'carrot': 60, 'celery': 1, 'onion': 0.5, 'butter': 25, 'flour': 15, 'chicken-broth': 500, 'milk': 400, 'bread': 4, 'bologna': 60 } },
+      'n1':  { name: 'Chili + wieners', when: 'Mon 9', later: ['milk', 'cucumber'], uses: { 'wieners': 2, 'cucumber': 0.5, 'milk': 250 } },
+      'n2':  { name: 'Chicken & cauliflower macaroni', when: 'Mon 9', later: ['chicken-breast', 'cauliflower', 'milk'], uses: { 'chicken-breast': 250, 'macaroni': 150, 'cauliflower': 200, 'carrot': 40, 'butter': 20, 'flour': 20, 'milk': 550 } },
+      'n3':  { name: 'Freezer meal + veggies', when: 'Fri 13', later: ['milk'], uses: { 'carrot': 60, 'milk': 250 } },
+      'sn1': { name: 'Graham wafers + fruit + milk', when: 'Mon 2', uses: { 'graham-wafers': 1, 'milk': 250 } },
+      'sn2': { name: 'Ham + crackers + cucumber', when: 'Tue 3', uses: { 'deli-meat': 60, 'crackers': 1, 'cucumber': 0.5 } },
+      'sn3': { name: 'Nut-free trail mix + veggies', when: 'Wed 4', uses: { 'rice-cereal': 30, 'raisins': 20, 'pumpkin-seeds': 20, 'chocolate-chips': 15, 'cucumber': 0.5, 'carrot': 40, 'milk': 250 } },
+      'sn4': { name: 'Rice crispy treats + veggies', when: 'Wed 4 → Mon 9', later: ['milk', 'cucumber'], uses: { 'butter': 30, 'mini-marshmallows': 150, 'rice-cereal': 120, 'cucumber': 0.5, 'milk': 250 } },
+      'sn5': { name: 'Crispy Minis + raw veggies', when: 'Tue 10', later: ['milk', 'cucumber'], uses: { 'rice-chips': 1, 'cucumber': 0.5, 'carrot': 40, 'milk': 250 } },
+      'sn6': { name: 'Cinnamon toast + fruit', when: 'Thu 12', later: ['milk'], uses: { 'bread': 2, 'butter': 10, 'sugar': 10, 'milk': 250 } },
+      'sn7': { name: 'Sorbet bar + fruit', when: 'Fri 13', uses: { 'sorbet-bars': 2 } }
     },
     items: {
-      'chicken-strips': { name: 'Frozen breaded chicken strips, egg-free', group: 'frozen', unit: 'box', text: 'enough for 6 portions (~700 g)', note: 'Many brands use egg in the batter or breading. Check the box.' },
-      'ham-steak':      { name: 'Ham steak', group: 'meat', unit: 'g', text: '1 small (150 g used)' },
-      'sorbet-bars':    { name: 'Fruit sorbet bars, dairy-free', group: 'frozen', unit: '', text: '1 box (2 used)', note: 'Sorbet, not sherbet: sherbet contains milk.' },
-      'crackers':       { name: 'Crackers, egg-free & nut-free', group: 'dry', unit: 'box', note: 'Check for a nut "may contain" warning.' },
-      'pretzels':       { name: 'Pretzels, egg-free & nut-free', group: 'dry', unit: 'bag', note: 'Soft pretzel thins are easier for the younger one.' },
-      'icing-sugar':    { name: 'Icing sugar', group: 'dry', unit: 'g', text: '1 small bag (100 g used)' },
-      'sprinkles':      { name: 'Halloween sprinkles, egg-free & nut-free', group: 'dry', unit: '', text: '1 small jar', note: 'Check for egg, dairy and a nut "may contain" warning.' },
-      'juice':          { name: 'Juice boxes', group: 'other', unit: '', text: '2 for Tuesday' },
-      'fresh-fruit':    { name: 'Fresh fruit, incl. oranges', group: 'produce', text: 'for lunchboxes and Monday\'s, Tuesday\'s and Wednesday\'s snacks, plus orange wedges for Sunday', always: true }
+      'ham-steak':     { name: 'Ham steak', group: 'meat', unit: 'g', text: '1 small (150 g used)' },
+      'bologna':       { name: 'Sliced bologna', group: 'meat', unit: 'g', text: '1 small pack (60 g used)', note: 'Check for egg and milk binders.' },
+      'wieners':       { name: 'All-beef wieners, egg-free', group: 'meat', unit: '', text: '1 pack (2 used)', note: 'Some wieners use egg as a binder. Check the best-before covers Nov 9.' },
+      'dinner-buns':   { name: 'Dinner buns, egg-free', group: 'bakery', unit: '', text: '1 pack (4 used)', note: 'Some soft rolls are glazed with egg.' },
+      'graham-wafers': { name: 'Graham wafers', group: 'dry', unit: 'box', note: 'Many contain honey: not recommended under age one. Check for a nut warning.' },
+      'crackers':      { name: 'Crackers, egg-free & nut-free', group: 'dry', unit: 'box', note: 'Check for a nut "may contain" warning.' },
+      'rice-chips':    { name: 'Crispy Minis rice chips, plain', group: 'dry', unit: 'bag', note: 'Flavoured ones can contain milk powder.' },
+      'sorbet-bars':   { name: 'Fruit sorbet bars, dairy-free', group: 'frozen', unit: '', text: '2 needed — check for leftovers from Oct 26', note: 'Sorbet, not sherbet: sherbet contains milk.' },
+      'fresh-fruit':   { name: 'Fresh fruit, incl. oranges', group: 'produce', text: 'for Nov 2–4 lunches and snacks; buy more on the way back for Nov 9–13', always: true }
     }
   };
 </script>
-<script src="inventory.js?v=4"></script>
+<script src="inventory.js?v=5"></script>
 </body>
 </html>
