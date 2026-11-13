@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Meal Plan">
 <meta name="theme-color" content="#c0533f">
-<title>Meal Plan — Nov 1–13, 2026</title>
+<title>Meal Plan — Nov 16–20, 2026</title>
 <style>
   :root{
     --bg:#f6f5f2; --card:#ffffff; --ink:#22201c; --muted:#6b6459;
@@ -165,7 +165,7 @@
 <body id="top">
 <header>
   <h1>🍽️ Family Meal Plan</h1>
-  <div class="sub">Nov 1–4 &amp; Nov 9–13, 2026 · Kids' portions · metric · <a href="recipes.html" style="color:#fff;">📖 Recipe Book</a></div>
+  <div class="sub">Nov 16–20, 2026 · Family &amp; kids' dinners · metric · <a href="recipes.html" style="color:#fff;">📖 Recipe Book</a></div>
 </header>
 
 <div class="tabs" id="tabbar">
@@ -177,136 +177,102 @@
   <button data-tab="prep" onclick="showTab('prep')">🔪 Prep</button>
 </div>
 
+
 <div class="wrap">
 <!-- ============ PLAN ============ -->
 <div class="panel active" id="tab-plan">
-  <h2 class="sec">This week — Nov 1–4</h2>
-  <p class="note">Kids' portions only. Each kids' dinner makes <b>2 kid dinners + 2 packed lunches</b> for the next day. You're away Thursday and Friday. On Sunday you also make the <b>cheeseburger casserole</b> and freeze it for Nov 12. Tap <b>made?</b> once a dish is cooked and its ingredients come out of inventory.</p>
+  <h2 class="sec">This week — Nov 16–20</h2>
+  <p class="note">Three family dinners (Sun, Tue, Wed) and two kids-only dinners (Mon, Thu). Each dinner also makes <b>2 packed lunches</b> for the next day, matched to the daycare tray. Family dinners have a <b>low-carb swap</b>. Shop on the weekend. Tap <b>made?</b> once a dish is cooked and its ingredients come out of inventory.</p>
   <div class="cal">
     <div class="day">
-      <div class="dbadge"><span class="dow">SUN</span><span class="dnum">1</span></div>
+      <div class="dbadge"><span class="dow">SUN</span><span class="dnum">15</span></div>
       <div class="dmeals">
-        <div class="meal dinner" data-made="r1"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r1')">Meatballs + Rice + Veggies</a><small>Kid portions · cook ahead → matches Monday's daycare lunch</small></div>
-        <div class="meal dinner" data-made="r2"><span class="k">Cook &amp; freeze</span><a class="dish" onclick="openRecipe('r2')">Cheeseburger Casserole</a><small>Kid portions · into the freezer for Thursday Nov 12's lunch</small></div>
+        <div class="meal dinner" data-made="r1"><span class="k">Dinner · family</span><a class="dish" onclick="openRecipe('r1')">Spaghetti + Freezer Sauce</a><small>Sauce from the freezer · low-carb swap: zucchini noodles · cook ahead → Monday's lunch</small></div>
+        <div class="meal snack" data-made="sn1"><span class="k">Bake</span><a class="dish" onclick="openRecipe('sn1')">Banana Bread</a><small>For Monday's snack · egg-free, a little less sugar</small></div>
+        <div class="meal snack" data-made="sn3"><span class="k">Bake</span><a class="dish" onclick="openRecipe('sn3')">Banana Oat Bites</a><small>For Wednesday's snack · same oven, same bananas</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">MON</span><span class="dnum">2</span></div>
+      <div class="dbadge"><span class="dow">MON</span><span class="dnum">16</span></div>
       <div class="dmeals">
-        <div class="meal snack" data-made="sn1"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn1')">Graham Wafers + Fruit + Milk</a><small>No yogurt · daycare has: Yogurt, Graham Wafers, Fruit, Milk</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r1')">Meatballs + Rice + Veggies</a><small>Packed · matches daycare: Meatballs, Rice, Veggies, Fruit, Milk</small></div>
-        <div class="meal dinner" data-made="r3"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r3')">Chicken Pot Pie + Buns</a><small>Kid portions · cook ahead → matches Tuesday's daycare lunch</small></div>
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn1')">Banana Bread + Water</a><small>Baked Sunday · matches daycare: Banana Bread</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r1')">Spaghetti + Sauce + Cucumber</a><small>Packed · daycare has: Tomato Macaroni Soup, Grilled Cheese, Fruit, Milk</small></div>
+        <div class="meal dinner" data-made="r2"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r2')">Perogy Casserole + Broccoli</a><small>Kid portions · cook ahead → matches Tuesday's daycare lunch</small></div>
+        <div class="meal snack" data-made="sn2"><span class="k">Bake</span><a class="dish" onclick="openRecipe('sn2')">Mini Pizza Buns</a><small>For Tuesday's snack · 10 min in the oven after the casserole</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">TUE</span><span class="dnum">3</span></div>
+      <div class="dbadge"><span class="dow">TUE</span><span class="dnum">17</span></div>
       <div class="dmeals">
-        <div class="meal snack" data-made="sn2"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn2')">Ham + Crackers + Cucumber</a><small>No cheese · daycare has: Ham, Cheese, Zucchini Muffin, Water</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r3')">Chicken Pot Pie + Buns</a><small>Packed · matches daycare: Chicken Pot Pie, Buns, Fruit, Milk</small></div>
-        <div class="meal dinner" data-made="r4"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r4')">Ham &amp; Potato Soup + Bologna Sandwich</a><small>Kid portions · cook ahead → matches Wednesday's daycare lunch</small></div>
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn2')">Mini Pizza Buns + Juice</a><small>Made Monday · matches daycare: Pizza Buns, Juice</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r2')">Perogy Casserole + Broccoli</a><small>Packed · matches daycare: Perogies Casserole, Veggies, Fruit, Milk</small></div>
+        <div class="meal dinner" data-made="r3"><span class="k">Dinner · family</span><a class="dish" onclick="openRecipe('r3')">갈비 Pie</a><small>Galbi-jjim from the freezer under mash · low-carb swap: cauliflower mash · cook ahead → Wednesday's lunch</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">WED</span><span class="dnum">4</span></div>
+      <div class="dbadge"><span class="dow">WED</span><span class="dnum">18</span></div>
       <div class="dmeals">
-        <div class="meal snack" data-made="sn3"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn3')">Nut-free Trail Mix + Veggies + Milk</a><small>No nuts · daycare has: Trail Mix, Raw Veggies, Milk</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r4')">Ham &amp; Potato Soup + Bologna Sandwich</a><small>Packed · matches daycare: Ham Potato Soup, Bologna Sandwich, Fruit, Milk</small></div>
-        <div class="meal none">Dinner: something you have around. Make the rice crispy treats for Nov 9 tonight.</div>
-      </div>
-    </div>
-    <div class="day weekend">
-      <div class="dbadge"><span class="dow">THU–FRI</span><span class="dnum">5–6</span></div>
-      <div class="dmeals">
-        <div class="meal none">Away. No daycare lunches or snacks.</div>
-      </div>
-    </div>
-  </div>
-
-  <h2 class="sec">Back from out of town — Nov 8–13</h2>
-  <p class="note">Hardly any cooking: one dinner, the rest comes from the freezer. Buy the <b>perishables on the way back</b> (Shopping tab, second list).</p>
-  <div class="cal">
-    <div class="day weekend">
-      <div class="dbadge"><span class="dow">SUN</span><span class="dnum">8</span></div>
-      <div class="dmeals">
-        <div class="meal none">Buy the "on the way back" list. Move the chili to the fridge to thaw.</div>
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn3')">Banana Oat Bites + Fruit</a><small>No yogurt · daycare has: Greek Yogurt, Fruit, Granola</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r3')">갈비 Pie + Broccoli</a><small>Packed · stands in for daycare: Shepherd's Pie, Fruit, Milk</small></div>
+        <div class="meal dinner" data-made="r4"><span class="k">Dinner · family</span><a class="dish" onclick="openRecipe('r4')">Frozen Pizza + Veggie Sticks</a><small>Low-carb swap: one slice + a big salad · cook ahead → Thursday's lunch</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">MON</span><span class="dnum">9</span></div>
+      <div class="dbadge"><span class="dow">THU</span><span class="dnum">19</span></div>
       <div class="dmeals">
-        <div class="meal snack" data-made="sn4"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn4')">Rice Crispy Treat + Veggies + Milk</a><small>Made Nov 4 · matches daycare: Rice Crispy Treat, Veggie, Milk</small></div>
-        <div class="meal lunch" data-made="n1"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('n1')">Chili + Wieners</a><small>From the freezer · daycare has: Weiner &amp; Beans, Shredded Cheese, Veggies, Fruit, Milk</small></div>
-        <div class="meal dinner" data-made="n2"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('n2')">Chicken &amp; Cauliflower Macaroni</a><small>Kid portions · cook ahead → matches Tuesday's daycare lunch</small></div>
+        <div class="meal snack" data-made="sn4"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn4')">Ham + Crackers + Cucumber</a><small>No cold cheese for the younger one · daycare has: Meat, Cheese, Crackers</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r4')">Pizza + Cucumber &amp; Peppers</a><small>Packed · stands in for daycare: Chicken Tortilla Rollups, Veggies, Fruit, Milk</small></div>
+        <div class="meal dinner" data-made="r5"><span class="k">Dinner · kids</span><a class="dish" onclick="openRecipe('r5')">Lazy Cabbage Roll Casserole</a><small>Kid portions · cook ahead → matches Friday's daycare lunch</small></div>
+        <div class="meal snack" data-made="sn5"><span class="k">Bake</span><a class="dish" onclick="openRecipe('sn5')">Broccoli Cheddar Hand Pies</a><small>For Friday's snack · while the casserole bakes</small></div>
       </div>
     </div>
     <div class="day">
-      <div class="dbadge"><span class="dow">TUE</span><span class="dnum">10</span></div>
+      <div class="dbadge"><span class="dow">FRI</span><span class="dnum">20</span></div>
       <div class="dmeals">
-        <div class="meal snack" data-made="sn5"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn5')">Crispy Minis + Raw Veggies + Milk</a><small>Check label · matches daycare: Crispy Minis, Raw Veggies, Milk</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('n2')">Chicken &amp; Cauliflower Macaroni</a><small>Packed · matches daycare: Chicken, Cheese, Cauliflower Macaroni, Fruit, Milk</small></div>
-        <div class="meal none">Dinner: from the freezer or takeout.</div>
-      </div>
-    </div>
-    <div class="day weekend">
-      <div class="dbadge"><span class="dow">WED</span><span class="dnum">11</span></div>
-      <div class="dmeals">
-        <div class="meal none">Remembrance Day, no daycare. Tonight, move the casserole to the fridge.</div>
-      </div>
-    </div>
-    <div class="day">
-      <div class="dbadge"><span class="dow">THU</span><span class="dnum">12</span></div>
-      <div class="dmeals">
-        <div class="meal snack" data-made="sn6"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn6')">Cinnamon Toast + Fruit + Milk</a><small>Egg-free · daycare has: Cinnamon Buns, Fruit, Milk</small></div>
-        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r2')">Cheeseburger Casserole</a><small>From the freezer (made Nov 1) · matches daycare: Cheeseburger Casserole, Veggies, Fruit, Milk</small></div>
-        <div class="meal none">Dinner: your choice. Move Friday's freezer meal to the fridge.</div>
-      </div>
-    </div>
-    <div class="day">
-      <div class="dbadge"><span class="dow">FRI</span><span class="dnum">13</span></div>
-      <div class="dmeals">
-        <div class="meal snack" data-made="sn7"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn7')">Fruit Sorbet Bar + Fruit</a><small>Instead of frozen yogurt · daycare has: Frozen Yogurt Pop, Fruit, Water</small></div>
-        <div class="meal lunch" data-made="n3"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('n3')">Freezer Meal + Veggies</a><small>From the freezer · daycare has: Pork Loin, Mashed Potatoes, Veggies, Fruit, Milk</small></div>
+        <div class="meal snack"><span class="k">Snack</span><a class="dish" onclick="openRecipe('sn5')">Broccoli Cheddar Hand Pie</a><small>Made Thursday · matches daycare: Broccoli Cheddar Hand Pie</small></div>
+        <div class="meal lunch"><span class="k">Lunch</span><a class="dish" onclick="openRecipe('r5')">Lazy Cabbage Roll Casserole</a><small>Packed · matches daycare: Lazy Cabbage Rolls, Fruit, Milk</small></div>
+        <div class="meal none">Dinner: your choice.</div>
       </div>
     </div>
   </div>
 
   <h2 class="sec">How to read the tags</h2>
   <div class="legend">
-    <div class="row"><b>🚫 Allergen-safe</b><span>No <b>raw/uncooked dairy, egg, tree nut, peanut, or pea</b>. ✅ Cooked/baked milk is used.</span></div>
-    <div class="row"><b>👶 Kid portions</b><span>Sized for <b>2 kid dinners + 2 kid lunches</b>.</span></div>
-    <div class="row"><b>🩸 Iron-rich</b><span>Iron sources <b>paired with vitamin C</b> to aid absorption, plus extra <b>fiber</b>.</span></div>
+    <div class="row"><b>🚫 Allergen-safe</b><span>No <b>raw/uncooked dairy, egg, tree nut, peanut, pea or honey</b> for the younger one. ✅ Cooked milk, baked-in milk and melted cheese are used.</span></div>
+    <div class="row"><b>🏠 Family</b><span>Sized for the <b>whole family</b> tonight, plus <b>2 kid lunches</b> tomorrow.</span></div>
+    <div class="row"><b>👶 Kids only</b><span>Sized for <b>2 kid dinners + 2 kid lunches</b>.</span></div>
+    <div class="row"><b>🥗 Low-carb swap</b><span>A lower-carb plate for an adult, cooked alongside.</span></div>
+    <div class="row"><b>🩸 Iron-rich</b><span>Iron sources <b>paired with vitamin C</b> to aid absorption.</span></div>
   </div>
 </div>
 
 <!-- ============ RECIPES ============ -->
 <div class="panel" id="tab-recipes">
-  <h2 class="sec">Cooking — Nov 1–4</h2>
+  <h2 class="sec">Dinners → next day's lunch</h2>
 
   <details class="card" id="r1">
-    <summary><div class="cnum">1</div><div class="ctitle"><div class="t">Meatballs + Rice + Veggies</div><div class="s">Sunday dinner → Monday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">1</div><div class="ctitle"><div class="t">Spaghetti + Freezer Sauce</div><div class="s">Sunday family dinner → Monday lunch · family + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (no egg)</span><span class="tag t-iron">Iron-rich ★</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Breadcrumbs soaked in milk bind the meatballs instead of egg, and the milk is baked in. <b>Check the breadcrumbs are egg-free.</b> No parmesan.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check pasta)</span><span class="tag t-iron">Iron-rich (if meat sauce)</span><span class="tag t-fam">Family</span><span class="tag t-diab">Low-carb swap</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> <b>Check the spaghetti isn't egg pasta.</b> Skip cold grated parmesan on the younger one's plate; stirring a little cheddar into the hot sauce so it melts is fine.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>350 g ground beef <span class="pill">iron ★</span></li>
-        <li>25 g breadcrumbs, egg-free, soaked in 30 ml milk</li>
-        <li>¼ onion + 1 clove garlic, grated · 30 g carrot, finely grated <span class="pill">hidden veg</span></li>
-        <li>½ tsp dried oregano, a pinch of salt</li>
-        <li>Sauce: 1 small can (398 ml) crushed tomatoes <span class="pill">vit C</span></li>
-        <li>120 g rice (dry)</li>
-        <li>150 g broccoli <span class="pill">vit C</span> + 50 g carrot, steamed</li>
+        <li>Pasta sauce from the freezer, enough for the family + 2 kid lunches (about 1–1.2 L) <span class="pill">iron · vit C</span></li>
+        <li>300 g spaghetti, egg-free (kids, one adult, and lunches)</li>
+        <li>Low-carb swap: 2 zucchini, spiralised or cut into ribbons with a peeler</li>
+        <li>For Monday's lunch: ½ cucumber, as sticks · fresh fruit</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Preheat the oven to <b>200°C (400°F)</b>. Start the rice.</li>
-        <li>Mix the beef, soaked crumbs, onion, garlic, carrot, oregano and salt with your hands. Roll into 2–3 cm balls (about 20).</li>
-        <li>Bake on a lined tray 15–18 min, until cooked through.</li>
-        <li>Warm the crushed tomatoes in a pan, add the meatballs and simmer 5 min. Steam the broccoli and carrots.</li>
+        <li><b>Saturday night:</b> move the sauce to the fridge to thaw (or defrost it in the microwave on Sunday).</li>
+        <li>Boil the spaghetti until tender. Meanwhile, heat the sauce until bubbling.</li>
+        <li>Low-carb swap: sauté the zucchini noodles in a little oil for 2–3 min, until just tender, and top with sauce.</li>
+        <li>Set aside 2 kid portions of spaghetti and sauce for Monday's lunch before serving.</li>
       </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> quarter the meatballs for the younger one; round, firm foods are a choking risk.</div>
-      <div class="note iron"><span class="lbl">🩸 Iron-rich ★:</span> beef, with tomato and broccoli for vitamin C.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> meatballs and sauce over rice, veg on the side. Matches Monday's daycare tray (Meatballs, Rice, Veggies, Fruit, Milk).</div>
+      <div class="note diab"><span class="lbl">🥗 Low-carb swap:</span> sauce over zucchini noodles instead of pasta. A side of the cucumber or a green salad bulks it out.</div>
+      <div class="note"><span class="lbl">👶 Little ones:</span> cut the spaghetti into 2–3 cm lengths for the younger one.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron:</span> a meat sauce gives iron, and the tomato brings vitamin C.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> reheat until piping hot with a splash of water and pack in a warmed thermos, with cucumber sticks and fruit. Stands in for Monday's daycare tray (Tomato Macaroni Soup, Grilled Cheese, Fruit, Milk): same tomato-and-pasta idea.</div>
       <div class="savewidget" data-recipe-id="r1">
         <button class="savebtn" onclick="toggleSave('r1')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-r1">
@@ -316,30 +282,29 @@
       </div>
     </div>
   </details>
-
   <details class="card" id="r2">
-    <summary><div class="cnum">❄</div><div class="ctitle"><div class="t">Cheeseburger Casserole</div><div class="s">Make Sunday Nov 1 and freeze → Thursday Nov 12 lunch · 4 kid portions</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">2</div><div class="ctitle"><div class="t">Perogy Casserole + Broccoli</div><div class="s">Monday kids' dinner → Tuesday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check pasta)</span><span class="tag t-iron">Iron-rich</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> No egg or raw dairy. <b>Check the macaroni isn't egg pasta.</b> The cheddar goes in when you reheat it, so it's melted, not raw.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check perogies)</span><span class="tag t-iron">Iron boost</span><span class="tag t-kid">Kids only</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> The milk and cheddar are baked in. <b>Check the perogy dough is egg-free</b>; some brands use egg. Cheese-filled perogies are fine because they're cooked.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>300 g ground beef <span class="pill">iron</span></li>
-        <li>½ onion, finely chopped · 60 g carrot, finely grated <span class="pill">hidden veg</span></li>
-        <li>1 small can (398 ml) crushed tomatoes + 20 g tomato paste <span class="pill">vit C</span></li>
-        <li>1 tbsp ketchup + 1 tsp mild mustard</li>
-        <li>150 g macaroni, egg-free</li>
-        <li>40 g shredded cheddar, for reheating day</li>
+        <li>600 g frozen perogies (potato &amp; cheddar)</li>
+        <li>150 g ham steak, diced small <span class="pill">iron</span></li>
+        <li>½ onion, finely chopped · 15 g butter</li>
+        <li>100 ml milk · 60 g shredded cheddar</li>
+        <li>200 g broccoli, in small florets <span class="pill">vit C</span></li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Cook the macaroni 2 min less than the packet says (it softens when reheated). Drain.</li>
-        <li>Brown the beef with the onion and carrot, 6–7 min. Stir in the tomato paste, tomatoes, ketchup and mustard and simmer 10 min.</li>
-        <li>Stir in the macaroni. Cool, then pack into 2 freezer tubs of 2 portions each and label with the date.</li>
-        <li><b>Nov 11 evening:</b> move one tub to the fridge. <b>Nov 12 morning:</b> reheat with a splash of water until piping hot, stir in the cheddar until melted, and pack in a warmed thermos.</li>
+        <li>Preheat the oven to <b>190°C (375°F)</b>. Boil the perogies for 3 min (they finish in the oven), then drain.</li>
+        <li>Soften the onion in the butter, 5 min. Add the ham and cook for 2 min more.</li>
+        <li>Toss the perogies with the ham and onion in a 20 cm baking dish. Pour the milk over, then scatter the cheddar on top.</li>
+        <li>Bake 20 min, until bubbling and golden. Steam the broccoli for the last 5 min.</li>
       </ol>
-      <div class="note iron"><span class="lbl">🩸 Iron-rich:</span> beef, with tomato for vitamin C.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> with veggie sticks on the side. Matches Nov 12's daycare tray (Cheeseburger Casserole, Veggies, Fruit, Milk). The second tub can be Friday Nov 13's freezer lunch.</div>
+      <div class="note"><span class="lbl">👶 Little ones:</span> cut the perogies into small pieces for the younger one; the dough can be gummy.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron boost:</span> ham, with broccoli for vitamin C.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> reheat until piping hot and pack in a warmed thermos with the broccoli. Matches Tuesday's daycare tray (Perogies Casserole, Veggies, Fruit, Milk).</div>
       <div class="savewidget" data-recipe-id="r2">
         <button class="savebtn" onclick="toggleSave('r2')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-r2">
@@ -349,37 +314,45 @@
       </div>
     </div>
   </details>
-
   <details class="card" id="r3">
-    <summary><div class="cnum">2</div><div class="ctitle"><div class="t">Chicken Pot Pie + Buns</div><div class="s">Monday dinner → Tuesday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">3</div><div class="ctitle"><div class="t">갈비 Pie</div><div class="s">Tuesday family dinner → Wednesday lunch · family + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (2 swaps)</span><span class="tag t-iron">Iron boost</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe — two swaps:</span> classic pot pie is built on <b>peas and carrots</b>, so the peas are replaced with green beans and corn. And the lid is normally <b>brushed with beaten egg</b>; this uses milk instead, which browns nearly as well. Also check the pastry itself is egg-free; most puff and shortcrust sheets are, but not all. <b>Check the buns are egg-free</b> too.</div>
-      <h4>Ingredients</h4>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check sauce)</span><span class="tag t-iron">Iron-rich ★</span><span class="tag t-fam">Family</span><span class="tag t-diab">Low-carb swap</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> A shepherd's pie made with galbi-jjim from the freezer. Before it goes in the dish: <b>take out any chestnuts</b> (a tree nut), and any jujube pits and ginkgo nuts. If the galbi-jjim was made with <b>honey</b>, the younger one shouldn't have it, even cooked, so serve them something else. Rice syrup or sugar is fine. The milk in the mash is cooked.</div>
+      <h4>Filling</h4>
       <ul>
-        <li>350 g boneless chicken thighs, diced <span class="pill">iron</span></li>
-        <li>½ onion, diced · 100 g carrot, diced · 2 celery stalks, diced <span class="pill">hidden veg</span></li>
-        <li>80 g green beans, cut short + 80 g frozen corn <span class="pill">no peas</span></li>
-        <li>25 g butter · 25 g flour</li>
-        <li>250 ml chicken broth · 150 ml milk</li>
-        <li>½ tsp dried thyme, salt, pepper</li>
-        <li>1 sheet puff pastry or shortcrust, egg-free, thawed</li>
-        <li>1 tbsp milk, for brushing — <b>not egg</b></li>
-        <li>For Tuesday's lunchbox: 2–4 buns, egg-free</li>
+        <li>Galbi-jjim from the freezer, enough for the family + 2 kid lunches (about 1 kg with bones) <span class="pill">iron ★</span></li>
+        <li>100 g frozen corn</li>
+        <li>10 g cornstarch + 2 tbsp cold water, to thicken</li>
+      </ul>
+      <h4>Mash topping</h4>
+      <ul>
+        <li>800 g potatoes, peeled and cut into chunks</li>
+        <li>30 g butter · 100 ml milk, warm · pinch of salt</li>
+        <li>40 g shredded cheddar, for the top</li>
+      </ul>
+      <h4>Low-carb swap</h4>
+      <ul>
+        <li>400 g cauliflower, in florets · 10 g butter</li>
+      </ul>
+      <h4>On the side</h4>
+      <ul>
+        <li>200 g broccoli, steamed <span class="pill">vit C</span></li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Thaw the pastry in the fridge during the day (or 30–40 min on the counter). Preheat the oven to <b>200°C (400°F)</b>.</li>
-        <li>Melt the butter in a pan and soften the onion, carrot and celery, 6–8 min.</li>
-        <li>Add the chicken and cook until it's no longer pink on the outside.</li>
-        <li>Sprinkle in the flour and stir for a minute. Gradually add the broth, then the milk, stirring as it thickens; simmer 5 min.</li>
-        <li>Stir in the green beans, corn and thyme; season lightly.</li>
-        <li>Pour into a 20 cm baking dish. Lay the pastry over, trim, press the edges down and cut a few steam slits. Brush with milk.</li>
-        <li>Bake 25–30 min until the pastry is puffed and golden.</li>
+        <li><b>Monday morning:</b> move the galbi-jjim to the fridge to thaw.</li>
+        <li>Boil the potatoes and, in a separate pot, the cauliflower, until very soft, 15–18 min. Preheat the oven to <b>200°C (400°F)</b>.</li>
+        <li>Meanwhile, warm the galbi-jjim. Lift out the meat, pull it off the bones and chop it small. Chop the radish and carrot from the stew small too. Pick out chestnuts, jujube pits and ginkgo.</li>
+        <li>Return the meat and veg to the pot with the corn. Stir in the cornstarch slurry and simmer 2 min until the sauce is thick and glossy.</li>
+        <li>Mash the potatoes with the butter, milk and salt. Mash the cauliflower with its butter.</li>
+        <li>Spoon most of the filling into a 20 × 20 cm dish and a smaller one for the low-carb swap. Top the big dish with potato and the small one with cauliflower. Scatter cheddar over both.</li>
+        <li>Bake 20–25 min, until golden at the edges. Steam the broccoli while it bakes.</li>
       </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> chop the chicken small, and break the pastry into small pieces for the younger one.</div>
-      <div class="note iron"><span class="lbl">🩸 Iron boost:</span> chicken — pack orange or berries alongside for vitamin C.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> spoon filling and a piece of pastry into a warmed thermos (or pack the pastry separately so it stays crisp), with a bun and fruit. Matches Tuesday's daycare tray (Chicken Pot Pie, Buns, Fruit, Milk).</div>
+      <div class="note diab"><span class="lbl">🥗 Low-carb swap:</span> the small dish with the cauliflower topping. Galbi-jjim sauce is sweet, so use a slotted spoon and leave most of the sauce behind for that dish.</div>
+      <div class="note"><span class="lbl">👶 Little ones:</span> make sure every bone fragment is out, and chop the meat finely; short rib can be chewy.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich ★:</span> beef short rib, with broccoli for vitamin C.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> reheat until piping hot and pack in a warmed thermos, with broccoli and fruit. Stands in for Wednesday's daycare tray (Shepherd's Pie, Fruit, Milk).</div>
       <div class="savewidget" data-recipe-id="r3">
         <button class="savebtn" onclick="toggleSave('r3')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-r3">
@@ -389,32 +362,25 @@
       </div>
     </div>
   </details>
-
   <details class="card" id="r4">
-    <summary><div class="cnum">3</div><div class="ctitle"><div class="t">Ham &amp; Potato Soup + Bologna Sandwich</div><div class="s">Tuesday dinner → Wednesday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">4</div><div class="ctitle"><div class="t">Frozen Pizza + Veggie Sticks</div><div class="s">Wednesday family dinner → Thursday lunch · family + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check labels)</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> The milk is simmered into the soup. <b>Check the bologna and bread</b> for egg and milk binders.</div>
-      <h4>Soup</h4>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check box)</span><span class="tag t-fam">Family</span><span class="tag t-diab">Low-carb swap</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> The cheese is melted, so it's fine. <b>Check the box</b> for egg in the crust and for pesto (pine nuts). Skip pizzas with peas.</div>
+      <h4>Ingredients</h4>
       <ul>
-        <li>150 g ham steak, diced <span class="pill">iron</span></li>
-        <li>2 medium potatoes (~400 g), diced · 60 g carrot, diced · 1 celery stalk · ½ onion, chopped</li>
-        <li>15 g butter + 15 g flour · 500 ml chicken broth + 150 ml milk</li>
-      </ul>
-      <h4>Sandwiches</h4>
-      <ul>
-        <li>4 slices sandwich bread, egg-free · 10 g butter</li>
-        <li>60 g sliced bologna</li>
+        <li>2 frozen pizzas (one plain cheese or ham for the kids)</li>
+        <li>1 cucumber + 1 bell pepper, as sticks <span class="pill">vit C</span></li>
+        <li>Low-carb swap: 150 g baby spinach for a big salad, with some of the cucumber and pepper</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li>Soften the onion, carrot and celery in the butter, 5 min. Stir in the flour for 1 min.</li>
-        <li>Add the broth and potatoes. Simmer, covered, until the potatoes are very soft, 15 min.</li>
-        <li>Mash about half the potatoes in the pot to thicken. Stir in the ham and milk and heat through without boiling hard.</li>
-        <li>Sandwiches: butter the bread, fill with bologna and cut into fingers. For lunch, make them fresh Wednesday morning.</li>
+        <li>Bake the pizzas as the box says. Cut the veggie sticks while they bake.</li>
+        <li>Set aside 2 kid slices for Thursday's lunch before serving. Cool, then refrigerate.</li>
       </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> cut the bologna into small pieces; whole slices can be hard to chew.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> soup in a warmed thermos, sandwich fingers on the side. Matches Wednesday's daycare tray (Ham Potato Soup, Bologna Sandwich, Fruit, Milk).</div>
+      <div class="note diab"><span class="lbl">🥗 Low-carb swap:</span> one slice with a large spinach, cucumber and pepper salad. Thin-crust pizza is the lower-carb choice.</div>
+      <div class="note"><span class="lbl">👶 Little ones:</span> cut the pizza into small squares for the younger one, quarter any pepperoni, and steam the pepper sticks for 2 min.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> pizza cut into fingers (warm it and pack in an insulated container, or send it cold), cucumber and pepper sticks, and fruit. Stands in for Thursday's daycare tray (Chicken Tortilla Rollups, Veggies, Fruit, Milk).</div>
       <div class="savewidget" data-recipe-id="r4">
         <button class="savebtn" onclick="toggleSave('r4')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-r4">
@@ -424,109 +390,65 @@
       </div>
     </div>
   </details>
-
-  <h2 class="sec">Cooking — Nov 9–13</h2>
-
-  <details class="card" id="n1">
-    <summary><div class="cnum">4</div><div class="ctitle"><div class="t">Chili + Wieners</div><div class="s">Monday Nov 9 lunch · from the freezer · 2 kid lunches</div></div><div class="chev">▾</div></summary>
+  <details class="card" id="r5">
+    <summary><div class="cnum">5</div><div class="ctitle"><div class="t">Lazy Cabbage Roll Casserole</div><div class="s">Thursday kids' dinner → Friday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check wieners)</span><span class="tag t-iron">Iron-rich</span><span class="tag t-kid">Kid portions</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Some wieners use egg as a binder, so check the pack. Daycare adds shredded cheese: stir a little cheddar into the hot chili so it melts before you pack it.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span><span class="tag t-iron">Iron-rich ★</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kids only</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> No egg, nuts or peas. The cheddar is melted on top.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>2 kid portions of chili from the freezer <span class="pill">iron</span></li>
-        <li>2 all-beef wieners, egg-free</li>
-        <li>20 g shredded cheddar, optional</li>
-        <li>Veggies: ½ cucumber, as sticks <span class="pill">vit C with fruit</span></li>
+        <li>300 g ground beef <span class="pill">iron ★</span></li>
+        <li>½ onion, finely chopped · 1 clove garlic, grated</li>
+        <li>½ small head of green cabbage (about 350 g), finely shredded <span class="pill">vit C · hidden veg</span></li>
+        <li>80 g rice (dry), rinsed</li>
+        <li>1 small can (398 ml) crushed tomatoes <span class="pill">vit C</span> · 250 ml chicken broth</li>
+        <li>½ tsp paprika, a pinch of salt · 30 g shredded cheddar</li>
       </ul>
       <h4>Method</h4>
       <ol>
-        <li><b>Sunday Nov 8:</b> move the chili to the fridge to thaw.</li>
-        <li><b>Monday morning:</b> slice the wieners and simmer them in the chili until it's piping hot, 8–10 min. Pack in warmed thermoses.</li>
+        <li>Preheat the oven to <b>180°C (350°F)</b>.</li>
+        <li>Brown the beef with the onion and garlic in an ovenproof pot, 6–7 min. Stir in the paprika and salt.</li>
+        <li>Stir in the cabbage, raw rice, tomatoes and broth. Bring to a simmer.</li>
+        <li>Cover and bake 45 min, until the rice is tender. Uncover, scatter the cheddar on top and bake 5 min more.</li>
       </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> round slices of wiener are a choking risk. Quarter them lengthwise, then chop small.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> stands in for Monday's daycare tray (Weiner &amp; Beans, Shredded Cheese, Veggies, Fruit, Milk).</div>
-      <div class="savewidget" data-recipe-id="n1">
-        <button class="savebtn" onclick="toggleSave('n1')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-n1">
-          <textarea id="savenotes-n1" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('n1')">Submit</button>
+      <div class="note"><span class="lbl">👶 Little ones:</span> shred the cabbage finely so there are no long strands.</div>
+      <div class="note iron"><span class="lbl">🩸 Iron-rich ★:</span> beef, with tomato and cabbage for vitamin C.</div>
+      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> reheat until piping hot and pack in a warmed thermos, with fruit. Matches Friday's daycare tray (Lazy Cabbage Rolls, Fruit, Milk).</div>
+      <div class="savewidget" data-recipe-id="r5">
+        <button class="savebtn" onclick="toggleSave('r5')">💾 Save to Recipe Book</button>
+        <div class="savebox" id="savebox-r5">
+          <textarea id="savenotes-r5" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
+          <button onclick="submitSave('r5')">Submit</button>
         </div>
       </div>
     </div>
   </details>
-
-  <details class="card" id="n2">
-    <summary><div class="cnum">5</div><div class="ctitle"><div class="t">Chicken &amp; Cauliflower Macaroni</div><div class="s">Monday Nov 9 dinner → Tuesday lunch · 2 kid dinners + 2 kid lunches</div></div><div class="chev">▾</div></summary>
-    <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (melted cheese)</span><span class="tag t-veg">Hidden veg</span><span class="tag t-kid">Kid portions</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> A cooked cheddar sauce: the cheese is melted in. <b>Check the macaroni isn't egg pasta.</b></div>
-      <h4>Ingredients</h4>
-      <ul>
-        <li>250 g chicken breast, in small pieces <span class="pill">buy fresh</span></li>
-        <li>150 g macaroni, egg-free</li>
-        <li>200 g cauliflower, in small florets <span class="pill">vit C</span> · 40 g carrot, finely grated <span class="pill">hidden veg</span></li>
-        <li>Sauce: 20 g butter + 20 g flour + 300 ml milk + 60 g shredded cheddar, a pinch of salt</li>
-      </ul>
-      <h4>Method</h4>
-      <ol>
-        <li>Boil the macaroni, adding the cauliflower for the last 6 min. Drain.</li>
-        <li>Meanwhile, cook the chicken in a little oil until no pink remains, 6–7 min. Add the carrot for the last minute.</li>
-        <li>Melt the butter in the pasta pot, stir in the flour for 1 min, then whisk in the milk and simmer until thick, 3 min. Take off the heat and stir in the cheddar until melted.</li>
-        <li>Stir in the macaroni, cauliflower and chicken. Mash a little of the cauliflower into the sauce.</li>
-      </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> chop the chicken small for the younger one.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> reheats well with a splash of milk. Matches Tuesday's daycare tray (Chicken, Cheese, Cauliflower Macaroni, Fruit, Milk).</div>
-      <div class="savewidget" data-recipe-id="n2">
-        <button class="savebtn" onclick="toggleSave('n2')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-n2">
-          <textarea id="savenotes-n2" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('n2')">Submit</button>
-        </div>
-      </div>
-    </div>
-  </details>
-
-  <details class="card" id="n3">
-    <summary><div class="cnum">6</div><div class="ctitle"><div class="t">Freezer Meal + Veggies</div><div class="s">Friday Nov 13 lunch · 2 kid lunches</div></div><div class="chev">▾</div></summary>
-    <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Your freezer meal</span><span class="tag t-kid">Kid portions</span></div>
-      <h4>Ingredients</h4>
-      <ul>
-        <li>2 kid portions from the freezer (the spare tub of cheeseburger casserole works)</li>
-        <li>Veggies: 60 g carrot, as sticks</li>
-      </ul>
-      <h4>Method</h4>
-      <ol>
-        <li><b>Thursday evening:</b> move it to the fridge. <b>Friday morning:</b> reheat until piping hot and pack in warmed thermoses.</li>
-      </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> grate the carrot or steam the sticks for 2 min for the younger one.</div>
-      <div class="note kid"><span class="lbl">🥡 Lunchbox:</span> stands in for Friday's daycare tray (Pork Loin, Mashed Potatoes, Veggies, Fruit, Milk).</div>
-      <div class="savewidget" data-recipe-id="n3">
-        <button class="savebtn" onclick="toggleSave('n3')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-n3">
-          <textarea id="savenotes-n3" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('n3')">Submit</button>
-        </div>
-      </div>
-    </div>
-  </details>
-
   <h2 class="sec">Snacks</h2>
-  <p class="note">Matched to what's on the daycare's own tray each day, with no dairy-free substitutes. Cold dairy (yogurt, cheese cubes) is swapped for the younger one, but melted cheese is fine.</p>
+  <p class="note">Matched to the daycare's tray each day, with no dairy-free substitutes. Cold dairy (yogurt, cheese cubes) is swapped for the younger one, but melted and baked cheese is fine.</p>
 
   <details class="card" id="sn1">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Graham Wafers + Fruit + Milk</div><div class="s">Monday Nov 2 snack · 2 portions</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Banana Bread</div><div class="s">Bake Sunday → Monday snack · 1 loaf, freeze the extra slices</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Daycare has yogurt today, so this skips it. Graham wafers often contain <b>honey</b>, which isn't recommended under age one, even baked. Check the label, and for a nut warning.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (egg swap)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> The egg-free loaf from the Oct 5 plan, with the sugar cut from 100 g to 80 g. It uses a flax egg instead of egg, and the butter is baked in. Leave out walnuts.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>2 graham wafers each</li>
-        <li>Fresh fruit <span class="pill">vit C</span></li>
-        <li>Milk, to drink</li>
+        <li>3 very ripe bananas, mashed</li>
+        <li>80 g butter, melted</li>
+        <li>80 g brown sugar <span class="pill">was 100 g</span></li>
+        <li>1 flax egg (10 g ground flaxseed + 45 ml water, rested 5 min)</li>
+        <li>1 tsp vanilla · 1 tsp baking soda · pinch of salt · ½ tsp cinnamon</li>
+        <li>220 g flour</li>
       </ul>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Monday's daycare snack (Yogurt, Graham Wafers, Fruit, Milk).</div>
+      <h4>Method</h4>
+      <ol>
+        <li>Preheat the oven to <b>175°C (350°F)</b>; line a loaf pan.</li>
+        <li>Mix the bananas, melted butter, sugar, flax egg and vanilla.</li>
+        <li>Stir in the baking soda, salt and cinnamon, then fold in the flour until just combined.</li>
+        <li>Bake 55–65 min until a skewer comes out clean. Cool fully before slicing.</li>
+      </ol>
+      <div class="note"><span class="lbl">Less sugar:</span> the riper the bananas, the less you'll miss it. Use ones that are mostly brown.</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> one slice each, with water. Matches Monday's daycare snack (Banana Bread). Slice and freeze the rest.</div>
       <div class="savewidget" data-recipe-id="sn1">
         <button class="savebtn" onclick="toggleSave('sn1')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-sn1">
@@ -536,20 +458,26 @@
       </div>
     </div>
   </details>
-
   <details class="card" id="sn2">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Ham + Crackers + Cucumber</div><div class="s">Tuesday Nov 3 snack · 2 portions</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Mini Pizza Buns + Juice</div><div class="s">Make Monday evening → Tuesday snack · 4 halves</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Daycare has ham, cheese and a zucchini muffin today. This skips the cheese and the muffin, which likely has egg. Check the crackers for egg and for a nut "may contain" warning.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check buns)</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> The mozzarella is melted. <b>Check the buns are egg-free</b>; some soft rolls are glazed with egg.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>60 g sliced deli ham, cut into cracker-size squares <span class="pill">iron</span></li>
-        <li>A handful of crackers each, egg-free &amp; nut-free</li>
-        <li>½ cucumber, as sticks</li>
-        <li>Water, to drink</li>
+        <li>2 dinner buns, egg-free, split in half</li>
+        <li>20 g tomato paste, thinned with 1 tbsp water, plus a pinch of dried oregano</li>
+        <li>20 g sliced deli ham, finely chopped · 40 g shredded mozzarella</li>
+        <li>2 small boxes of 100% juice</li>
       </ul>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Tuesday's daycare snack (Ham, Cheese, Zucchini Muffin, Water).</div>
+      <h4>Method</h4>
+      <ol>
+        <li>After the perogy casserole comes out, turn the oven to <b>200°C (400°F)</b>.</li>
+        <li>Spread the tomato on the cut halves, add the ham and mozzarella, and bake 8–10 min until the cheese bubbles.</li>
+        <li>Cool, then refrigerate. Pack cold, or warm them briefly Tuesday morning.</li>
+      </ol>
+      <div class="note"><span class="lbl">👶 Little ones:</span> cut the younger one's half into small squares. Juice can be watered down half and half.</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Tuesday's daycare snack (Pizza Buns, Juice).</div>
       <div class="savewidget" data-recipe-id="sn2">
         <button class="savebtn" onclick="toggleSave('sn2')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-sn2">
@@ -559,20 +487,26 @@
       </div>
     </div>
   </details>
-
   <details class="card" id="sn3">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Nut-free Trail Mix + Veggies + Milk</div><div class="s">Wednesday Nov 4 snack · 2 portions</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Banana Oat Bites + Fruit</div><div class="s">Bake Sunday → Wednesday snack · 12 squares</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check labels)</span><span class="tag t-iron">Iron boost</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Trail mix is usually nut-based, so this is a nut-free mix. Check every bag for a nut "may contain" warning.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Daycare has Greek yogurt and granola. Store granola often has nuts and honey, so this is a soft, nut-free, honey-free oat bake held together with banana. The older one can have real Greek yogurt on the side if you like; the younger one can't have it uncooked. If you have sorbet bars left over, one of those works instead.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>30 g crisp rice cereal · 20 g raisins · 20 g pumpkin seeds <span class="pill">iron</span> · 15 g nut-free chocolate chips</li>
-        <li>Veggies: ½ cucumber + 40 g carrot, as sticks</li>
-        <li>Milk, to drink</li>
+        <li>1 ripe banana, mashed</li>
+        <li>100 g rolled oats · 30 g butter, melted · 20 g brown sugar</li>
+        <li>½ tsp cinnamon · pinch of salt</li>
+        <li>Fresh fruit <span class="pill">vit C</span> · water, to drink</li>
       </ul>
-      <div class="note"><span class="lbl">👶 Little ones:</span> raisins, seeds and raw carrot are choking risks. Give the younger one just the rice cereal and soft cucumber.</div>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Wednesday's daycare snack (Trail Mix, Raw Veggies, Milk).</div>
+      <h4>Method</h4>
+      <ol>
+        <li>Bake alongside the banana bread at <b>175°C (350°F)</b>. Line a loaf pan or small dish with baking paper.</li>
+        <li>Mix everything, press firmly into the pan about 2 cm thick, and bake 20–25 min until golden at the edges.</li>
+        <li>Cool fully, cut into 12 squares and freeze. Pack 2 straight from the freezer on Wednesday; they thaw by snack time.</li>
+      </ol>
+      <div class="note"><span class="lbl">👶 Little ones:</span> soft enough for the younger one; break it into small pieces.</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Wednesday's daycare snack (Greek Yogurt, Fruit, Granola).</div>
       <div class="savewidget" data-recipe-id="sn3">
         <button class="savebtn" onclick="toggleSave('sn3')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-sn3">
@@ -582,26 +516,20 @@
       </div>
     </div>
   </details>
-
   <details class="card" id="sn4">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Rice Crispy Treats + Veggies + Milk</div><div class="s">Make Wednesday Nov 4 → Monday Nov 9 snack · 16 squares</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Ham + Crackers + Cucumber</div><div class="s">Thursday snack · 2 portions</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check labels)</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Just butter, marshmallows and rice cereal, with the butter melted. Check the marshmallows and cereal for a nut warning.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span><span class="tag t-iron">Iron boost</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> Daycare has meat, cheese and crackers. Cold cheese isn't for the younger one, so it's left out. The older one can have a few cubes of real cheese. Check the crackers for egg and a nut "may contain" warning.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>30 g butter · 150 g mini marshmallows · 120 g crisp rice cereal</li>
-        <li>Veggies for Nov 9: ½ cucumber, as sticks</li>
-        <li>Milk, to drink</li>
+        <li>60 g sliced deli ham, cut into cracker-size squares <span class="pill">iron</span></li>
+        <li>A handful of crackers each, egg-free &amp; nut-free</li>
+        <li>½ cucumber, as sticks <span class="pill">vit C</span></li>
+        <li>Water, to drink</li>
       </ul>
-      <h4>Method</h4>
-      <ol>
-        <li>Line a 20 cm square pan with baking paper. Melt the butter in a large pot over low heat, add the marshmallows and stir until smooth.</li>
-        <li>Off the heat, stir in the cereal until coated. Press firmly into the pan with a buttered spatula. Cool 1 hour.</li>
-        <li>Cut into 16 squares. Freeze them in an airtight tub with baking paper between layers, and pack 2 straight from the freezer on Nov 9; they thaw by snack time.</li>
-      </ol>
-      <div class="note"><span class="lbl">👶 Little ones:</span> sticky treats are hard for very young eaters. Give the younger one a small, thin piece, or skip it and send soft veggies.</div>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Nov 9's daycare snack (Rice Crispy Treat, Veggie, Milk). The rest are for home.</div>
+      <div class="note"><span class="lbl">👶 Little ones:</span> tear the ham into small pieces and break up the crackers.</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Thursday's daycare snack (Meat, Cheese, Crackers).</div>
       <div class="savewidget" data-recipe-id="sn4">
         <button class="savebtn" onclick="toggleSave('sn4')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-sn4">
@@ -611,20 +539,27 @@
       </div>
     </div>
   </details>
-
   <details class="card" id="sn5">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Crispy Minis + Raw Veggies + Milk</div><div class="s">Tuesday Nov 10 snack · 2 portions</div></div><div class="chev">▾</div></summary>
+    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Broccoli Cheddar Hand Pies</div><div class="s">Make Thursday evening → Friday snack · 6 pies, freeze the extras</div></div><div class="chev">▾</div></summary>
     <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Plain or lightly salted rice chips are usually egg- and nut-free. Flavoured ones can contain milk powder. Check the bag.</div>
+      <div class="tags"><span class="tag t-safe">Allergen-safe (milk wash)</span><span class="tag t-veg">Hidden veg</span></div>
+      <div class="note safe"><span class="lbl">Allergen-safe:</span> The cheddar and milk are baked in. The pastry is <b>brushed with milk, not egg</b>. Check the pastry is egg-free.</div>
       <h4>Ingredients</h4>
       <ul>
-        <li>Crispy Minis rice chips, a small handful each</li>
-        <li>Veggies: ½ cucumber + 40 g carrot, as sticks</li>
-        <li>Milk, to drink</li>
+        <li>1 sheet puff pastry, egg-free, thawed</li>
+        <li>120 g broccoli, very finely chopped <span class="pill">vit C</span></li>
+        <li>10 g butter + 10 g flour + 80 ml milk · 50 g shredded cheddar</li>
+        <li>1 tbsp milk, for brushing — <b>not egg</b></li>
       </ul>
-      <div class="note"><span class="lbl">👶 Little ones:</span> break rice chips into small pieces, and grate or steam the carrot for the younger one.</div>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> matches Nov 10's daycare snack (Crispy Minis, Raw Veggies, Milk).</div>
+      <h4>Method</h4>
+      <ol>
+        <li><b>Thursday morning:</b> move the pastry to the fridge to thaw.</li>
+        <li>Steam the broccoli for 3 min. Melt the butter, stir in the flour for 1 min, whisk in the milk and simmer until thick. Off the heat, stir in the cheddar and broccoli. Cool 10 min.</li>
+        <li>Cut the pastry into 6 squares. Put a spoonful of filling on each, fold into triangles and press the edges with a fork. Brush with milk and cut a small slit.</li>
+        <li>Bake at <b>200°C (400°F)</b> for 18–20 min, after the casserole comes out, until puffed and golden. Cool and refrigerate.</li>
+      </ol>
+      <div class="note"><span class="lbl">👶 Little ones:</span> break the pastry into small pieces for the younger one.</div>
+      <div class="note kid"><span class="lbl">🍪 Snack:</span> one each, with water. Matches Friday's daycare snack (Broccoli Cheddar Hand Pie).</div>
       <div class="savewidget" data-recipe-id="sn5">
         <button class="savebtn" onclick="toggleSave('sn5')">💾 Save to Recipe Book</button>
         <div class="savebox" id="savebox-sn5">
@@ -634,67 +569,13 @@
       </div>
     </div>
   </details>
-
-  <details class="card" id="sn6">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Cinnamon Toast + Fruit + Milk</div><div class="s">Thursday Nov 12 snack · 2 portions</div></div><div class="chev">▾</div></summary>
-    <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check bread)</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> Store cinnamon buns usually contain egg, and their icing often has raw dairy. This gives the same flavour with no prep. Check the bread is egg-free.</div>
-      <h4>Ingredients</h4>
-      <ul>
-        <li>2 slices sandwich bread, egg-free (freeze them on Nov 4 so they're fresh)</li>
-        <li>10 g butter + 10 g sugar + ½ tsp cinnamon</li>
-        <li>Fresh fruit <span class="pill">vit C</span> · milk, to drink</li>
-      </ul>
-      <h4>Method</h4>
-      <ol>
-        <li>Toast the bread from frozen. Butter it while hot, sprinkle with the cinnamon sugar and cut into fingers.</li>
-      </ol>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Nov 12's daycare snack (Cinnamon Buns, Fruit, Milk).</div>
-      <div class="savewidget" data-recipe-id="sn6">
-        <button class="savebtn" onclick="toggleSave('sn6')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-sn6">
-          <textarea id="savenotes-sn6" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('sn6')">Submit</button>
-        </div>
-      </div>
-    </div>
-  </details>
-
-  <details class="card" id="sn7">
-    <summary><div class="cnum">🍪</div><div class="ctitle"><div class="t">Fruit Sorbet Bar + Fruit</div><div class="s">Friday Nov 13 snack · 2 portions</div></div><div class="chev">▾</div></summary>
-    <div class="cbody">
-      <div class="tags"><span class="tag t-safe">Allergen-safe (check label)</span></div>
-      <div class="note safe"><span class="lbl">Allergen-safe:</span> <b>Sorbet, not sherbet</b>: sherbet contains milk. You may have some left from the Oct 26 box.</div>
-      <h4>Ingredients</h4>
-      <ul>
-        <li>2 fruit sorbet bars, dairy-free</li>
-        <li>Fresh fruit <span class="pill">vit C</span> · water, to drink</li>
-      </ul>
-      <h4>Method</h4>
-      <ol>
-        <li>Send in an insulated bag with an ice pack, or ask the daycare to keep it in their freezer.</li>
-      </ol>
-      <div class="note kid"><span class="lbl">🍪 Snack:</span> stands in for Nov 13's daycare snack (Frozen Yogurt Pop, Fruit, Water).</div>
-      <div class="savewidget" data-recipe-id="sn7">
-        <button class="savebtn" onclick="toggleSave('sn7')">💾 Save to Recipe Book</button>
-        <div class="savebox" id="savebox-sn7">
-          <textarea id="savenotes-sn7" placeholder="Any notes? (optional)" maxlength="300" oninput="filterNotes(this)"></textarea>
-          <button onclick="submitSave('sn7')">Submit</button>
-        </div>
-      </div>
-    </div>
-  </details>
 </div>
 
 <!-- ============ SHOPPING ============ -->
 <div class="panel shop" id="tab-shop">
-  <h2 class="sec">Buy today — both weeks</h2>
-  <p class="note">Everything for Nov 1–4, plus whatever keeps for Nov 9–13. Worked out from the recipes and what's in <b>Inventory</b>. Anything already on hand drops off. Ticking an item adds it to inventory; ticking <b>made</b> on a recipe takes its ingredients back out. Basic seasonings are on the <b>Pantry</b> tab.</p>
+  <h2 class="sec">Weekend shop — Nov 14–15</h2>
+  <p class="note">Everything for Nov 15–20, worked out from the recipes and what's in <b>Inventory</b>. Anything already on hand drops off. Ticking an item adds it to inventory; ticking <b>made</b> on a recipe takes its ingredients back out. Freezer meals are on the <b>Pantry</b> tab, along with basic seasonings.</p>
   <div id="inv-shop"></div>
-  <h2 class="sec">🕒 Buy on the way back — Nov 7–8</h2>
-  <p class="note">Perishables for Nov 9–13: the macaroni's chicken, cheddar, fresh veg and milk. Plus fruit for the week. Ticking these doesn't change inventory.</p>
-  <div id="inv-shop-later"></div>
 </div>
 
 <!-- ============ INVENTORY ============ -->
@@ -715,19 +596,17 @@
   <h2 class="sec">Pantry check — assumed at home</h2>
   <p class="note">Seasonings, odds and ends, and the freezer. None of this is on the shopping list.</p>
   <div class="grp"><h4>🧊 From the freezer</h4>
-    <div class="item"><label><input type="checkbox" data-k="frz1"><span>Chili, 2 kid portions <span class="pill">Nov 9 lunch</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="frz2"><span>A kids' freezer meal, 2 portions (or the spare casserole tub) <span class="pill">Nov 13 lunch</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="frz3"><span>Something for dinner Nov 4 and Nov 10 <span class="pill">or takeout</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="frz4"><span>Room for 2 casserole tubs, the rice crispy treats and 2 bread slices <span class="pill">goes in Nov 1–4</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="frz1"><span>Pasta sauce, about 1–1.2 L <span class="pill">Sun dinner + Mon lunch</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="frz2"><span>Galbi-jjim, about 1 kg with bones <span class="pill">Tue dinner + Wed lunch</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="frz3"><span>Room for the banana bread, oat bites and spare hand pies <span class="pill">goes in Sun &amp; Thu</span></span></label></div>
   </div>
   <div class="grp"><h4>🧂 Assumed staples (verify stock)</h4>
     <div class="item"><label><input type="checkbox" data-k="pan1"><span>Cooking oil</span></label></div>
     <div class="item"><label><input type="checkbox" data-k="pan2"><span>Salt &amp; black pepper</span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan3"><span>Dried oregano &amp; thyme <span class="pill">meatballs, pot pie</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan4"><span>Ketchup &amp; mild mustard <span class="pill">casserole</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan5"><span>Cinnamon <span class="pill">cinnamon toast</span></span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan6"><span>Freezer tubs, labels &amp; baking paper</span></label></div>
-    <div class="item"><label><input type="checkbox" data-k="pan7"><span>2 thermoses <span class="pill">pot pie, soup, chili, casserole</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan3"><span>Dried oregano &amp; paprika <span class="pill">pizza buns, cabbage rolls</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan4"><span>Cinnamon, vanilla &amp; baking soda <span class="pill">banana bread, oat bites</span></span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan5"><span>Baking paper, freezer bags &amp; a loaf pan</span></label></div>
+    <div class="item"><label><input type="checkbox" data-k="pan6"><span>2 thermoses <span class="pill">every lunch except Thursday</span></span></label></div>
   </div>
 </div>
 
@@ -736,74 +615,71 @@
   <h2 class="sec">Meal prep — by the day it happens</h2>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Sunday Nov 1</span><span class="pdtime">~1 hr 15 min</span></div><span class="pdwhen">the big cook: meatballs in the oven, casserole on the stove</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Saturday Nov 14</span><span class="pdtime">~2 min</span></div><span class="pdwhen">after the shop</span></div>
     <ol>
-      <li><span class="time">15 min · mix &amp; roll</span><br><b>Meatballs</b> into the oven; start the rice.</li>
-      <li><span class="time">30 min · stovetop</span><br><b>Cheeseburger casserole</b> while the meatballs bake. Cool, split into 2 labelled tubs and freeze.</li>
-      <li><span class="time">10 min · finish</span><br>Simmer the meatballs in the sauce, steam the veg — dinner and Monday's lunch.</li>
-      <li><span class="time">10 min · sticks</span><br><b>Cucumber and carrot sticks</b> for Tuesday's and Wednesday's snacks, stored in water in the fridge.</li>
+      <li><span class="time">1 min · freezer</span><br><b>Pasta sauce</b> to the fridge to thaw.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Monday Nov 2</span><span class="pdtime">~50 min, mostly oven</span></div><span class="pdwhen">filling on the stove, then bake</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Sunday Nov 15</span><span class="pdtime">~1 hr 30 min, mostly oven</span></div><span class="pdwhen">baking, then a quick family dinner</span></div>
     <ol>
-      <li><span class="time">morning · 1 min</span><br><b>Pastry</b> from the freezer to the fridge to thaw.</li>
-      <li><span class="time">20 min stovetop + 30 min bake</span><br><b>Chicken pot pie</b> — kids' dinner and Tuesday's lunch, with buns.</li>
+      <li><span class="time">15 min · mix</span><br><b>Banana bread</b> and <b>banana oat bites</b> into the oven together at 175°C. The bites come out after 20–25 min, the loaf after about an hour.</li>
+      <li><span class="time">20 min · stovetop</span><br><b>Spaghetti and sauce</b>, plus zucchini noodles for the low-carb swap. Set aside 2 kid lunches.</li>
+      <li><span class="time">5 min · after cooling</span><br>Cut the oat bites and freeze them. Slice the banana bread, keep 2 slices out, freeze the rest.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Tuesday Nov 3</span><span class="pdtime">~35 min</span></div><span class="pdwhen">one pot</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Monday Nov 16</span><span class="pdtime">~10 min am · ~40 min pm</span></div><span class="pdwhen">casserole, then pizza buns in the same oven</span></div>
     <ol>
-      <li><span class="time">30 min · stovetop</span><br><b>Ham &amp; potato soup</b> — kids' dinner and Wednesday's lunch.</li>
-      <li><span class="time">5 min</span><br><b>Bologna sandwiches</b> for tonight. Make Wednesday's fresh in the morning.</li>
+      <li><span class="time">morning · 10 min</span><br>Reheat the spaghetti into thermoses; cucumber sticks; banana bread. <b>Galbi-jjim</b> from the freezer to the fridge.</li>
+      <li><span class="time">evening · 30 min</span><br><b>Perogy casserole</b> and broccoli — kids' dinner and Tuesday's lunch.</li>
+      <li><span class="time">10 min</span><br><b>Mini pizza buns</b> in the hot oven for Tuesday's snack.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Wednesday Nov 4</span><span class="pdtime">~20 min</span></div><span class="pdwhen">no dinner to cook — set up for Nov 9</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Tuesday Nov 17</span><span class="pdtime">~55 min</span></div><span class="pdwhen">the biggest cook of the week</span></div>
     <ol>
-      <li><span class="time">15 min + cooling</span><br><b>Rice crispy treats</b> for Nov 9. Cut and freeze.</li>
-      <li><span class="time">1 min · freezer</span><br><b>2 slices of bread</b> into the freezer for Nov 12's cinnamon toast.</li>
-      <li><span class="time">2 min · check</span><br>Use up or freeze any fresh fruit and veg before you leave.</li>
+      <li><span class="time">morning · 5 min</span><br>Reheat the casserole into thermoses; pizza buns and juice.</li>
+      <li><span class="time">evening · 30 min</span><br>Potatoes and cauliflower on to boil. Strip the galbi off the bone, chop and thicken with the corn.</li>
+      <li><span class="time">25 min · bake</span><br><b>갈비 pie</b>, plus the small cauliflower-topped dish. Steam the broccoli. Set aside 2 kid lunches.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Sunday Nov 8</span><span class="pdtime">~5 min</span></div><span class="pdwhen">on the way back</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Wednesday Nov 18</span><span class="pdtime">~5 min am · ~20 min pm</span></div><span class="pdwhen">easy night</span></div>
     <ol>
-      <li><span class="time">shop</span><br>The <b>"Buy on the way back"</b> list: chicken, cauliflower, cucumbers, milk, fruit.</li>
-      <li><span class="time">1 min · freezer</span><br><b>Chili</b> into the fridge to thaw for Monday's lunch.</li>
+      <li><span class="time">morning · 5 min</span><br>Reheat the 갈비 pie into thermoses; 2 oat bites from the freezer, plus fruit.</li>
+      <li><span class="time">evening · 20 min</span><br><b>Frozen pizzas</b>, veggie sticks and the spinach salad. Set aside 2 kid slices.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Monday Nov 9</span><span class="pdtime">~10 min am · ~30 min pm</span></div><span class="pdwhen">the only cooking of the week</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Thursday Nov 19</span><span class="pdtime">~5 min am · ~1 hr 15 min pm, mostly oven</span></div><span class="pdwhen">casserole in the oven, hand pies after</span></div>
     <ol>
-      <li><span class="time">morning · 10 min</span><br><b>Chili + wieners</b> into thermoses. Cucumber sticks, and 2 rice crispy treats from the freezer.</li>
-      <li><span class="time">evening · 30 min</span><br><b>Chicken &amp; cauliflower macaroni</b> — kids' dinner and Tuesday's lunch.</li>
+      <li><span class="time">morning · 5 min</span><br>Pack the pizza and veggie sticks; ham, crackers and cucumber. <b>Puff pastry</b> to the fridge.</li>
+      <li><span class="time">evening · 15 min + 50 min bake</span><br><b>Lazy cabbage roll casserole</b> — kids' dinner and Friday's lunch.</li>
+      <li><span class="time">15 min + 20 min bake</span><br>Make the <b>hand pie</b> filling while the casserole bakes; bake the pies once it's out.</li>
     </ol>
   </div>
 
   <div class="prepday">
-    <div class="pdhead"><div class="pdtop"><span class="pdname">Nov 10–13</span><span class="pdtime">a few minutes a day</span></div><span class="pdwhen">thaw the night before, reheat in the morning</span></div>
+    <div class="pdhead"><div class="pdtop"><span class="pdname">Friday Nov 20</span><span class="pdtime">~5 min</span></div><span class="pdwhen">pack and go</span></div>
     <ol>
-      <li><span class="time">Tue 10</span><br>Pack the macaroni, Crispy Minis and veggies. Dinner from the freezer or takeout.</li>
-      <li><span class="time">Wed 11 · evening</span><br><b>Casserole</b> from the freezer to the fridge.</li>
-      <li><span class="time">Thu 12 · 10 min</span><br>Reheat the casserole into thermoses; cinnamon toast from frozen bread. Evening: move Friday's freezer meal to the fridge.</li>
-      <li><span class="time">Fri 13 · 10 min</span><br>Reheat the freezer meal; sorbet bars in an insulated bag.</li>
+      <li><span class="time">morning · 5 min</span><br>Reheat the casserole into thermoses; a hand pie each.</li>
     </ol>
   </div>
 </div>
 
 <footer>
-  Allergen-safe: no raw dairy, egg, tree nut, peanut, or pea · iron-rich options included · metric.<br>Refresh with the next plan after Nov 13.
+  Allergen-safe: no raw dairy, egg, tree nut, peanut, pea or honey · iron-rich options included · metric.<br>Refresh with the next plan after Nov 20.
 </footer>
 </div>
 
 <script>
-  var KEY='mealplan_2026_11_02_v1';
+  var KEY='mealplan_2026_11_16_v1';
   function showTab(name){
     document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id==='tab-'+name); });
     document.querySelectorAll('#tabbar button').forEach(function(b){ b.classList.toggle('active', b.dataset.tab===name); });
@@ -870,41 +746,33 @@
   }
 </script>
 <script>
-  // Two weeks: Nov 1–4 and Nov 9–13 (away Nov 5–6). Ids match inventory.js's catalog;
-  // anything in `items` is a one-off and isn't tracked.
-  // `later` lists the perishables for Nov 9–13, bought on the way back (separate list).
-  // Freezer meals (chili, Friday's lunch) aren't listed.
-  // Drinking milk for each packed lunch (2 kids) is counted on the recipe that makes it;
-  // snack milk is counted on the snack.
+  // Week of Nov 16–20. Ids match inventory.js's catalog; anything in `items` is a one-off
+  // and isn't tracked. Freezer meals (pasta sauce, galbi-jjim) aren't listed.
+  // Drinking milk for each packed lunch (2 kids, 250 ml) is counted on the dinner that makes it.
   var WEEK = {
-    id: '2026-11-02',
+    id: '2026-11-16',
     recipes: {
-      'r1':  { name: 'Meatballs + rice', when: 'Sun 1', uses: { 'ground-beef': 350, 'breadcrumbs': 25, 'milk': 280, 'onion': 0.25, 'garlic': 1, 'carrot': 80, 'crushed-tomatoes': 1, 'rice': 120, 'broccoli': 150 } },
-      'r2':  { name: 'Cheeseburger casserole (freeze)', when: 'Sun 1', later: ['milk', 'cheddar'], uses: { 'ground-beef': 300, 'onion': 0.5, 'carrot': 60, 'crushed-tomatoes': 1, 'tomato-paste': 20, 'macaroni': 150, 'cheddar': 40, 'milk': 250 } },
-      'r3':  { name: 'Chicken pot pie + buns', when: 'Mon 2', uses: { 'chicken-thigh': 350, 'carrot': 100, 'celery': 2, 'onion': 0.5, 'green-beans': 80, 'frozen-corn': 80, 'butter': 25, 'flour': 25, 'chicken-broth': 250, 'milk': 415, 'puff-pastry': 1, 'dinner-buns': 4 } },
-      'r4':  { name: 'Ham & potato soup + bologna sandwich', when: 'Tue 3', uses: { 'ham-steak': 150, 'potato': 400, 'carrot': 60, 'celery': 1, 'onion': 0.5, 'butter': 25, 'flour': 15, 'chicken-broth': 500, 'milk': 400, 'bread': 4, 'bologna': 60 } },
-      'n1':  { name: 'Chili + wieners', when: 'Mon 9', later: ['milk', 'cucumber', 'cheddar'], uses: { 'wieners': 2, 'cucumber': 0.5, 'cheddar': 20, 'milk': 250 } },
-      'n2':  { name: 'Chicken & cauliflower macaroni', when: 'Mon 9', later: ['chicken-breast', 'cauliflower', 'milk', 'cheddar'], uses: { 'chicken-breast': 250, 'macaroni': 150, 'cauliflower': 200, 'carrot': 40, 'butter': 20, 'flour': 20, 'milk': 550, 'cheddar': 60 } },
-      'n3':  { name: 'Freezer meal + veggies', when: 'Fri 13', later: ['milk'], uses: { 'carrot': 60, 'milk': 250 } },
-      'sn1': { name: 'Graham wafers + fruit + milk', when: 'Mon 2', uses: { 'graham-wafers': 1, 'milk': 250 } },
-      'sn2': { name: 'Ham + crackers + cucumber', when: 'Tue 3', uses: { 'deli-meat': 60, 'crackers': 1, 'cucumber': 0.5 } },
-      'sn3': { name: 'Nut-free trail mix + veggies', when: 'Wed 4', uses: { 'rice-cereal': 30, 'raisins': 20, 'pumpkin-seeds': 20, 'chocolate-chips': 15, 'cucumber': 0.5, 'carrot': 40, 'milk': 250 } },
-      'sn4': { name: 'Rice crispy treats + veggies', when: 'Wed 4 → Mon 9', later: ['milk', 'cucumber'], uses: { 'butter': 30, 'mini-marshmallows': 150, 'rice-cereal': 120, 'cucumber': 0.5, 'milk': 250 } },
-      'sn5': { name: 'Crispy Minis + raw veggies', when: 'Tue 10', later: ['milk', 'cucumber'], uses: { 'rice-chips': 1, 'cucumber': 0.5, 'carrot': 40, 'milk': 250 } },
-      'sn6': { name: 'Cinnamon toast + fruit', when: 'Thu 12', later: ['milk'], uses: { 'bread': 2, 'butter': 10, 'sugar': 10, 'milk': 250 } },
-      'sn7': { name: 'Sorbet bar + fruit', when: 'Fri 13', uses: { 'sorbet-bars': 2 } }
+      'r1':  { name: 'Spaghetti + freezer sauce (family)', when: 'Sun 15', uses: { 'spaghetti': 300, 'zucchini': 2, 'cucumber': 0.5, 'milk': 250 } },
+      'r2':  { name: 'Perogy casserole + broccoli (kids)', when: 'Mon 16', uses: { 'frozen-perogies': 600, 'ham-steak': 150, 'onion': 0.5, 'butter': 15, 'milk': 350, 'cheddar': 60, 'broccoli': 200 } },
+      'r3':  { name: '갈비 pie (family)', when: 'Tue 17', uses: { 'frozen-corn': 100, 'cornstarch': 10, 'potato': 800, 'butter': 40, 'milk': 350, 'cheddar': 40, 'cauliflower': 400, 'broccoli': 200 } },
+      'r4':  { name: 'Frozen pizza + veggie sticks (family)', when: 'Wed 18', uses: { 'frozen-pizza': 2, 'cucumber': 1, 'bell-pepper': 1, 'baby-spinach': 150, 'milk': 250 } },
+      'r5':  { name: 'Lazy cabbage roll casserole (kids)', when: 'Thu 19', uses: { 'ground-beef': 300, 'onion': 0.5, 'garlic': 1, 'cabbage': 1, 'rice': 80, 'crushed-tomatoes': 1, 'chicken-broth': 250, 'cheddar': 30, 'milk': 250 } },
+      'sn1': { name: 'Banana bread', when: 'Sun 15 → Mon 16', uses: { 'bananas': 3, 'butter': 80, 'brown-sugar': 80, 'flaxseed': 10, 'flour': 220 } },
+      'sn2': { name: 'Mini pizza buns + juice', when: 'Mon 16 → Tue 17', uses: { 'dinner-buns': 2, 'tomato-paste': 20, 'deli-meat': 20, 'mozzarella': 40, 'juice-boxes': 2 } },
+      'sn3': { name: 'Banana oat bites + fruit', when: 'Sun 15 → Wed 18', uses: { 'bananas': 1, 'rolled-oats': 100, 'butter': 30, 'brown-sugar': 20 } },
+      'sn4': { name: 'Ham + crackers + cucumber', when: 'Thu 19', uses: { 'deli-meat': 60, 'crackers': 1, 'cucumber': 0.5 } },
+      'sn5': { name: 'Broccoli cheddar hand pies', when: 'Thu 19 → Fri 20', uses: { 'puff-pastry': 1, 'broccoli': 120, 'butter': 10, 'flour': 10, 'milk': 95, 'cheddar': 50 } }
     },
     items: {
-      'ham-steak':     { name: 'Ham steak', group: 'meat', unit: 'g', text: '1 small (150 g used)' },
-      'bologna':       { name: 'Sliced bologna', group: 'meat', unit: 'g', text: '1 small pack (60 g used)', note: 'Check for egg and milk binders.' },
-      'wieners':       { name: 'All-beef wieners, egg-free', group: 'meat', unit: '', text: '1 pack (2 used)', note: 'Some wieners use egg as a binder. Check the best-before covers Nov 9.' },
-      'puff-pastry':   { name: 'Puff pastry or shortcrust sheet, egg-free', group: 'frozen', unit: '', text: '1 sheet', note: 'Most are egg-free, but not all. Check the box.' },
-      'dinner-buns':   { name: 'Dinner buns, egg-free', group: 'bakery', unit: '', text: '1 pack (4 used)', note: 'Some soft rolls are glazed with egg.' },
-      'graham-wafers': { name: 'Graham wafers', group: 'dry', unit: 'box', note: 'Many contain honey: not recommended under age one. Check for a nut warning.' },
-      'crackers':      { name: 'Crackers, egg-free & nut-free', group: 'dry', unit: 'box', note: 'Check for a nut "may contain" warning.' },
-      'rice-chips':    { name: 'Crispy Minis rice chips, plain', group: 'dry', unit: 'bag', note: 'Flavoured ones can contain milk powder.' },
-      'sorbet-bars':   { name: 'Fruit sorbet bars, dairy-free', group: 'frozen', unit: '', text: '2 needed — check for leftovers from Oct 26', note: 'Sorbet, not sherbet: sherbet contains milk.' },
-      'fresh-fruit':   { name: 'Fresh fruit, incl. oranges', group: 'produce', text: 'for Nov 2–4 lunches and snacks; buy more on the way back for Nov 9–13', always: true }
+      'ham-steak':       { name: 'Ham steak', group: 'meat', unit: 'g', text: '1 small (150 g used)' },
+      'cabbage':         { name: 'Green cabbage, small', group: 'produce', unit: '', text: '1 small head (about half used)' },
+      'bananas':         { name: 'Bananas, very ripe', group: 'produce', unit: '', text: '4 (buy early so they ripen)', note: 'Mostly brown is best for the lower-sugar banana bread.' },
+      'frozen-pizza':    { name: 'Frozen pizzas', group: 'frozen', unit: '', text: '2 — skip if you have some', note: 'Check for egg in the crust, pesto (pine nuts) and peas.' },
+      'puff-pastry':     { name: 'Puff pastry sheet, egg-free', group: 'frozen', unit: '', text: '1 sheet', note: 'Most are egg-free, but not all. Check the box.' },
+      'dinner-buns':     { name: 'Dinner buns, egg-free', group: 'bakery', unit: '', text: '1 pack (2 used)', note: 'Some soft rolls are glazed with egg.' },
+      'crackers':        { name: 'Crackers, egg-free & nut-free', group: 'dry', unit: 'box', note: 'Check for a nut "may contain" warning.' },
+      'juice-boxes':     { name: 'Small 100% juice boxes', group: 'dry', unit: '', text: '2' },
+      'fresh-fruit':     { name: 'Fresh fruit, incl. oranges', group: 'produce', text: 'for 5 lunches and Wednesday\'s snack', always: true }
     }
   };
 </script>
